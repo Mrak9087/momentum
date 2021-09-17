@@ -1,5 +1,27 @@
+$width_container:1440px;
+$bg-dark:#030303;
+$dark-red:#710707;
+$font-gold:#9d8665;
+
 *,*::after,::before{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+.container{
+    max-width: $width_container;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header{
+    background-color: $bg-dark;
+
+    &_container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
