@@ -47,6 +47,11 @@ $font-gold:#9d8665;
     margin: 0 auto;
 }
 
+.pad75_b_t{
+    padding-bottom: 75px;
+    padding-top: 75px;
+}
+
 .header{
     background-color: $bg-dark;
     line-height: 33px;
@@ -271,6 +276,83 @@ $font-gold:#9d8665;
     }
 }
 
+.visiting{
+
+    .cards_container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 75px 60px;
+        padding-top: 75px;
+        
+        .card{
+            display: block;
+            max-width: 440px;
+            width: 100%;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+        }
+        
+        .card_img{
+            width: 100%;
+            margin-bottom: 25px;
+        }
+        
+        .card_title{
+            font-family: Forum;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: 35px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #000000;
+        
+            padding-bottom: 9px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        
+        .card_title::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0px;
+            width: 300px;
+            height: 2px;
+            background-color: $dark-red;
+            transition: all 0.5s;
+        }
+        
+        .card:hover{
+            .card_title::after{
+                width: 100%;
+            }
+        }
+
+        .card_text_deg{
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 200;
+            font-size: 22px;
+            line-height: 26px;
+            color: #000000;    
+            margin-bottom: 10px;
+        }
+        
+        .card_text_info{
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 200;
+            font-size: 18px;
+            line-height: 21px;
+            color: #000000;
+        }
+    }
+
+}
+
 
 
 .title_section{
@@ -294,8 +376,8 @@ $font-gold:#9d8665;
 }
 
 .title_underline{
-    border-bottom: 4px solid $dark-red;
-    padding-bottom: 28px;
+    border-bottom: 3px solid $dark-red;
+    padding-bottom: 27px;
 }
 
 
