@@ -78,3 +78,130 @@
     letter-spacing: 5px;
     text-transform: uppercase;
     color: #FFFFFF; }
+
+.welcome {
+  background-color: #030303; }
+  .welcome_text {
+    position: relative;
+    z-index: 3; }
+  .welcome_container {
+    display: flex;
+    position: relative;
+    padding-top: 150px;
+    padding-bottom: 272px; }
+  .welcome_subtitle {
+    margin-top: 30px;
+    margin-bottom: 75px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 33px;
+    letter-spacing: 2px;
+    color: #FFFFFF; }
+  .welcome_btn {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    max-width: 360px;
+    width: 100%;
+    background-color: #710707;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 22px;
+    line-height: 26px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    padding-top: 25px;
+    padding-bottom: 24px;
+    cursor: pointer; }
+    .welcome_btn:hover {
+      background-color: #9d8665; }
+  .welcome .slider {
+    position: absolute;
+    max-width: 1000px;
+    width: 100%;
+    z-index: 1;
+    right: 0;
+    top: 0; }
+    .welcome .slider_image {
+      display: flex;
+      overflow-x: hidden; }
+    .welcome .slider_wrapper {
+      position: relative;
+      padding-bottom: 60px; }
+    .welcome .slider_panel {
+      background-color: #030303;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: space-between;
+      max-width: 600px;
+      width: 100%;
+      padding: 40px; }
+      .welcome .slider_panel .slide_count {
+        display: flex;
+        max-width: 76px;
+        width: 100%;
+        justify-content: space-between;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 40px;
+        /* identical to box height, or 182% */
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        color: #FFFFFF; }
+      .welcome .slider_panel .slide_positions {
+        display: flex;
+        max-width: 180px;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center; }
+      .welcome .slider_panel .slide_position {
+        width: 16px;
+        height: 16px;
+        background-color: #fff; }
+      .welcome .slider_panel .current_position {
+        background-color: #9d8665; }
+      .welcome .slider_panel .slide_btn {
+        width: 40px;
+        height: 40px;
+        outline: none;
+        border: none;
+        background-color: #030303;
+        cursor: pointer; }
+      .welcome .slider_panel .btn_next {
+        background-image: url("./assets/img/arrow.png");
+        background-repeat: no-repeat;
+        background-position: center; }
+      .welcome .slider_panel .btn_prev {
+        background-image: url("./assets/img/arrow.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: rotate(180deg); }
+
+.title_section {
+  font-family: Forum;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  /* line-height: 90px; */
+  letter-spacing: 5px;
+  text-transform: uppercase; }
+
+.title_section_white {
+  color: #FFFFFF; }
+
+.title_section_brown {
+  color: #9d8665; }
+
+.title_underline {
+  border-bottom: 4px solid #710707;
+  padding-bottom: 28px; }
