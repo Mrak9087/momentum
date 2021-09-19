@@ -48,7 +48,7 @@
     justify-content: space-between;
     align-items: center; }
   .header_nav {
-    max-width: 720px;
+    max-width: 775px;
     width: 100%; }
     .header_nav .nav_list {
       display: flex;
@@ -62,7 +62,8 @@
       font-style: normal;
       font-weight: 200;
       font-size: 22px;
-      /* line-height: 50px; */
+      line-height: 26px;
+      /* identical to box height */
       letter-spacing: 2px;
       color: #FFFFFF; }
 
@@ -88,7 +89,7 @@
     display: flex;
     position: relative;
     padding-top: 150px;
-    padding-bottom: 272px; }
+    padding-bottom: 271px; }
   .welcome_subtitle {
     margin-top: 30px;
     margin-bottom: 75px;
@@ -129,7 +130,15 @@
     top: 0; }
     .welcome .slider_image {
       display: flex;
-      overflow-x: hidden; }
+      overflow-x: hidden;
+      position: relative; }
+    .welcome .slider_grad {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      max-width: 300px;
+      width: 100%;
+      background-image: linear-gradient(to right, black, rgba(0, 0, 0, 0)); }
     .welcome .slider_wrapper {
       position: relative;
       padding-bottom: 60px; }
@@ -140,9 +149,11 @@
       bottom: 0;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       max-width: 600px;
       width: 100%;
-      padding: 40px; }
+      padding-left: 74px;
+      padding-right: 74px; }
       .welcome .slider_panel .slide_count {
         display: flex;
         max-width: 76px;
@@ -153,9 +164,6 @@
         font-weight: normal;
         font-size: 22px;
         line-height: 40px;
-        /* identical to box height, or 182% */
-        display: flex;
-        align-items: center;
         text-transform: uppercase;
         color: #FFFFFF; }
       .welcome .slider_panel .slide_positions {
@@ -163,7 +171,8 @@
         max-width: 180px;
         width: 100%;
         justify-content: space-between;
-        align-items: center; }
+        align-items: center;
+        padding: 52px 0 52px; }
       .welcome .slider_panel .slide_position {
         width: 16px;
         height: 16px;
@@ -176,15 +185,13 @@
         outline: none;
         border: none;
         background-color: #030303;
-        cursor: pointer; }
-      .welcome .slider_panel .btn_next {
-        background-image: url("./assets/img/arrow.png");
+        cursor: pointer;
         background-repeat: no-repeat;
-        background-position: center; }
+        background-position: center center; }
+      .welcome .slider_panel .btn_next {
+        background-image: url("./assets/img/arrow.png"); }
       .welcome .slider_panel .btn_prev {
         background-image: url("./assets/img/arrow.png");
-        background-repeat: no-repeat;
-        background-position: center;
         transform: rotate(180deg); }
 
 .title_section {

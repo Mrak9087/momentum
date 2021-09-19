@@ -63,7 +63,7 @@ $font-gold:#9d8665;
     }
 
     &_nav{
-        max-width: 720px;
+        max-width: 775px;
         width: 100%;
 
         .nav_list{
@@ -81,9 +81,14 @@ $font-gold:#9d8665;
             font-style: normal;
             font-weight: 200;
             font-size: 22px;
-            /* line-height: 50px; */
+            line-height: 26px;
+            
+            /* identical to box height */
             letter-spacing: 2px;
+            
             color: #FFFFFF;
+            
+            
         }
     }
 }
@@ -118,7 +123,7 @@ $font-gold:#9d8665;
         display: flex;
         position: relative;
         padding-top: 150px;
-        padding-bottom: 272px;
+        padding-bottom: 271px;
     }
 
     &_subtitle{
@@ -166,15 +171,29 @@ $font-gold:#9d8665;
         z-index: 1;
         right: 0;
         top: 0;
+
         &_image{
             display: flex;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        &_grad{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            max-width: 300px;
+            width: 100%;
+            background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+
         }
 
         &_wrapper{
             position: relative;
             padding-bottom: 60px;
         }
+
+
 
         &_panel{
             background-color: $bg-dark;
@@ -183,10 +202,13 @@ $font-gold:#9d8665;
             bottom: 0;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             max-width: 600px;
             width: 100%;
+            padding-left: 74px;
+            padding-right: 74px;
 
-            padding:40px ;
+            // padding:40px ;
 
             .slide_count{
                 display: flex;
@@ -198,10 +220,6 @@ $font-gold:#9d8665;
                 font-weight: normal;
                 font-size: 22px;
                 line-height: 40px;
-
-                /* identical to box height, or 182% */
-                display: flex;
-                align-items: center;
                 text-transform: uppercase;
 
                 color: #FFFFFF;
@@ -213,12 +231,15 @@ $font-gold:#9d8665;
                 width: 100%;
                 justify-content: space-between;
                 align-items: center;
+                padding: 52px 0 52px;
             }
 
             .slide_position{
                 width: 16px;
                 height: 16px;
                 background-color: #fff;
+                
+
             }
 
             .current_position{
@@ -232,18 +253,18 @@ $font-gold:#9d8665;
                 border: none;
                 background-color: $bg-dark;
                 cursor: pointer;
+                background-repeat: no-repeat;
+                background-position: center center;
             }
 
             .btn_next{
                 background-image: url("./assets/img/arrow.png");
-                background-repeat: no-repeat;
-                background-position: center;
+               
             }
 
             .btn_prev{
                 background-image: url("./assets/img/arrow.png");
-                background-repeat: no-repeat;
-                background-position: center;
+                
                 transform: rotate(180deg);
             }
         }
