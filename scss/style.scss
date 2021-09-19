@@ -35,7 +35,7 @@ $bg-dark:#030303;
 $dark-red:#710707;
 $font-gold:#9d8665;
 
-*,*::after,::before{
+*,*::after,*::before{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
