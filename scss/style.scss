@@ -47,9 +47,13 @@ $font-gold:#9d8665;
     margin: 0 auto;
 }
 
-.pad75_b_t{
-    padding-bottom: 75px;
-    padding-top: 75px;
+.indent_bottom_title73{
+    margin-bottom: 73px;
+}
+
+
+.text_let_spac{
+    letter-spacing: 0.01px;
 }
 
 .header{
@@ -278,13 +282,17 @@ $font-gold:#9d8665;
 
 .visiting{
 
+    &_container{
+        padding-bottom: 74px;
+        padding-top: 75px;
+    }
+
     .cards_container{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 75px 60px;
-        padding-top: 75px;
         
         .card{
             display: block;
@@ -353,7 +361,92 @@ $font-gold:#9d8665;
 
 }
 
+.explore{
+    background-color: $bg-dark;
 
+    &_container{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 73px;
+        padding-top: 75px;
+        
+        &_text{
+            max-width: 660px;
+            width: 100%;
+
+            span{
+                color: #CAAA7D;
+            }
+        }
+    }
+
+    &_text{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 38px;
+        color: #FFFFFF;
+        margin-bottom: 25px;
+    }
+    
+    &_slider{
+        padding-top: 15px;
+        max-width: 720px;
+            width: 100%;
+        .exp_slid_container{
+            max-width: 720px;
+            width: 100%;
+            // overflow-x: hidden;
+        }
+
+        .explore_card{
+            display: flex;
+            // position: absolute;
+            
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .card_cur{
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* right: 0; */
+            overflow-x: hidden;
+            width: 441px;
+            z-index: 2;
+        }
+
+        .spliter{
+            min-height: 100%;
+            min-width: 5px;
+            position: absolute;
+            left: 441px;
+            transform: translateX(-50%);
+            background-color: #fff;
+            
+            z-index: 3;
+            &::after{
+                content: '';
+                position: absolute;
+                width: 39px;
+                height: 39px;
+                top: 50%;
+                border: 5px solid #fff;
+                border-radius: 50%;
+                background: transparent;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &_wrap{
+            display: flex;
+            position: relative;
+        }
+    }
+}
 
 .title_section{
     font-family: Forum;

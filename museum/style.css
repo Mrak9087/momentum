@@ -37,9 +37,11 @@
   width: 100%;
   margin: 0 auto; }
 
-.pad75_b_t {
-  padding-bottom: 75px;
-  padding-top: 75px; }
+.indent_bottom_title73 {
+  margin-bottom: 73px; }
+
+.text_let_spac {
+  letter-spacing: 0.01px; }
 
 .header {
   background-color: #030303;
@@ -198,13 +200,16 @@
         background-image: url("./assets/img/arrow.png");
         transform: rotate(180deg); }
 
+.visiting_container {
+  padding-bottom: 74px;
+  padding-top: 75px; }
+
 .visiting .cards_container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 75px 60px;
-  padding-top: 75px; }
+  gap: 75px 60px; }
   .visiting .cards_container .card {
     display: block;
     max-width: 440px;
@@ -252,6 +257,68 @@
     font-size: 18px;
     line-height: 21px;
     color: #000000; }
+
+.explore {
+  background-color: #030303; }
+  .explore_container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 73px;
+    padding-top: 75px; }
+    .explore_container_text {
+      max-width: 660px;
+      width: 100%; }
+      .explore_container_text span {
+        color: #CAAA7D; }
+  .explore_text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 38px;
+    color: #FFFFFF;
+    margin-bottom: 25px; }
+  .explore_slider {
+    padding-top: 15px;
+    max-width: 720px;
+    width: 100%; }
+    .explore_slider .exp_slid_container {
+      max-width: 720px;
+      width: 100%; }
+    .explore_slider .explore_card {
+      display: flex;
+      top: 0;
+      left: 0;
+      z-index: 1; }
+    .explore_slider .card_cur {
+      position: absolute;
+      top: 0;
+      left: 0;
+      /* right: 0; */
+      overflow-x: hidden;
+      width: 441px;
+      z-index: 2; }
+    .explore_slider .spliter {
+      min-height: 100%;
+      min-width: 5px;
+      position: absolute;
+      left: 441px;
+      transform: translateX(-50%);
+      background-color: #fff;
+      z-index: 3; }
+      .explore_slider .spliter::after {
+        content: '';
+        position: absolute;
+        width: 39px;
+        height: 39px;
+        top: 50%;
+        border: 5px solid #fff;
+        border-radius: 50%;
+        background: transparent;
+        transform: translate(-50%, -50%); }
+    .explore_slider_wrap {
+      display: flex;
+      position: relative; }
 
 .title_section {
   font-family: Forum;
