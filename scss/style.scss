@@ -602,6 +602,66 @@ $font-gold:#9d8665;
             align-items: center;
         }
     }
+
+    &_slider{
+        width: 100%;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+        align-items: center;
+
+        &_wrapper{
+            display: flex;
+            justify-content: space-between;
+            min-width: calc(452px * 5 + 42px * 4);
+
+            .video_card{
+                max-width: 452px;
+                width: 100%;
+                display: flex;
+
+                .video_slide{
+                    flex: 1;
+                }
+            }
+        }
+
+        &_nav{
+            max-width: 200px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .nav_btn{
+                width: 10px;
+                height: 12px;
+                background-image: url("./assets/svg/nav_arrow.svg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                border: none;
+                outline: none;
+                cursor: pointer;
+            }
+
+            .nav_next{
+                transform: rotate(180deg);
+            }
+
+            .nav_position{
+                width: 12px;
+                height: 12px;
+                border-radius: 500%;
+                background-color: #999;
+            }
+
+            .nav_cur{
+                background-color: #333;
+            }
+        }
+
+    }
 }
 
 .title_section{
