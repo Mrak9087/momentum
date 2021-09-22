@@ -37,6 +37,25 @@
   width: 100%;
   margin: 0 auto; }
 
+.title_section {
+  font-family: Forum;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  /* line-height: 90px; */
+  letter-spacing: 5px;
+  text-transform: uppercase; }
+
+.title_section_white {
+  color: #FFFFFF; }
+
+.title_section_brown {
+  color: #9d8665; }
+
+.title_underline {
+  border-bottom: 3px solid #710707;
+  padding-bottom: 27px; }
+
 .indent_bottom_title73 {
   margin-bottom: 73px; }
 
@@ -473,21 +492,41 @@
         .video_slider_nav_wrapper .nav_cur {
           background-color: #333; }
 
-.title_section {
-  font-family: Forum;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 80px;
-  /* line-height: 90px; */
-  letter-spacing: 5px;
-  text-transform: uppercase; }
-
-.title_section_white {
-  color: #FFFFFF; }
-
-.title_section_brown {
-  color: #9d8665; }
-
-.title_underline {
-  border-bottom: 3px solid #710707;
-  padding-bottom: 27px; }
+.gallery {
+  background-color: #030303;
+  padding-top: 75px; }
+  .gallery .gallery_pictures {
+    position: relative;
+    max-height: 1960px;
+    overflow-y: hidden; }
+  .gallery .picture_container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: dense;
+    row-gap: 24px;
+    column-gap: 36px;
+    grid-row-gap: 24px;
+    overflow: hidden; }
+    .gallery .picture_container .picture {
+      position: relative;
+      grid-row-end: span 5;
+      overflow: hidden; }
+      .gallery .picture_container .picture:nth-child(3n+1) {
+        grid-column-start: 1;
+        top: 50px; }
+      .gallery .picture_container .picture:nth-child(3n+3) {
+        grid-column-start: 3;
+        top: 50px; }
+    .gallery .picture_container .square {
+      grid-row-end: span 4; }
+    .gallery .picture_container .min_pic {
+      grid-row-end: span 3; }
+  .gallery_grad {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 360px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    pointer-events: none; }
