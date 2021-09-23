@@ -92,6 +92,31 @@ $font-gold:#9d8665;
     margin-bottom: 39px;
 }
 
+.pd_b40{
+    padding-bottom: 40px;
+}
+
+.logo_foot{
+    padding-top: 10px;
+    background-position-y: 7px;
+}
+
+.nav_link{
+    text-decoration: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 22px;
+    line-height: 26px;
+    
+    /* identical to box height */
+    letter-spacing: 2px;
+    
+    color: #FFFFFF;
+    
+    
+}
+
 .header{
     background-color: $bg-dark;
     line-height: 33px;
@@ -120,21 +145,7 @@ $font-gold:#9d8665;
             }
         }
 
-        .nav_link{
-            text-decoration: none;
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 200;
-            font-size: 22px;
-            line-height: 26px;
-            
-            /* identical to box height */
-            letter-spacing: 2px;
-            
-            color: #FFFFFF;
-            
-            
-        }
+        
     }
 }
 
@@ -1020,13 +1031,14 @@ $font-gold:#9d8665;
         background-image: url("./assets/img/parallax.jpg");
         background-size: cover;
         background-attachment: fixed;
+        background-position: center;
         padding-top: 400px;
     }
 }
 
 .contacts{
     padding-top: 75px;
-    padding-bottom: 74px;
+    padding-bottom: 69px;
 
     &_content{
         display: flex;
@@ -1061,12 +1073,121 @@ $font-gold:#9d8665;
             }
         }
 
+        .content_img{
+            max-width: 960px;
+            width: 100%;
+
+            img{
+                width: 100%;
+            }
+        }
 
     }
 }
 
+.footer{
+    background-color: $bg-dark;
+    padding-top: 75px;
+
+    &_container{
+        display: flex;
+        justify-content: space-between;
+        column-gap: 145px;
+
+        .nav_footer{
+            display: flex;
+            max-width: 366px;
+            width: 100%;
+
+            .nav_list{
+                display: flex;
+                flex-wrap: wrap;
+                column-gap: 152px;
+            }
+
+            .nav_link{
+                line-height: 50px;
+            }
+
+            li{
+                width: 107px;
+            }
+        }
+
+        .soc_wrap{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+
+            .soc_list{
+                display: flex;
+                list-style: none;
+                max-width: 336px;
+                width:100%;
+                justify-content: space-between;
+                margin-bottom: 16px;
+            }
+            
+            .soc_link{
+                display: block;
+                width: 48px;
+                height: 48px;
+                cursor: pointer;
+                transition: all 0.5s ease;
+            }
+            
+            .soc_link:hover{
+                cursor: pointer;
+                transform: scale(1.2);
+            }
+            
+            .youtube{
+                background-image: url("./assets/svg/Youtube.svg");
+                background-repeat: no-repeat;
+            }
+            
+            .instagram{
+                background-image: url("./assets/svg/Instagram.svg");
+                background-repeat: no-repeat;
+            }
+            
+            .facebook{
+                background-image: url("./assets/svg/Facebook.svg");
+                background-repeat: no-repeat;
+            }
+            
+            .twitter{
+                background-image: url("./assets/svg/Twitter.svg");
+                background-repeat: no-repeat;
+            }
+            
+            .pinterest{
+                background-image: url("./assets/svg/Pinterest.svg");
+                background-repeat: no-repeat;
+            }
+        }
+        
+    }
+
+    .footer_info{
+        border-top: 3px solid #666;
+
+        padding: 50px 0 50px;
+
+        span{
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 200;
+            font-size: 22px;
+            line-height: 22px;
+
+            /* identical to box height, or 100% */
+            letter-spacing: 2px;
+
+            color: #FFFFFF;
 
 
-
-
-
+        }
+    }
+}
