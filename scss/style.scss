@@ -1024,6 +1024,47 @@ $font-gold:#9d8665;
     }
 }
 
+.contacts{
+    padding-top: 75px;
+    padding-bottom: 74px;
+
+    &_content{
+        display: flex;
+        justify-content: space-between;
+
+        .content_txt{
+            max-width: 282px;
+            width: 100%;
+
+            .contacts_subtitle{
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 28px;
+                line-height: 33px;
+                color: #000000;
+
+                max-width: 240px;
+                width: 100%;
+                margin-bottom: 50px;
+            }
+
+            .contact_item{
+                list-style: none;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 22px;
+                line-height: 26px;
+                color: #000000;
+                margin-bottom: 25px;
+            }
+        }
+
+
+    }
+}
+
 
 
 

@@ -717,3 +717,32 @@
     background-size: cover;
     background-attachment: fixed;
     padding-top: 400px; }
+
+.contacts {
+  padding-top: 75px;
+  padding-bottom: 74px; }
+  .contacts_content {
+    display: flex;
+    justify-content: space-between; }
+    .contacts_content .content_txt {
+      max-width: 282px;
+      width: 100%; }
+      .contacts_content .content_txt .contacts_subtitle {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 33px;
+        color: #000000;
+        max-width: 240px;
+        width: 100%;
+        margin-bottom: 50px; }
+      .contacts_content .content_txt .contact_item {
+        list-style: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 26px;
+        color: #000000;
+        margin-bottom: 25px; }
