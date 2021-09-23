@@ -539,8 +539,9 @@
     pointer-events: none; }
 
 .tickets {
-  padding-top: 75px;
-  padding-bottom: 68px; }
+  padding-top: 75px; }
+  .tickets_container {
+    padding-bottom: 75px; }
   .tickets_content {
     display: flex;
     justify-content: space-between; }
@@ -711,3 +712,8 @@
       line-height: 26px;
       letter-spacing: 2px;
       color: #fff; }
+  .tickets .paralax {
+    background-image: url("./assets/img/parallax.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 400px; }

@@ -764,7 +764,12 @@ $font-gold:#9d8665;
 
 .tickets{
     padding-top: 75px;
-    padding-bottom: 68px;
+    
+    &_container{
+        padding-bottom: 75px;
+    }
+
+
 
     &_content{
         display: flex;
@@ -1011,19 +1016,12 @@ $font-gold:#9d8665;
 
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    .paralax{
+        background-image: url("./assets/img/parallax.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        padding-top: 400px;
+    }
 }
 
 
