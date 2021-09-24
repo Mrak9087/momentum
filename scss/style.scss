@@ -41,6 +41,10 @@ $font-gold:#9d8665;
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 .container{
     max-width: $width_container;
     width: 100%;
@@ -115,6 +119,11 @@ $font-gold:#9d8665;
     color: #FFFFFF;
     
     
+}
+
+.link_btn{
+    display: block;
+    text-decoration: none;
 }
 
 .header{
@@ -346,6 +355,7 @@ $font-gold:#9d8665;
             max-width: 440px;
             width: 100%;
             cursor: pointer;
+            text-decoration: none;
             transition: transform 0.5s ease;
         }
         

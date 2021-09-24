@@ -32,6 +32,9 @@
   margin: 0;
   box-sizing: border-box; }
 
+html {
+  scroll-behavior: smooth; }
+
 .container {
   max-width: 1440px;
   width: 100%;
@@ -88,6 +91,10 @@
   /* identical to box height */
   letter-spacing: 2px;
   color: #FFFFFF; }
+
+.link_btn {
+  display: block;
+  text-decoration: none; }
 
 .header {
   background-color: #030303;
@@ -251,6 +258,7 @@
     max-width: 440px;
     width: 100%;
     cursor: pointer;
+    text-decoration: none;
     transition: transform 0.5s ease; }
   .visiting .cards_container .card_img {
     width: 100%;
