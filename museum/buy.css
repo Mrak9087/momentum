@@ -51,10 +51,9 @@
     padding: 91px 0 91px; }
   .buy .ticket_wrapper {
     display: flex;
+    justify-content: space-between;
     max-width: 970px;
     width: 100%; }
-  .buy .ticket {
-    flex-basis: 50%; }
   .buy .ticket_info {
     max-width: 400px;
     width: 100%; }
@@ -234,3 +233,58 @@
       .buy .ticket_entry .entry_option .entry_number::-webkit-outer-spin-button {
         -webkit-appearance: none;
         margin: 0; }
+  .buy .ticket_pay {
+    border: 1px solid #030303;
+    max-width: 530px;
+    width: 100%;
+    padding: 25px 30px; }
+    .buy .ticket_pay .pay_overview {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 17px; }
+      .buy .ticket_pay .pay_overview .overview_head {
+        margin-bottom: 2px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 37px;
+        color: #272727; }
+      .buy .ticket_pay .pay_overview .overview_subtitle {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 26px;
+        margin-bottom: 10px;
+        color: #740C11;
+        opacity: 0.9; }
+      .buy .ticket_pay .pay_overview .pay_dt {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 21px;
+        padding-left: 30px;
+        color: #030303; }
+      .buy .ticket_pay .pay_overview .date_pay {
+        background-image: url("./assets/img/date.png");
+        background-repeat: no-repeat;
+        background-position-y: center;
+        margin-bottom: 5px; }
+      .buy .ticket_pay .pay_overview .time_pay {
+        background-image: url("./assets/img/time.png");
+        background-repeat: no-repeat;
+        background-position-y: center;
+        margin-bottom: 5px; }
+      .buy .ticket_pay .pay_overview .txt_pay {
+        background-image: url("./assets/img/check_circle_outline.png");
+        background-repeat: no-repeat;
+        background-position-y: center;
+        margin-bottom: 5px; }
+      .buy .ticket_pay .pay_overview .overview_img {
+        width: 150px;
+        height: 120px;
+        background-image: url("./assets/img/louvre.jpg");
+        background-repeat: no-repeat;
+        background-size: contain; }
