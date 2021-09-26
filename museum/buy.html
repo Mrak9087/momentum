@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="buy.css">
+</head>
+<body>
+    <div class="buy">
+        <div class="container buy_container">
+            <div class="ticket_wrapper">
+                <div class="ticket ticket_info">
+                    <div class="logo_ticket"></div>
+                    <h2 class="ticket_head title_section_brown">
+                        Booking tickets
+                    </h2>
+                    <p class="ticket_subtitle title_underline pd10">
+                        Tour to Louvre
+                    </p>
+
+                    <div class="ticket_data">
+                        <div class="ticket_date_time">
+                            <div class="ticket_input ticket_date">
+                                <input type="text" name="" placeholder="Date">
+                            </div>
+                            <div class="ticket_input ticket_time">
+                                <input type="text" name="" placeholder="Time">
+                            </div>
+                        </div>
+
+                        <div class="ticket_input ticket_name">
+                            <input type="text" name="name" class="input_name" placeholder="Name">
+                        </div>
+                        <div class="ticket_input ticket_mail">
+                            <input type="email" name="mail" class="input_mail" placeholder="E-mail">
+                        </div>
+                        <div class="ticket_input ticket_phone">
+                            <input type="text" name="phone" class="input_phone" placeholder="Phone">
+                        </div>
+
+                        <div class="ticket_input ticket_type">
+                            <select name="ticket_type" class="input_type">
+                                <option value="" hidden disabled selected>Ticket Type</option>
+                                <option value="Permanent">Permanent exhibition</option>
+                                <option value="Temporary">Temporary exhibition</option>
+                                <option value="Combined">Combined Admission</option>
+                            </select>
+                        </div>
+
+                        <div class="ticket_entry">
+                            <h2 class="entry_head title_section_brown title_underline pd5">Entry ticket</h2>
+                            <div class="entry_option mb18">
+                                <span>Basic 18+ (20 €)</span>
+
+                                <div class="entry_count">
+                                    <button class="entry_btn"><span class="button_symbol">-</span></button>
+                                    <input type="number" min="0" max="20" value="2" readonly class="entry_number">
+                                    <button class="entry_btn"><span class="button_symbol">+</span></button>
+                                </div>
+                            </div>
+
+                            <div class="entry_option">
+                                <span>Senior 65+ (10 €)</span>
+
+                                <div class="entry_count">
+                                    <button class="entry_btn"><span class="button_symbol">-</span></button>
+                                    <input type="number" min="0" max="20" value="2" readonly class="entry_number">
+                                    <button class="entry_btn"><span class="button_symbol">+</span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="ticket ticket_pay">
+                    <div class="pay_overview">
+                        <div class="overview_text">
+                            <h2 class="overview_head">
+                                Overview
+                            </h2>
+                            <p class="overview_subtitle">
+                                Tour to Louvre
+                            </p>
+                            <p class="pay_dt date_pay">Friday, August 19</p>
+                            <p class="pay_dt time_pay">16 : 30</p>
+                            <p class="pay_dt txt_pay">Temporary exhibition</p>
+                        </div>
+                        <div class="overview_img"></div>
+                    </div>
+                    <div class="pay_total"></div>
+                    <div class="pay_card"></div>
+                    <div class="pay_btn"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
