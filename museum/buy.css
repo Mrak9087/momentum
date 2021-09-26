@@ -48,7 +48,18 @@
     justify-content: center;
     width: 100%;
     background-color: white;
-    padding: 91px 0 91px; }
+    padding: 91px 0 91px;
+    position: relative; }
+    .buy_container .btn_close {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: 30px;
+      right: 30px;
+      background-color: transparent;
+      background-image: url("./assets/img/Close.png");
+      border: none;
+      outline: none; }
   .buy .ticket_wrapper {
     display: flex;
     justify-content: space-between;
@@ -288,3 +299,176 @@
         background-image: url("./assets/img/louvre.jpg");
         background-repeat: no-repeat;
         background-size: contain; }
+    .buy .ticket_pay .total_option {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      column-gap: 10px;
+      margin-bottom: 5px; }
+      .buy .ticket_pay .total_option .total_count {
+        min-width: 30px;
+        background-color: #030303;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+        color: #A4A4A3;
+        border-radius: 5px;
+        text-align: center; }
+      .buy .ticket_pay .total_option .option_text {
+        width: 100%;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 26px;
+        color: #030303; }
+      .buy .ticket_pay .total_option .price {
+        min-width: 45px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 26px;
+        color: #030303; }
+    .buy .ticket_pay .pay_total {
+      margin-bottom: 11px; }
+    .buy .ticket_pay .total_sum {
+      display: flex;
+      justify-content: space-between;
+      border-top: 2px solid #740C11;
+      padding-top: 10px; }
+    .buy .ticket_pay .total_text {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 32px;
+      line-height: 37px;
+      /* identical to box height */
+      color: #030303; }
+    .buy .ticket_pay .total_price {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 37px;
+      color: #030303; }
+    .buy .ticket_pay .pay_card {
+      position: relative;
+      padding-bottom: 30px;
+      margin-bottom: 26px; }
+    .buy .ticket_pay .card {
+      max-width: 360px;
+      width: 100%;
+      border-radius: 3px; }
+    .buy .ticket_pay .card_inp {
+      padding: 10px;
+      border: none;
+      outline: none; }
+    .buy .ticket_pay .card_num {
+      width: 100%;
+      margin-bottom: 10px; }
+    .buy .ticket_pay .txt_font {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 14px; }
+    .buy .ticket_pay .card_text {
+      color: #161615;
+      margin-bottom: 5px; }
+    .buy .ticket_pay .card_front {
+      position: relative;
+      z-index: 2;
+      background-color: #BCBCBC;
+      padding: 15px 20px; }
+      .buy .ticket_pay .card_front .front_wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%; }
+      .buy .ticket_pay .card_front .front_inp {
+        max-width: 215px;
+        width: 100%;
+        margin-bottom: 10px; }
+      .buy .ticket_pay .card_front .wrap_date {
+        display: flex;
+        width: 100%;
+        justify-content: space-between; }
+      .buy .ticket_pay .card_front .card_month, .buy .ticket_pay .card_front .card_year {
+        max-width: 100px;
+        width: 100%; }
+      .buy .ticket_pay .card_front .cardholder {
+        width: 100%; }
+      .buy .ticket_pay .card_front .front_pic {
+        padding-top: 19px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end; }
+      .buy .ticket_pay .card_front .pic_visa {
+        background-image: url("./assets/img/Visa.png");
+        width: 55px;
+        padding-top: 16px;
+        margin-bottom: 15px; }
+      .buy .ticket_pay .card_front .pic_master {
+        background-image: url("./assets/img/Mastercard.png");
+        width: 53px;
+        padding-top: 32px; }
+    .buy .ticket_pay .card_back {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background-color: #939393;
+      padding-top: 25px;
+      padding-bottom: 15px;
+      z-index: 1; }
+      .buy .ticket_pay .card_back .black_band {
+        background-color: #161615;
+        padding-top: 45px;
+        margin-bottom: 15px; }
+      .buy .ticket_pay .card_back .back_txt {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 20px; }
+      .buy .ticket_pay .card_back .cvc {
+        max-width: 75px;
+        width: 100%; }
+      .buy .ticket_pay .card_back .cvc_head {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        color: #161615;
+        text-align: center;
+        margin-bottom: 5px; }
+      .buy .ticket_pay .card_back .cvc_txt {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 12px;
+        color: #161615;
+        max-width: 55px;
+        width: 100%;
+        margin: 0 auto; }
+    .buy .ticket_pay .pay_wrap_btn {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%; }
+      .buy .ticket_pay .pay_wrap_btn .pay_btn {
+        max-width: 220px;
+        width: 100%;
+        padding-top: 11px;
+        padding-bottom: 10px;
+        background-color: #710707;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 26px;
+        color: #FFFFFF;
+        cursor: pointer;
+        border: none;
+        outline: none; }
