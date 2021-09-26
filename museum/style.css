@@ -100,6 +100,10 @@ html {
   /* identical to box height */
   letter-spacing: 2px;
   color: #FFFFFF; }
+  .nav_link:hover {
+    color: #9d8665; }
+  .nav_link:active {
+    color: #7E6C51; }
 
 .link_btn {
   display: block;
@@ -738,6 +742,11 @@ html {
       line-height: 26px;
       letter-spacing: 2px;
       color: #fff; }
+      .tickets .tickets_amount .btn_buy:hover {
+        color: #030303;
+        background-color: #9d8665; }
+      .tickets .tickets_amount .btn_buy:active {
+        color: #7E6C51; }
   .tickets .paralax {
     background-image: url("./assets/img/parallax.jpg");
     background-size: cover;

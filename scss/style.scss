@@ -34,6 +34,7 @@ $width_container:1440px;
 $bg-dark:#030303;
 $dark-red:#710707;
 $font-gold:#9d8665;
+$active:#7E6C51;
 
 *,*::after,*::before{
     padding: 0;
@@ -130,7 +131,13 @@ html{
     
     color: #FFFFFF;
     
-    
+    &:hover{
+        color: $font-gold;
+    }
+
+    &:active{
+        color: $active;
+    }
 }
 
 .link_btn{
@@ -1042,6 +1049,15 @@ html{
             letter-spacing: 2px;
         
             color: #fff;
+
+            &:hover{
+                color: $bg-dark;
+                background-color: $font-gold;
+            }
+
+            &:active{
+                color: $active;
+            }
         }
         
         // .btn_buy:hover{
