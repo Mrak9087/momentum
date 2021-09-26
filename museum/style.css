@@ -406,7 +406,8 @@ html {
     position: relative;
     margin-bottom: 40px; }
     .video_wrapper .player {
-      display: block; }
+      display: block;
+      width: 100%; }
     .video_wrapper .btn_play_video {
       background-image: url("./assets/img/btn_play.png");
       background-color: transparent;
