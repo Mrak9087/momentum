@@ -1127,6 +1127,15 @@ html{
                 color: #000000;
                 margin-bottom: 25px;
             }
+
+            .link_tel,.link_mail{
+                color: $bg-dark;
+                text-decoration: none;
+                transition: all 0.3s;
+                &:hover{
+                    color:$font-gold;
+                }
+            }
         }
 
         .content_img{
