@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass --watch museum/buy.scss museum/buy.css"
+    "scss": "node-sass --watch scss/style.scss museum/style.css"
   },
   "repository": {
     "type": "git",
