@@ -376,7 +376,7 @@ html{
 
     &_container{
         padding-bottom: 74px;
-        padding-top: 75px;
+        padding-top: 73px;
     }
 
     .cards_container{
@@ -459,9 +459,11 @@ html{
 
     &_container{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         padding-bottom: 77px;
         padding-top: 75px;
+        flex-wrap: wrap;
+        column-gap: 60px;
         
         &_text{
             max-width: 660px;
@@ -486,7 +488,7 @@ html{
     &_slider{
         padding-top: 15px;
         max-width: 720px;
-            width: 100%;
+        width: 100%;
         .exp_slid_container{
             max-width: 720px;
             width: 100%;
@@ -554,7 +556,7 @@ html{
 
 .video{
     padding-top: 75px;
-    padding-bottom: 72px;
+    padding-bottom: 75px;
 
     &_container{
         display: flex;
