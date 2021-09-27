@@ -46,6 +46,14 @@ html{
     scroll-behavior: smooth;
 }
 
+.invisible{
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    top: -99999px;
+    overflow: hidden;
+}
+
 .container{
     max-width: $width_container;
     width: 100%;
