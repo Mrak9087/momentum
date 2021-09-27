@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="./galery.js" defer></script>
     <script src="./amount.js" defer></script>
+    <script src="./video.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -313,9 +314,9 @@
                                     Basic 18+
                                 </p>
                                 <div class="amount_count">
-                                    <button class="amount_btn"><span class="button_symbol">-</span></button>
+                                    <button class="amount_btn" onclick="this.nextElementSibling.stepDown()"><span class="button_symbol">-</span></button>
                                     <input type="number" min="0" max="20" value="1" readonly class="number">
-                                    <button class="amount_btn"><span class="button_symbol">+</span></button>
+                                    <button class="amount_btn" onclick="this.previousElementSibling.stepUp()"><span class="button_symbol">+</span></button>
                                 </div>
                             </div>
 
@@ -324,9 +325,9 @@
                                     Senior 65+
                                 </p>
                                 <div class="amount_count">
-                                    <button class="amount_btn"><span class="button_symbol">-</span></button>
+                                    <button class="amount_btn" onclick="this.nextElementSibling.stepDown()"><span class="button_symbol">-</span></button>
                                     <input type="number" min="0" max="20" value="1" readonly class="number">
-                                    <button class="amount_btn"><span class="button_symbol">+</span></button>
+                                    <button class="amount_btn" onclick="this.previousElementSibling.stepUp()"><span class="button_symbol">+</span></button>
                                 </div>
                             </div>
 
@@ -450,9 +451,9 @@
                                 <span>Basic 18+ (20 €)</span>
 
                                 <div class="entry_count">
-                                    <button class="entry_btn"><span class="button_symbol">-</span></button>
+                                    <button class="entry_btn" onclick="return false"><span class="button_symbol">-</span></button>
                                     <input type="number" min="0" max="20" value="2" readonly class="entry_number">
-                                    <button class="entry_btn"><span class="button_symbol">+</span></button>
+                                    <button class="entry_btn" onclick="return false"><span class="button_symbol">+</span></button>
                                 </div>
                             </div>
 
@@ -460,9 +461,9 @@
                                 <span>Senior 65+ (10 €)</span>
 
                                 <div class="entry_count">
-                                    <button class="entry_btn"><span class="button_symbol">-</span></button>
+                                    <button class="entry_btn" onclick="return false"><span class="button_symbol">-</span></button>
                                     <input type="number" min="0" max="20" value="2" readonly class="entry_number">
-                                    <button class="entry_btn"><span class="button_symbol">+</span></button>
+                                    <button class="entry_btn" onclick="return false"><span class="button_symbol">+</span></button>
                                 </div>
                             </div>
                         </div>
