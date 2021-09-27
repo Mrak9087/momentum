@@ -1355,6 +1355,26 @@ html{
             cursor: pointer;
             z-index: 2;
         }
+
+        .inp_date::-webkit-outer-spin-button,
+        .inp_date::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0; 
+        }
+
+        .inp_date::-webkit-clear-button {
+            display: none;
+        }
+
+        .inp_date::-webkit-calendar-picker-indicator {
+            display: none;  
+        }
+
+        .inp_date::before{
+            content: "Date";
+            width: 100%;
+        }
+
     }
 
     .ticket_time{
@@ -1375,6 +1395,25 @@ html{
             height: 17px;
             cursor: pointer;
             z-index: 2;
+        }
+
+        .inp_time::-webkit-outer-spin-button,
+        .inp_time::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0; 
+        }
+
+        .inp_time::-webkit-clear-button {
+            display: none;
+        }
+
+        .inp_time::-webkit-calendar-picker-indicator {
+            display: none;  
+        }
+
+        .inp_time::before{
+            content: "Time";
+            width: 100%;
         }
     }
 

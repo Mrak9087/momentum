@@ -949,6 +949,17 @@ html {
       height: 17px;
       cursor: pointer;
       z-index: 2; }
+    .buy .ticket_date .inp_date::-webkit-outer-spin-button,
+    .buy .ticket_date .inp_date::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .buy .ticket_date .inp_date::-webkit-clear-button {
+      display: none; }
+    .buy .ticket_date .inp_date::-webkit-calendar-picker-indicator {
+      display: none; }
+    .buy .ticket_date .inp_date::before {
+      content: "Date";
+      width: 100%; }
   .buy .ticket_time {
     max-width: 190px;
     width: 100%;
@@ -967,6 +978,17 @@ html {
       height: 17px;
       cursor: pointer;
       z-index: 2; }
+    .buy .ticket_time .inp_time::-webkit-outer-spin-button,
+    .buy .ticket_time .inp_time::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .buy .ticket_time .inp_time::-webkit-clear-button {
+      display: none; }
+    .buy .ticket_time .inp_time::-webkit-calendar-picker-indicator {
+      display: none; }
+    .buy .ticket_time .inp_time::before {
+      content: "Time";
+      width: 100%; }
   .buy .ticket_input {
     border: 1px solid #030303;
     padding-left: 45px;
