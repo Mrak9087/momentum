@@ -896,7 +896,8 @@ html {
       background-color: transparent;
       background-image: url("./assets/img/Close.png");
       border: none;
-      outline: none; }
+      outline: none;
+      cursor: pointer; }
   .buy .ticket_wrapper {
     display: flex;
     justify-content: space-between;
