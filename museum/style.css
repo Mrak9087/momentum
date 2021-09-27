@@ -270,12 +270,12 @@ html {
 
 .visiting_container {
   padding-bottom: 74px;
-  padding-top: 75px; }
+  padding-top: 73px; }
 
 .visiting .cards_container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 75px 60px; }
   .visiting .cards_container .card {
@@ -331,9 +331,11 @@ html {
   background-color: #030303; }
   .explore_container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding-bottom: 77px;
-    padding-top: 75px; }
+    padding-top: 75px;
+    flex-wrap: wrap;
+    column-gap: 60px; }
     .explore_container_text {
       max-width: 660px;
       width: 100%; }
@@ -398,7 +400,7 @@ html {
 
 .video {
   padding-top: 75px;
-  padding-bottom: 72px; }
+  padding-bottom: 75px; }
   .video_container {
     display: flex;
     flex-direction: column;
