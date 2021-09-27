@@ -794,6 +794,12 @@ html {
         line-height: 26px;
         color: #000000;
         margin-bottom: 25px; }
+      .contacts_content .content_txt .link_tel, .contacts_content .content_txt .link_mail {
+        color: #030303;
+        text-decoration: none;
+        transition: all 0.3s; }
+        .contacts_content .content_txt .link_tel:hover, .contacts_content .content_txt .link_mail:hover {
+          color: #9d8665; }
     .contacts_content .content_img {
       max-width: 960px;
       width: 100%; }
