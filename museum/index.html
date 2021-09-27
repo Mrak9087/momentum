@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="./galery.js" defer></script>
     <script src="./amount.js" defer></script>
+    <script src="./video.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -313,9 +314,9 @@
                                     Basic 18+
                                 </p>
                                 <div class="amount_count">
-                                    <button class="amount_btn"><span class="button_symbol">-</span></button>
+                                    <button class="amount_btn" onclick="this.nextElementSibling.stepDown()"><span class="button_symbol">-</span></button>
                                     <input type="number" min="0" max="20" value="1" readonly class="number">
-                                    <button class="amount_btn"><span class="button_symbol">+</span></button>
+                                    <button class="amount_btn" onclick="this.previousElementSibling.stepUp()"><span class="button_symbol">+</span></button>
                                 </div>
                             </div>
 
@@ -324,9 +325,9 @@
                                     Senior 65+
                                 </p>
                                 <div class="amount_count">
-                                    <button class="amount_btn"><span class="button_symbol">-</span></button>
+                                    <button class="amount_btn" onclick="this.nextElementSibling.stepDown()"><span class="button_symbol">-</span></button>
                                     <input type="number" min="0" max="20" value="1" readonly class="number">
-                                    <button class="amount_btn"><span class="button_symbol">+</span></button>
+                                    <button class="amount_btn" onclick="this.previousElementSibling.stepUp()"><span class="button_symbol">+</span></button>
                                 </div>
                             </div>
 
@@ -398,14 +399,14 @@
         </div>
         <div class="footer_info">
               <div class="container footer_container">
-                  <span>© 2021</span><span>The Rolling Scopes School</span><span>Mrak9087</span>
+                  <span>© 2021</span><a class="nav_link" href="https://rs.school/js-stage0/">The Rolling Scopes School</a><a class="nav_link" href="https://github.com/Mrak9087">Mrak9087</a>
               </div>  
         </div>
     </footer>
 
     <div class="buy">
         <div class="container buy_container">
-            <div class="ticket_wrapper">
+            <form class="ticket_wrapper">
                 <div class="ticket ticket_info">
                     <div class="logo_ticket"></div>
                     <h2 class="ticket_head title_section_brown">
@@ -418,10 +419,10 @@
                     <div class="ticket_data">
                         <div class="ticket_date_time">
                             <div class="ticket_input ticket_date">
-                                <input type="text" name="" placeholder="Date">
+                                <input type="date" name="buyDate" class="inp_date">
                             </div>
                             <div class="ticket_input ticket_time">
-                                <input type="text" name="" placeholder="Time">
+                                <input type="time" name="buyTime" class="inp_time">
                             </div>
                         </div>
 
@@ -432,7 +433,7 @@
                             <input type="email" name="mail" class="input_mail" placeholder="E-mail">
                         </div>
                         <div class="ticket_input ticket_phone">
-                            <input type="text" name="phone" class="input_phone" placeholder="Phone">
+                            <input type="tel" name="phone" class="input_phone" placeholder="Phone">
                         </div>
 
                         <div class="ticket_input ticket_type">
@@ -450,9 +451,9 @@
                                 <span>Basic 18+ (20 €)</span>
 
                                 <div class="entry_count">
-                                    <button class="entry_btn"><span class="button_symbol">-</span></button>
+                                    <button class="entry_btn" onclick="return false"><span class="button_symbol">-</span></button>
                                     <input type="number" min="0" max="20" value="2" readonly class="entry_number">
-                                    <button class="entry_btn"><span class="button_symbol">+</span></button>
+                                    <button class="entry_btn" onclick="return false"><span class="button_symbol">+</span></button>
                                 </div>
                             </div>
 
@@ -460,9 +461,9 @@
                                 <span>Senior 65+ (10 €)</span>
 
                                 <div class="entry_count">
-                                    <button class="entry_btn"><span class="button_symbol">-</span></button>
+                                    <button class="entry_btn" onclick="return false"><span class="button_symbol">-</span></button>
                                     <input type="number" min="0" max="20" value="2" readonly class="entry_number">
-                                    <button class="entry_btn"><span class="button_symbol">+</span></button>
+                                    <button class="entry_btn" onclick="return false"><span class="button_symbol">+</span></button>
                                 </div>
                             </div>
                         </div>
@@ -546,7 +547,7 @@
                         <button class="pay_btn">Book</button>
                     </div>
                 </div>
-            </div>
+            </form>
             <button class="btn_close"></button>
         </div>
     </div>

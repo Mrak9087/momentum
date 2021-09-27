@@ -106,7 +106,8 @@ html {
   line-height: 26px;
   /* identical to box height */
   letter-spacing: 2px;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  transition: all 0.3s; }
   .nav_link:hover {
     color: #9d8665; }
   .nav_link:active {
@@ -139,7 +140,8 @@ html {
 .logo {
   padding-left: 75px;
   background-image: url("./assets/svg/logo.svg");
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  transition: all 0.3s; }
   .logo_text {
     font-family: Forum;
     font-style: normal;
@@ -148,6 +150,9 @@ html {
     letter-spacing: 5px;
     text-transform: uppercase;
     color: #FFFFFF; }
+  .logo:hover {
+    cursor: pointer;
+    filter: invert(57%) sepia(8%) saturate(1508%) hue-rotate(356deg) brightness(93%) contrast(82%); }
 
 .welcome {
   background-color: #030303; }
@@ -811,7 +816,8 @@ html {
         flex-wrap: wrap;
         column-gap: 152px; }
       .footer_container .nav_footer .nav_link {
-        line-height: 50px; }
+        line-height: 50px;
+        transition: all 0.3s; }
       .footer_container .nav_footer li {
         width: 107px; }
     .footer_container .soc_wrap {
@@ -834,7 +840,7 @@ html {
         transition: all 0.5s ease; }
       .footer_container .soc_wrap .soc_link:hover {
         cursor: pointer;
-        transform: scale(1.2); }
+        filter: invert(57%) sepia(8%) saturate(1508%) hue-rotate(356deg) brightness(93%) contrast(82%); }
       .footer_container .soc_wrap .youtube {
         background-image: url("./assets/svg/Youtube.svg");
         background-repeat: no-repeat; }
@@ -943,6 +949,17 @@ html {
       height: 17px;
       cursor: pointer;
       z-index: 2; }
+    .buy .ticket_date .inp_date::-webkit-outer-spin-button,
+    .buy .ticket_date .inp_date::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .buy .ticket_date .inp_date::-webkit-clear-button {
+      display: none; }
+    .buy .ticket_date .inp_date::-webkit-calendar-picker-indicator {
+      display: none; }
+    .buy .ticket_date .inp_date::before {
+      content: "Date";
+      width: 100%; }
   .buy .ticket_time {
     max-width: 190px;
     width: 100%;
@@ -961,6 +978,17 @@ html {
       height: 17px;
       cursor: pointer;
       z-index: 2; }
+    .buy .ticket_time .inp_time::-webkit-outer-spin-button,
+    .buy .ticket_time .inp_time::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .buy .ticket_time .inp_time::-webkit-clear-button {
+      display: none; }
+    .buy .ticket_time .inp_time::-webkit-calendar-picker-indicator {
+      display: none; }
+    .buy .ticket_time .inp_time::before {
+      content: "Time";
+      width: 100%; }
   .buy .ticket_input {
     border: 1px solid #030303;
     padding-left: 45px;
@@ -1289,6 +1317,7 @@ html {
       justify-content: flex-end;
       width: 100%; }
       .buy .ticket_pay .pay_wrap_btn .pay_btn {
+        position: relative;
         max-width: 220px;
         width: 100%;
         padding-top: 11px;
@@ -1302,7 +1331,32 @@ html {
         color: #FFFFFF;
         cursor: pointer;
         border: none;
-        outline: none; }
+        outline: none;
+        overflow: hidden; }
+        .buy .ticket_pay .pay_wrap_btn .pay_btn .circle {
+          position: absolute;
+          background-color: #fff;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          transform: translate(-50%, -50%) scale(0);
+          animation: scale 0.5s ease-out; }
+        .buy .ticket_pay .pay_wrap_btn .pay_btn:hover {
+          cursor: pointer; }
 
 .buy_show {
   left: 0; }
+
+.circle {
+  position: absolute;
+  background-color: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: scale 0.5s ease-out; }
+
+@keyframes scale {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0; } }
