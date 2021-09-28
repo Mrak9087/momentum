@@ -483,6 +483,8 @@ html{
         line-height: 38px;
         color: #FFFFFF;
         margin-bottom: 25px;
+
+        
     }
     
     &_slider{
@@ -834,6 +836,7 @@ html{
     &_content{
         display: flex;
         justify-content: space-between;
+        column-gap: 20px;
 
         .tickets_picture{
             max-width: 720px;
@@ -1244,6 +1247,7 @@ html{
         padding: 50px 0 50px;
 
         span{
+            
             font-family: Roboto;
             font-style: normal;
             font-weight: 200;
@@ -1942,5 +1946,125 @@ html{
         transform: translate(-50%, -50%) scale(3);
         opacity: 0;
     }
+}
+
+@media screen and (max-width:1465px) {
+
+    .container{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .gallery{
+
+        .picture_container{
+            align-items: center;
+
+            &::before,&::after{
+                flex-basis: 984px;
+            }
+            .picture{
+                max-width: 304px;
+            }
+        }
+    }
+
+    .footer_container{
+        column-gap: auto;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    
+    
+    .title_section{
+        font-size: 50px;
+    }
+
+    .header{    
+        .nav_list{
+            display: none;
+        }
+    }
+    
+    .welcome{
+        .slider{
+            max-width: 700px;
+            right: 20px;
+        }
+    }
+
+    .explore_container_text{
+        max-width: 100%;
+        margin-bottom: 62px;
+        .explore_text{
+            margin-bottom: auto;
+            font-size: 20px;
+        }
+
+        .explore_text:nth-child(4){
+            display: none;
+        }
+    }
+
+    .video_text{
+        display: none;
+    }
+
+    .gallery{
+        .gallery_pictures{
+            max-height: 1265px;
+        }
+    }
+    
+
+    .tickets{
+        .ticket_content{
+
+            .tickets_picture{
+                max-width: 700px;
+                width: 100%;
+            }
+            
+            
+        }
+        
+        .tickets_type_amount{
+            width: auto;
+            padding-right: 29px;
+        }   
+
+        .tickets_type{
+            display: none;
+        }
+
+        .tickets_amount{
+            align-items: flex-start;
+        }
+    }
+
+    
+    .contacts{
+        &_content{
+            column-gap: 16px;
+            .content_txt{
+                max-width: 274px;
+                .contacts_subtitle{
+                    max-width: 185px;
+                    font-size: 24px;
+                    line-height: 28px;
+                    margin-bottom: 35px;
+                }
+
+                .contact_item{
+                    font-size: 20px;
+                    line-height: 23px;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+    
+    
 }
   
