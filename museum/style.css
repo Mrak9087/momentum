@@ -75,6 +75,9 @@ html {
 
 .indent_bottom_title73 {
   margin-bottom: 75px; }
+  @media screen and (max-width: 1024px) {
+    .indent_bottom_title73 {
+      margin-bottom: 62px; } }
 
 .text_let_spac {
   letter-spacing: 0.01px; }
@@ -84,12 +87,21 @@ html {
 
 .mb25 {
   margin-bottom: 25px; }
+  @media screen and (max-width: 1024px) {
+    .mb25 {
+      margin-bottom: 30px; } }
 
 .mb39 {
   margin-bottom: 39px; }
+  @media screen and (max-width: 1024px) {
+    .mb39 {
+      margin-bottom: 15px; } }
 
 .pd_b40 {
   padding-bottom: 40px; }
+  @media screen and (max-width: 1024px) {
+    .pd_b40 {
+      padding-bottom: 50px; } }
 
 .pd10 {
   padding-bottom: 10px; }
@@ -129,6 +141,10 @@ html {
   line-height: 33px;
   padding-top: 59px;
   padding-bottom: 58px; }
+  @media screen and (max-width: 1024px) {
+    .header {
+      padding-top: 49px;
+      padding-bottom: 48px; } }
   .header_container {
     display: flex;
     flex-direction: row;
@@ -166,6 +182,9 @@ html {
 
 .welcome {
   background-color: #030303; }
+  @media screen and (max-width: 1024px) {
+    .welcome_title {
+      line-height: 90px; } }
   .welcome_text {
     position: relative;
     z-index: 3; }
@@ -188,6 +207,13 @@ html {
     line-height: 33px;
     letter-spacing: 2px;
     color: #FFFFFF; }
+    @media screen and (max-width: 1024px) {
+      .welcome_subtitle {
+        margin-top: 26px;
+        margin-bottom: 50px;
+        font-size: 24px;
+        line-height: 28px;
+        letter-spacing: 2px; } }
   .welcome_btn {
     outline: none;
     border: none;
@@ -209,6 +235,12 @@ html {
     cursor: pointer; }
     .welcome_btn:hover {
       background-color: #9d8665; }
+    @media screen and (max-width: 1024px) {
+      .welcome_btn {
+        max-width: 300px;
+        font-size: 20px;
+        line-height: 23px;
+        padding: 18px 0 18px; } }
   .welcome .slider {
     position: absolute;
     max-width: 1000px;
@@ -219,7 +251,8 @@ html {
     @media screen and (max-width: 1024px) {
       .welcome .slider {
         max-width: 700px;
-        right: 20px; } }
+        right: 20px;
+        height: 100%; } }
     .welcome .slider_image {
       display: flex;
       overflow-x: hidden;
@@ -240,9 +273,6 @@ html {
     .welcome .slider_wrapper {
       position: relative;
       padding-bottom: 60px; }
-      @media screen and (max-width: 1024px) {
-        .welcome .slider_wrapper {
-          padding-bottom: 40px; } }
     .welcome .slider_panel {
       background-color: #030303;
       position: absolute;
@@ -260,7 +290,7 @@ html {
           max-width: 100%;
           justify-content: flex-end;
           padding-left: 30px;
-          column-gap: 45px; } }
+          column-gap: 43px; } }
       .welcome .slider_panel .slide_count {
         display: flex;
         max-width: 76px;
@@ -273,6 +303,10 @@ html {
         line-height: 40px;
         text-transform: uppercase;
         color: #FFFFFF; }
+        @media screen and (max-width: 1024px) {
+          .welcome .slider_panel .slide_count {
+            max-width: 71px;
+            font-size: 20px; } }
       .welcome .slider_panel .slide_positions {
         display: flex;
         max-width: 180px;
@@ -280,10 +314,18 @@ html {
         justify-content: space-between;
         align-items: center;
         padding: 52px 0 52px; }
+        @media screen and (max-width: 1024px) {
+          .welcome .slider_panel .slide_positions {
+            max-width: 160px;
+            padding: 54px 0 54px; } }
       .welcome .slider_panel .slide_position {
         width: 16px;
         height: 16px;
         background-color: #fff; }
+        @media screen and (max-width: 1024px) {
+          .welcome .slider_panel .slide_position {
+            width: 12px;
+            height: 12px; } }
       .welcome .slider_panel .current_position {
         background-color: #9d8665; }
       .welcome .slider_panel .slide_btn {
@@ -304,6 +346,9 @@ html {
 .visiting_container {
   padding-bottom: 74px;
   padding-top: 73px; }
+  @media screen and (max-width: 1024px) {
+    .visiting_container {
+      padding-bottom: 60px; } }
 
 .visiting .cards_container {
   display: flex;
@@ -311,6 +356,9 @@ html {
   justify-content: center;
   flex-wrap: wrap;
   gap: 75px 60px; }
+  @media screen and (max-width: 1024px) {
+    .visiting .cards_container {
+      gap: 60px 110px; } }
   .visiting .cards_container .card {
     display: block;
     max-width: 440px;
@@ -318,6 +366,9 @@ html {
     cursor: pointer;
     text-decoration: none;
     transition: transform 0.5s ease; }
+    @media screen and (max-width: 1024px) {
+      .visiting .cards_container .card {
+        max-width: 330px; } }
   .visiting .cards_container .card_img {
     width: 100%;
     margin-bottom: 25px; }
@@ -333,6 +384,11 @@ html {
     padding-bottom: 9px;
     position: relative;
     margin-bottom: 10px; }
+    @media screen and (max-width: 1024px) {
+      .visiting .cards_container .card_title {
+        font-size: 28px;
+        line-height: 31px;
+        letter-spacing: 3px; } }
   .visiting .cards_container .card_title::after {
     content: "";
     position: absolute;
@@ -342,6 +398,9 @@ html {
     height: 2px;
     background-color: #710707;
     transition: all 0.5s; }
+    @media screen and (max-width: 1024px) {
+      .visiting .cards_container .card_title::after {
+        width: 155px; } }
   .visiting .cards_container .card:hover .card_title::after {
     width: 100%; }
   .visiting .cards_container .card_text_deg {
@@ -352,6 +411,10 @@ html {
     line-height: 26px;
     color: #000000;
     margin-bottom: 10px; }
+    @media screen and (max-width: 1024px) {
+      .visiting .cards_container .card_text_deg {
+        font-size: 20px;
+        line-height: 23px; } }
   .visiting .cards_container .card_text_info {
     font-family: Roboto;
     font-style: normal;
@@ -359,6 +422,10 @@ html {
     font-size: 18px;
     line-height: 21px;
     color: #000000; }
+    @media screen and (max-width: 1024px) {
+      .visiting .cards_container .card_text_info {
+        font-size: 16px;
+        line-height: 19px; } }
 
 .explore {
   background-color: #030303; }
@@ -369,13 +436,17 @@ html {
     padding-top: 75px;
     flex-wrap: wrap;
     column-gap: 60px; }
+    @media screen and (max-width: 1024px) {
+      .explore_container {
+        padding-top: 70px;
+        padding-bottom: 58px; } }
     .explore_container_text {
       max-width: 660px;
       width: 100%; }
       @media screen and (max-width: 1024px) {
         .explore_container_text {
           max-width: 100%;
-          margin-bottom: 62px; } }
+          margin-bottom: 45px; } }
       .explore_container_text span {
         color: #CAAA7D; }
   .explore_text {
@@ -444,6 +515,9 @@ html {
 .video {
   padding-top: 75px;
   padding-bottom: 75px; }
+  @media screen and (max-width: 1024px) {
+    .video {
+      padding-bottom: 62px; } }
   .video_container {
     display: flex;
     flex-direction: column;
@@ -452,6 +526,9 @@ html {
     display: flex;
     justify-content: space-between;
     margin-bottom: 77px; }
+    @media screen and (max-width: 1024px) {
+      .video_title_text {
+        margin-bottom: 43px; } }
   .video_text {
     max-width: 720px;
     width: 100%;
@@ -484,11 +561,22 @@ html {
       top: calc(50% - 152px);
       left: calc(50% - 110px);
       cursor: pointer; }
+      @media screen and (max-width: 1024px) {
+        .video_wrapper .btn_play_video {
+          width: 152px;
+          height: 152px;
+          background-size: contain;
+          top: calc(50% - 104px);
+          left: calc(50% - 78px); } }
     .video_wrapper .video_control {
       display: flex;
       justify-content: space-between;
       align-items: center;
       background-color: #000; }
+      @media screen and (max-width: 1024px) {
+        .video_wrapper .video_control {
+          justify-content: center;
+          column-gap: 14px; } }
     .video_wrapper .btn_control {
       border: none;
       outline: none;
@@ -497,6 +585,10 @@ html {
       background-repeat: no-repeat;
       width: 85px;
       height: 85px; }
+      @media screen and (max-width: 1024px) {
+        .video_wrapper .btn_control {
+          width: 60px;
+          height: 60px; } }
     .video_wrapper .btn_control_play {
       background-image: url("./assets/svg/play.svg");
       background-position: center center;
@@ -505,10 +597,16 @@ html {
       background-image: url("./assets/svg/volume.svg");
       background-position: center center;
       background-size: 38px; }
+      @media screen and (max-width: 1024px) {
+        .video_wrapper .btn_control_sound {
+          background-size: 30px; } }
     .video_wrapper .btn_control_fullscreen {
       background-image: url("./assets/svg/fullScrean.svg");
       background-position: center center;
       background-size: 35px; }
+      @media screen and (max-width: 1024px) {
+        .video_wrapper .btn_control_fullscreen {
+          background-size: 25px; } }
     .video_wrapper .btn_control:hover {
       filter: invert(71%) sepia(0%) saturate(882%) hue-rotate(218deg) brightness(87%) contrast(83%); }
     .video_wrapper .progress {
@@ -528,10 +626,18 @@ html {
       background: linear-gradient(to right, #710707 0%, #710707 53%, #fff 53%, #fff 100%);
       max-width: 930px;
       width: 100%; }
+      @media screen and (max-width: 1024px) {
+        .video_wrapper .video_progress {
+          max-width: 564px;
+          height: 5px; } }
     .video_wrapper .sound_progress {
       background: linear-gradient(to right, #710707 0%, #710707 41%, #fff 41%, #fff 100%);
       max-width: 155px;
       width: 100%; }
+      @media screen and (max-width: 1024px) {
+        .video_wrapper .sound_progress {
+          max-width: 143px;
+          height: 5px; } }
     .video_wrapper .video_title_text {
       display: flex;
       justify-content: space-between; }
@@ -556,12 +662,25 @@ html {
       display: flex;
       justify-content: space-between;
       min-width: calc(452px * 5 + 42px * 4); }
+      @media screen and (max-width: 1024px) {
+        .video_slider_wrapper {
+          min-width: calc(300px * 5 + 42px * 4); } }
       .video_slider_wrapper .video_card {
         max-width: 452px;
         width: 100%;
         display: flex; }
+        @media screen and (max-width: 1024px) {
+          .video_slider_wrapper .video_card {
+            max-width: 300px; } }
         .video_slider_wrapper .video_card .video_slide {
           flex: 1; }
+        .video_slider_wrapper .video_card iframe {
+          height: 254px; }
+          @media screen and (max-width: 1024px) {
+            .video_slider_wrapper .video_card iframe {
+              height: 170px;
+              border: none;
+              outline: none; } }
     .video_slider_nav {
       width: 100%;
       display: flex;
@@ -594,6 +713,11 @@ html {
 .gallery {
   background-color: #030303;
   padding-top: 75px; }
+  @media screen and (max-width: 1024px) {
+    .gallery {
+      padding-top: 70px; }
+      .gallery .mb1024 {
+        margin-bottom: 70px; } }
   .gallery .gallery_pictures {
     position: relative;
     max-height: 1960px;
@@ -640,8 +764,14 @@ html {
 
 .tickets {
   padding-top: 75px; }
+  @media screen and (max-width: 1024px) {
+    .tickets {
+      padding-top: 70px; } }
   .tickets_container {
     padding-bottom: 75px; }
+    @media screen and (max-width: 1024px) {
+      .tickets_container {
+        padding-bottom: 55px; } }
   .tickets_content {
     display: flex;
     justify-content: space-between;
@@ -655,6 +785,9 @@ html {
           width: 100%; } }
       .tickets_content .tickets_picture img {
         width: 100%; }
+        @media screen and (max-width: 1024px) {
+          .tickets_content .tickets_picture img {
+            height: 440px; } }
   .tickets_type_amount {
     max-width: 660px;
     width: 100%;
@@ -742,10 +875,16 @@ html {
     align-items: flex-end; }
     @media screen and (max-width: 1024px) {
       .tickets .tickets_amount {
-        align-items: flex-start; } }
+        width: 175px;
+        align-items: flex-start; }
+        .tickets .tickets_amount .mb35 {
+          margin-bottom: 19px; } }
     .tickets .tickets_amount .amount_item {
       max-width: 150px;
       width: 100%; }
+      @media screen and (max-width: 1024px) {
+        .tickets .tickets_amount .amount_item {
+          max-width: 100%; } }
     .tickets .tickets_amount .item_title {
       font-family: Roboto;
       font-style: normal;
@@ -754,6 +893,9 @@ html {
       line-height: 26px;
       color: #000;
       margin-bottom: 14px; }
+      @media screen and (max-width: 1024px) {
+        .tickets .tickets_amount .item_title {
+          margin-bottom: 9px; } }
     .tickets .tickets_amount .amount_count {
       display: flex;
       width: 100%;
@@ -761,6 +903,10 @@ html {
       padding-top: 5px;
       padding-bottom: 2px;
       margin-bottom: 11px; }
+      @media screen and (max-width: 1024px) {
+        .tickets .tickets_amount .amount_count {
+          padding-right: 5px;
+          padding-left: 5px; } }
     .tickets .tickets_amount .amount_btn {
       display: flex;
       justify-content: center;
@@ -785,6 +931,9 @@ html {
       line-height: 37px;
       text-align: center;
       color: #000; }
+      @media screen and (max-width: 1024px) {
+        .tickets .tickets_amount .button_symbol {
+          font-size: 32px; } }
     .tickets .tickets_amount .number {
       width: 100%;
       background-color: transparent;
@@ -812,6 +961,10 @@ html {
       letter-spacing: 1.65px;
       color: #000;
       margin-bottom: 60px; }
+      @media screen and (max-width: 1024px) {
+        .tickets .tickets_amount .total_sum {
+          column-gap: 15px;
+          margin-bottom: 68px; } }
     .tickets .tickets_amount .btn_buy {
       border: none;
       outline: none;
@@ -842,6 +995,9 @@ html {
 .contacts {
   padding-top: 75px;
   padding-bottom: 69px; }
+  @media screen and (max-width: 1024px) {
+    .contacts {
+      padding-bottom: 60px; } }
   .contacts_content {
     display: flex;
     justify-content: space-between; }
@@ -899,13 +1055,16 @@ html {
 .footer {
   background-color: #030303;
   padding-top: 75px; }
+  @media screen and (max-width: 1024px) {
+    .footer {
+      padding-top: 53px; } }
   .footer_container {
     display: flex;
     justify-content: space-between;
     column-gap: 145px; }
-    @media screen and (max-width: 1465px) {
+    @media screen and (max-width: 1024px) {
       .footer_container {
-        column-gap: normal; } }
+        column-gap: 30px; } }
     .footer_container .nav_footer {
       display: flex;
       max-width: 366px;
@@ -914,13 +1073,27 @@ html {
         display: flex;
         flex-wrap: wrap;
         column-gap: 152px; }
+        @media screen and (max-width: 1024px) {
+          .footer_container .nav_footer .nav_list {
+            column-gap: 135px;
+            row-gap: 25px;
+            padding-left: 11px;
+            padding-top: 12px; } }
       .footer_container .nav_footer .nav_link {
         line-height: 50px;
         transition: all 0.3s; }
+        @media screen and (max-width: 1024px) {
+          .footer_container .nav_footer .nav_link {
+            font-size: 22px;
+            line-height: 26px; } }
       .footer_container .nav_footer li {
         width: 107px; }
+        @media screen and (max-width: 1024px) {
+          .footer_container .nav_footer li {
+            width: 70px;
+            font-size: 22px;
+            line-height: 26px; } }
     .footer_container .soc_wrap {
-      max-width: 340px;
       width: 100%;
       display: flex;
       justify-content: flex-end;
@@ -932,6 +1105,9 @@ html {
         width: 100%;
         justify-content: space-between;
         margin-bottom: 16px; }
+        @media screen and (max-width: 1024px) {
+          .footer_container .soc_wrap .soc_list {
+            margin-bottom: 0; } }
       .footer_container .soc_wrap .soc_link {
         display: block;
         width: 48px;
@@ -959,6 +1135,12 @@ html {
   .footer .footer_info {
     border-top: 3px solid #666;
     padding: 50px 0 50px; }
+    @media screen and (max-width: 1024px) {
+      .footer .footer_info .nav_link {
+        font-size: 22px;
+        line-height: 22px; }
+        .footer .footer_info .nav_link:nth-child(2) {
+          padding-left: 33px; } }
     .footer .footer_info span {
       font-family: Roboto;
       font-style: normal;
