@@ -1161,9 +1161,9 @@ html{
         @media screen and (max-width:1465px) {
             align-items: center;
 
-            &::before,&::after{
+            // &::before,&::after{
                 // flex-basis: 984px;
-            }
+            // }
             
         }
     }
@@ -1611,42 +1611,52 @@ html{
         
         .nav_footer{
             display: flex;
-            max-width: 366px;
+            // max-width: 366px;
+            justify-content: space-between;
+            
             width: 100%;
+            @include media(950px){
+                flex-direction: column;
+                align-items: center;
+                row-gap: 42px;
+            }
 
             .nav_list{
                 display: flex;
                 flex-wrap: wrap;
                 column-gap: 152px;
-                @include media(1024px){
+                max-width: 370px;
+                width:100%;
+                @include media(1120px){
                     column-gap: 135px;
                     row-gap: 25px;
                     padding-left: 11px;
                     padding-top: 12px;
+                }
+                li{
+                    width: 107px;
+                    @include media(1024px){
+                        width: 70px;
+                        font-size: 22px;
+                        line-height: 26px;
+                    }
                 }
             }
 
             .nav_link{
                 line-height: 50px;
                 transition: all 0.3s;
-                @include media(1024px){
+                @include media(1120px){
                     font-size: 22px;
                     line-height: 26px;
                 }
             }
 
-            li{
-                width: 107px;
-                @include media(1024px){
-                    width: 70px;
-                    font-size: 22px;
-                    line-height: 26px;
-                }
-            }
+            
         }
 
         .soc_wrap{
-            // max-width: 340px;
+            max-width: 340px;
             width: 100%;
             display: flex;
             justify-content: flex-end;
