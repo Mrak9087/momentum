@@ -180,6 +180,10 @@ html{
     text-decoration: none;
 }
 
+.active+.header_nav{
+    left: 0;
+}
+
 .header{
     background-color: $bg-dark;
     line-height: 33px;
@@ -189,7 +193,11 @@ html{
     @include media(1024px){
         padding-top: 49px;
         padding-bottom: 48px;
+
+        
     }
+
+    
 
     &_container{
         display: flex;
@@ -199,17 +207,85 @@ html{
         
     }
 
+    .burger_menu{
+        display: none;
+        width: 32px;
+        height: 18px;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 5;
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        @include media(1024px){
+            display: flex;
+            position: relative;
+            z-index: 4;
+            transition: all 0.3s ease 0s;
+        }
+        span{
+            width: 100%;
+            background-color: #fff;
+            height: 2px;
+            transition: all 0.3s ease 0s;
+        }
+
+        &.active{
+            .tp{
+                transform: rotate(-45deg) translate(-15px, 10px);
+                width: 30px;
+            }
+
+            .bt{
+                transform: rotate(45deg) translate(-10px, -5px);
+                width: 30px;
+            }
+            
+            .ct{
+                opacity: 0;
+            }
+            
+        }
+    }
+    
     &_nav{
         max-width: 775px;
         width: 100%;
+        @media screen and (max-width:1024px) {
+            position: fixed;
+            left: -100%; 
+            top: 130px;
+            padding-top: 35px;
+            padding-left: 55px;
+            width: 297px;
+            // height: 100%;
+            justify-content: space-around ;
+            
+            background-color: $bg-dark;
+            
+            transition: all 0.3s ease 0s;
+            z-index: 4;
+
+            .nav_list{
+                flex-direction: column;
+                row-gap: 25px;
+
+                li{
+                    position: relative;
+                    &::after{
+                        content: ">";
+                        position: absolute;
+                        right: 80px;
+                        color: white;
+                    }
+                }
+            }
+        }
 
         .nav_list{
             display: flex;
             width: 100%;
             justify-content: space-between;
-            @media screen and (max-width:1024px) {
-                display: none;
-            }
+            
             li{
                 list-style: none;
             }
@@ -249,12 +325,21 @@ html{
         @include media(1024px){
             line-height: 90px;
         }
+        @include media(768px){
+            text-align: center;
+        }
     }
 
     &_text{
         // width: 598px;
         position: relative;
         z-index: 3;
+        @include media(768px){
+            position: static;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     &_container{
@@ -265,6 +350,11 @@ html{
         @include media(1024px){
             padding-top: 50px;
             padding-bottom: 192px;
+        }
+        @include media(768px){
+            flex-direction: column;
+            padding-top: 0;
+            padding-bottom: 0;
         }
     }
 
@@ -318,6 +408,10 @@ html{
             line-height: 23px;
             padding: 18px 0 18px;
         }
+
+        @include media(768px){
+            display: none;
+        }
     }
 
     .slider{
@@ -331,6 +425,11 @@ html{
             max-width: 700px;
             right: 20px;
             height: 100%;
+        }
+
+        @include media(768px){
+            position: static;
+            max-width: 728px;
         }
         &_image{
             display: flex;
@@ -355,6 +454,9 @@ html{
             max-width: 300px;
             width: 100%;
             background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+            @include media(768px){
+                display: none;
+            }
 
         }
 
@@ -385,6 +487,9 @@ html{
                 column-gap: 43px;
             }
 
+            @include media(768px){
+                justify-content: center;
+            }
             // padding:40px ;
 
             .slide_count{
@@ -481,6 +586,10 @@ html{
         @include media(1024px){
             gap:60px 110px;
         }
+
+        @include media(768px){
+            gap:40px 56px;
+        }
         
         .card{
             display: block;
@@ -491,6 +600,9 @@ html{
             transition: transform 0.5s ease;
             @include media(1024px){
                 max-width: 330px;
+            }
+            @include media(768px){
+                max-width: 280px;
             }
         }
         
@@ -590,6 +702,7 @@ html{
                 max-width: 100%;
                 margin-bottom: 45px;
             }
+            
             span{
                 color: #CAAA7D;
             }
@@ -613,6 +726,9 @@ html{
             }
             
         }
+        @include media(768px){
+            display: none;
+        }
     }
     
     &_slider{
@@ -632,6 +748,10 @@ html{
             top: 0;
             left: 0;
             z-index: 1;
+
+            // img{
+            //     width: 100%;
+            // }
         }
 
         .card_cur{
@@ -961,6 +1081,9 @@ html{
         padding-top: 70px;
         .mb1024{
             margin-bottom: 70px;
+            @include media(768px){
+                margin-bottom: 40px;
+            }
         }
     }
 
@@ -992,29 +1115,56 @@ html{
             flex-basis: 100%;
             width: 0;
             order: 2;
+            @include media(999px){
+                // order:0;
+            }
         }
+
 
         .picture{
             max-width: 456px;
+            @include media(1465px){
+                max-width: 304px;
+            }
+            @include media(999px){
+                max-width: 352px;
+                width: 100%;
+            }
         }
 
-        .picture:nth-child(3n+1) { order: 1; }
-        .picture:nth-child(3n+2) { order: 2; }
-        .picture:nth-child(3n) { order: 3; }
-
-        .picture:first-child,.picture:nth-child(3){
-            margin-top: 50px;
+        
+        @media screen and (min-width:1000px) {
+            .picture:nth-child(3n+1) { order: 1; }
+            .picture:nth-child(3n+2) { order: 2; }
+            .picture:nth-child(3n) { order: 3; }
+            .picture:first-child,.picture:nth-child(3){
+                margin-top: 50px;
+            }
         }
+
+        @include media(999px){
+            max-width: 728px;
+            column-gap: normal;
+            height: 4000px;
+            
+            .picture:nth-child(2n+1) { order: 1; };
+            .picture:nth-child(2n) { order: 2; };
+            
+            .picture:first-child{
+                margin-top: 50px;
+            }
+        }
+        
+
+        
 
         @media screen and (max-width:1465px) {
             align-items: center;
 
             &::before,&::after{
-                flex-basis: 984px;
+                // flex-basis: 984px;
             }
-            .picture{
-                max-width: 304px;
-            }
+            
         }
     }
     
@@ -1050,6 +1200,9 @@ html{
         display: flex;
         justify-content: space-between;
         column-gap: 20px;
+        @include media(768px){
+            column-gap: 0;
+        }
 
         .tickets_picture{
             max-width: 720px;
@@ -1062,6 +1215,11 @@ html{
                 width: 100%;
                 @include media(1024px){
                     height: 440px;
+                }
+
+                @include media(768px){
+                    width: 444px;
+                    height: 340px;
                 }
             }
 
@@ -1344,6 +1502,9 @@ html{
         background-attachment: fixed;
         background-position: center;
         padding-top: 400px;
+        @include media(768px){
+            padding-top: 300px;
+        }
     }
 }
 
@@ -1359,6 +1520,10 @@ html{
         justify-content: space-between;
         @include media(1024px){
             column-gap: 16px;
+        }
+        @include media(768px){
+            flex-direction: column;
+            row-gap: 40px;
         }
         .content_txt{
             max-width: 282px;
