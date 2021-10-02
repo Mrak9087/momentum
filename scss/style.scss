@@ -81,7 +81,10 @@ html{
     text-transform: uppercase;
     @media screen and (max-width:1024px) {
         font-size: 50px;
-        
+    }
+
+    @include media(768px){
+        font-size: 40px;
     }
     
 }
@@ -104,6 +107,10 @@ html{
     @include media(1024px){
         margin-bottom: 62px;
     }
+
+    @include media(768px){
+        margin-bottom: 40px;
+    }
 }
 
 .text_let_spac{
@@ -119,12 +126,18 @@ html{
     @include media(1024px){
         margin-bottom: 30px;
     }
+    @include media(768px){
+        margin-bottom: 40px;
+    }
 }
 
 .mb39{
     margin-bottom: 39px;
     @include media(1024px){
         margin-bottom: 15px;
+    }
+    @include media(768px){
+        margin-bottom: 28px;
     }
 }
 
@@ -133,7 +146,11 @@ html{
     @include media(1024px){
         padding-bottom: 50px;
     }
+    @include media(768px){
+        padding-bottom: 38px;
+    }
 }
+
 
 .pd10{
     padding-bottom: 10px;
@@ -150,6 +167,9 @@ html{
 .logo_foot{
     padding-top: 10px;
     background-position-y: 7px;
+    @include media(768px){
+        padding-top: 0;
+    }
 }
 
 .nav_link{
@@ -197,6 +217,13 @@ html{
         
     }
 
+    @include media(768px){
+        padding-top: 38px;
+        padding-bottom: 27px;
+
+        
+    }
+
     
 
     &_container{
@@ -204,7 +231,10 @@ html{
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        
+        @include media(768px){
+            align-items: flex-start;
+        }
+
     }
 
     .burger_menu{
@@ -221,6 +251,11 @@ html{
             position: relative;
             z-index: 4;
             transition: all 0.3s ease 0s;
+        }
+
+        @include media(768px){
+            height: 34px;
+            justify-content: space-evenly;
         }
         span{
             width: 100%;
@@ -299,7 +334,12 @@ html{
     padding-left: 75px;
     background-image: url("./assets/svg/logo.svg");
     background-repeat: no-repeat;
+    
     transition: all 0.3s;
+
+    @include media(768px){
+        background-position-y: 5px;
+    }
     
     &_text{
         font-family: Forum;
@@ -309,6 +349,10 @@ html{
         letter-spacing: 5px;
         text-transform: uppercase;
         color: #FFFFFF;
+        @include media(768px){
+            line-height: 45px;
+            
+        }
     }
 
     &:hover{
@@ -327,6 +371,8 @@ html{
         }
         @include media(768px){
             text-align: center;
+            font-size: 40px;
+            line-height: 60px;
         }
     }
 
@@ -339,6 +385,10 @@ html{
             display: flex;
             flex-direction: column;
             align-items: center;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 23px;
+            letter-spacing: 2px;
         }
     }
 
@@ -374,6 +424,11 @@ html{
             font-size: 24px;
             line-height: 28px;
             letter-spacing: 2px;
+        }
+
+        @include media(768px){
+            font-size: 20px;
+            line-height: 19px;
         }
     }
 
@@ -463,6 +518,9 @@ html{
         &_wrapper{
             position: relative;
             padding-bottom: 60px;
+            @include media(768px){
+                padding-bottom: 100px;
+            }
             
         }
 
@@ -489,6 +547,8 @@ html{
 
             @include media(768px){
                 justify-content: center;
+                padding-left: 0;
+                padding-right: 0;
             }
             // padding:40px ;
 
@@ -522,6 +582,10 @@ html{
                 @include media(1024px){
                     max-width: 160px;
                     padding: 54px 0 54px;
+                }
+
+                @include media(768px){
+                    padding: 44px 0 44px;
                 }
             }
 
@@ -575,6 +639,10 @@ html{
         @include media(1024px){
             padding-bottom: 60px;
         }
+        @include media(768px){
+            padding-top: 50px;
+            padding-bottom: 80px;
+        }
     }
 
     .cards_container{
@@ -609,6 +677,9 @@ html{
         .card_img{
             width: 100%;
             margin-bottom: 25px;
+            @include media(768px){
+                margin-bottom: 20px;
+            }
         }
         
         .card_title{
@@ -629,6 +700,12 @@ html{
                 line-height: 31px;
                 letter-spacing: 3px;
             }
+
+            @include media(768px){
+                font-size: 22px;
+                line-height: 24px;
+                padding-bottom: 11px;
+            }
         }
         
         .card_title::after{
@@ -642,6 +719,9 @@ html{
             transition: all 0.5s;
             @include media(1024px){
                 width: 155px;
+            }
+            @include media(768px){
+                width: 150px;
             }
         }
         
@@ -662,6 +742,11 @@ html{
             @include media(1024px){
                 font-size: 20px;
                 line-height: 23px;
+            }
+
+            @include media(768px){
+                font-size: 18px;
+                line-height: 21px;
             }
         }
         
@@ -695,12 +780,20 @@ html{
             padding-top: 70px;
             padding-bottom: 58px;
         }
+        @include media(768px){
+            padding-top: 50px;
+            padding-bottom: 37px;
+        }
         &_text{
             max-width: 660px;
             width: 100%;
             @include media(1024px){
                 max-width: 100%;
                 margin-bottom: 45px;
+            }
+            @include media(768px){
+                max-width: 100%;
+                margin-bottom: 0;
             }
             
             span{
@@ -735,10 +828,17 @@ html{
         padding-top: 15px;
         max-width: 720px;
         width: 100%;
+        @include media(768px){
+            padding-top: 0;
+            max-width: 728px;
+        }
         .exp_slid_container{
             max-width: 720px;
             width: 100%;
             // overflow-x: hidden;
+            @include media(768px){
+                max-width: 100%;
+            }
         }
 
         .explore_card{
@@ -752,6 +852,17 @@ html{
             // img{
             //     width: 100%;
             // }
+
+            @include media(768px){
+                width: 100%;
+                .img_explore{
+                    width: 100%;
+                }
+                
+                img{
+                    height: 100%;
+                }
+            }
         }
 
         .card_cur{
@@ -762,6 +873,9 @@ html{
             overflow-x: hidden;
             width: 441px;
             z-index: 2;
+            @include media(768px){
+                height: 100%;
+            }
         }
 
         .spliter{
@@ -812,6 +926,11 @@ html{
         padding-bottom: 62px;
     }
 
+    @include media(768px){
+        padding-top: 48px;
+        padding-bottom: 80px;
+    }
+
     &_container{
         display: flex;
         flex-direction: column;
@@ -824,6 +943,10 @@ html{
         margin-bottom: 77px;
         @include media(1024px){
             margin-bottom: 43px;
+        }
+
+        @include media(768px){
+            margin-bottom: 28px;
         }
     }
 
@@ -847,6 +970,9 @@ html{
     &_wrapper{
         position: relative;
         margin-bottom: 40px;
+        @include media(768px){
+            margin-bottom: 21px;
+        }
 
         .player{
             display: block;
@@ -873,6 +999,15 @@ html{
                 top:calc(50% - 104px);
                 left:calc(50% - 78px);
             }
+
+            @include media(768px){
+                width: 80px;
+                height: 80px;
+                background-size: contain;
+                top: calc(50%);
+                left: calc(50%);
+                transform: translate(-50%, -85%);
+            }
         }
 
         .video_control{
@@ -881,10 +1016,25 @@ html{
             align-items: center;
             background-color: #000;
             // padding: 25px 0;
-            @include media(1024px){
-                justify-content: center;
-                column-gap: 14px;
+            @include media(768px){
+                position: relative;
             }
+            &_wrap{
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+                @include media(1024px){
+                    justify-content: center;
+                    column-gap: 14px;
+                }
+                @include media(768px){
+                    column-gap: 32px;
+                    padding: 14px 0 14px;
+                }
+
+            }
+           
         }
         
         .btn_control{
@@ -899,6 +1049,11 @@ html{
                 width: 60px;
                 height: 60px;
             }
+            @include media(768px){
+                width: 29px;
+                height: 29px;
+                
+            }
         }
         
         .btn_control_play{
@@ -906,6 +1061,9 @@ html{
 
             background-position: center center;
             background-size: 23px;
+            @include media(768px){
+                background-size: contain;
+            }
         }
         
        .btn_control_sound{
@@ -915,6 +1073,9 @@ html{
             @include media(1024px){
                 background-size: 30px;
             }
+            @include media(768px){
+                background-size: contain;
+            }
         }
         
         .btn_control_fullscreen{
@@ -923,6 +1084,9 @@ html{
             background-size: 35px;
             @include media(1024px){
                 background-size: 25px;
+            }
+            @include media(768px){
+                background-size: contain;
             }
         }
         
@@ -957,6 +1121,13 @@ html{
                 max-width: 564px;
                 height: 5px;
             }
+
+            @include media(768px){
+                position: absolute;
+                left: 0;
+                top: 0;
+                max-width: 100%;
+            }
         }
         
         .sound_progress{
@@ -968,6 +1139,11 @@ html{
                 max-width: 143px;
                 height: 5px;
             }
+
+            @include media(768px){
+                max-width: 67%;                
+            }
+
         }
         
         .video_title_text{
@@ -997,12 +1173,19 @@ html{
         flex-direction: column;
         row-gap: 40px;
 
+        @include media(768px){
+            row-gap: 20px;
+        }
+
         &_wrapper{
             display: flex;
             justify-content: space-between;
             min-width: calc(452px * 5 + 42px * 4);
             @include media(1024px){
                 min-width: calc(300px * 5 + 42px * 4);
+            }
+            @include media(1024px){
+                min-width: calc(354px * 5 + 20px * 4);
             }
 
             .video_card{
@@ -1012,6 +1195,10 @@ html{
 
                 @include media(1024px){
                     max-width: 300px;
+
+                }
+                @include media(768px){
+                    max-width: 354px;
 
                 }
                 .video_slide{
@@ -1024,6 +1211,10 @@ html{
                         height: 170px;
                         border: none;
                         outline: none;
+                    }
+
+                    @include media(1024px){
+                        height: 199px;
                     }
                 }
             }
@@ -1040,6 +1231,10 @@ html{
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+
+                @include media(768px){
+                    max-width: 190px;
+                }
 
                 .nav_btn{
                     width: 10px;
@@ -1082,9 +1277,13 @@ html{
         .mb1024{
             margin-bottom: 70px;
             @include media(768px){
-                margin-bottom: 40px;
+                margin-bottom: 48px;
             }
         }
+    }
+
+    @include media(768px){
+        padding-top: 48px;
     }
 
     .gallery_pictures{
@@ -1093,6 +1292,9 @@ html{
         overflow-y: hidden;
         @include media(1024px){
             max-height: 1265px;
+        }
+        @include media(768px){
+            max-height: 1080px;
         }
     }
 
@@ -1110,6 +1312,7 @@ html{
         height: 3000px;
         row-gap: 24px;
         column-gap: 18px;
+        
         &::before,&::after{
             content: "";
             flex-basis: 100%;
@@ -1154,6 +1357,10 @@ html{
                 margin-top: 50px;
             }
         }
+
+        @include media(768px){
+            column-gap: 12px;
+        }
         
 
         
@@ -1186,11 +1393,19 @@ html{
     @include media(1024px){
         padding-top: 70px;
     }
+
+    @include media(1024px){
+        padding-top: 48px;
+    }
     
     &_container{
         padding-bottom: 75px;
         @include media(1024px){
             padding-bottom: 55px;
+        }
+
+        @include media(768px){
+            padding-bottom: 40px;
         }
     }
 
@@ -1202,6 +1417,7 @@ html{
         column-gap: 20px;
         @include media(768px){
             column-gap: 0;
+            justify-content: flex-start;
         }
 
         .tickets_picture{
@@ -1210,6 +1426,11 @@ html{
             @include media(1024px){
                 max-width: 700px;
                 width: 100%;
+            }
+
+            @include media(768px){
+                max-width: 504px;
+                
             }
             img{
                 width: 100%;
@@ -1350,6 +1571,9 @@ html{
             align-items: flex-start;
             .mb35{
                 margin-bottom: 19px;
+                @include media(768px){
+                    margin-bottom: 15px;
+                }
             }
         }
         
@@ -1460,6 +1684,9 @@ html{
                 column-gap: 15px;
                 margin-bottom: 68px;
             }
+            @include media(768px){
+                margin-bottom: 40px;
+            }
         }
         
         .btn_buy{
@@ -1514,6 +1741,10 @@ html{
     @include media(1024px){
         padding-bottom: 60px;
     }
+    @include media(768px){
+        padding-top: 49px;
+        padding-bottom: 67px;
+    }
 
     &_content{
         display: flex;
@@ -1523,7 +1754,7 @@ html{
         }
         @include media(768px){
             flex-direction: column;
-            row-gap: 40px;
+            row-gap: 26px;
         }
         .content_txt{
             max-width: 282px;
@@ -1548,6 +1779,13 @@ html{
                     line-height: 28px;
                     margin-bottom: 35px;
                 }
+
+                @include media(768px){
+                    font-size: 20px;
+                    line-height: 23px;
+                    max-width: 155px;
+                    margin-bottom: 40px;
+                }
             }
 
             .contact_item{
@@ -1563,6 +1801,11 @@ html{
                     font-size: 20px;
                     line-height: 23px;
                     margin-bottom: 15px;
+                }
+
+                @include media(768px){
+                    font-size: 18px;
+                    line-height: 21px;
                 }
             }
 
@@ -1594,7 +1837,9 @@ html{
     @include media(1024px){
         padding-top: 53px;
     }
-
+    @include media(768px){
+        padding-top: 43px;
+    }
     &_container{
         
 
@@ -1620,6 +1865,9 @@ html{
                 align-items: center;
                 row-gap: 42px;
             }
+            @include media(768px){
+                row-gap: 48px;
+            }
 
             .nav_list{
                 display: flex;
@@ -1633,6 +1881,11 @@ html{
                     padding-left: 11px;
                     padding-top: 12px;
                 }
+                @include media(768px){
+                    padding-left: 3px;
+                    column-gap: 186px;
+                    row-gap: 18px;
+                }
                 li{
                     width: 107px;
                     @include media(1024px){
@@ -1640,6 +1893,7 @@ html{
                         font-size: 22px;
                         line-height: 26px;
                     }
+                    
                 }
             }
 
@@ -1649,6 +1903,9 @@ html{
                 @include media(1120px){
                     font-size: 22px;
                     line-height: 26px;
+                }
+                @include media(768px){
+                    font-size: 18px;
                 }
             }
 
@@ -1661,6 +1918,11 @@ html{
             display: flex;
             justify-content: flex-end;
             align-items: flex-end;
+
+            @include media(768px){
+                max-width: 358px;
+                justify-content: flex-start;
+            }
 
             .soc_list{
                 display: flex;
@@ -1730,6 +1992,10 @@ html{
                 }
             }
 
+        }
+
+        @include media(768px){
+            padding: 40px 0 40px;
         }
 
         span{
