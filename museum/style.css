@@ -1511,6 +1511,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 5;
   transition: all 0.5s; }
   .buy_container {
     display: flex;
@@ -1519,6 +1520,9 @@ html {
     background-color: white;
     padding: 91px 0 91px;
     position: relative; }
+    @media screen and (max-width: 768px) {
+      .buy_container {
+        max-width: 590px; } }
     .buy_container .btn_close {
       position: absolute;
       width: 25px;
@@ -1535,9 +1539,17 @@ html {
     justify-content: space-between;
     max-width: 970px;
     width: 100%; }
+    @media screen and (max-width: 768px) {
+      .buy .ticket_wrapper {
+        flex-direction: column;
+        align-items: center; } }
   .buy .ticket_info {
     max-width: 400px;
     width: 100%; }
+    @media screen and (max-width: 768px) {
+      .buy .ticket_info {
+        max-width: 530px;
+        margin-bottom: 50px; } }
   .buy .logo_ticket {
     padding-top: 41px;
     background-image: url("./assets/svg/logo_ticket.svg");
@@ -1660,18 +1672,27 @@ html {
     background-image: url("./assets/img/name.png");
     background-repeat: no-repeat;
     background-position: 15px center; }
+    @media screen and (max-width: 768px) {
+      .buy .ticket_name {
+        max-width: 100%; } }
   .buy .ticket_mail {
     max-width: 400px;
     width: 100%;
     background-image: url("./assets/img/email.png");
     background-repeat: no-repeat;
     background-position: 15px center; }
+    @media screen and (max-width: 768px) {
+      .buy .ticket_mail {
+        max-width: 100%; } }
   .buy .ticket_phone {
     max-width: 400px;
     width: 100%;
     background-image: url("./assets/img/tel.png");
     background-repeat: no-repeat;
     background-position: 15px center; }
+    @media screen and (max-width: 768px) {
+      .buy .ticket_phone {
+        max-width: 100%; } }
   .buy .ticket_type {
     position: relative;
     background-image: url("./assets/img/ballot.png");

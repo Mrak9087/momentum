@@ -1984,7 +1984,7 @@ html{
 
         @include media(1024px){
             .nav_link{
-                font-size: 22px;
+                font-size: 22px;    
                 line-height: 22px;
 
                 &:nth-child(2){
@@ -2027,6 +2027,7 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 5;
     transition: all 0.5s;
 
     &_container{
@@ -2036,6 +2037,10 @@ html{
         background-color: white;
         padding:91px 0 91px;
         position: relative;
+
+        @include media(768px){
+            max-width: 590px;
+        }
 
         .btn_close{
             position: absolute;
@@ -2057,11 +2062,19 @@ html{
         justify-content: space-between;
         max-width: 970px;
         width: 100%;
+        @include media(768px){
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     .ticket_info{
         max-width: 400px;
         width: 100%;
+        @include media(768px){
+            max-width: 530px;
+            margin-bottom: 50px;
+        }
     }
 
     .logo_ticket{
@@ -2232,6 +2245,9 @@ html{
         background-image: url("./assets/img/name.png");
         background-repeat: no-repeat;
         background-position: 15px center;
+        @include media(768px){
+            max-width: 100%;
+        }
     }
 
     .ticket_mail{
@@ -2240,6 +2256,9 @@ html{
         background-image: url("./assets/img/email.png");
         background-repeat: no-repeat;
         background-position: 15px center;
+        @include media(768px){
+            max-width: 100%;
+        }
     }
 
     .ticket_phone{
@@ -2248,6 +2267,9 @@ html{
         background-image: url("./assets/img/tel.png");
         background-repeat: no-repeat;
         background-position: 15px center;
+        @include media(768px){
+            max-width: 100%;
+        }
     }
 
     .ticket_type{
