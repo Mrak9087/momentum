@@ -30,6 +30,12 @@
     font-weight: 600;
 }
 
+@mixin media($width){
+    @media screen and (max-width: $width) {
+        @content;
+      }
+}
+
 $width_container:1440px;
 $bg-dark:#030303;
 $dark-red:#710707;
@@ -58,6 +64,11 @@ html{
     max-width: $width_container;
     width: 100%;
     margin: 0 auto;
+
+    @include media(1465px){
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 .title_section{
@@ -68,7 +79,17 @@ html{
     /* line-height: 90px; */
     letter-spacing: 5px;
     text-transform: uppercase;
+    @media screen and (max-width:1024px) {
+        font-size: 50px;
+    }
 
+    @include media(768px){
+        font-size: 40px;
+    }
+
+    @include media(420px){
+        font-size: 28px;
+    }
     
 }
 
@@ -83,10 +104,23 @@ html{
 .title_underline{
     border-bottom: 3px solid $dark-red;
     padding-bottom: 27px;
+    @include media(420px){
+        padding-bottom: 20px;
+    }
+    @include media(420px){
+        padding-bottom: 24px;
+    }
 }
 
 .indent_bottom_title73{
     margin-bottom: 75px;
+    @include media(1024px){
+        margin-bottom: 62px;
+    }
+
+    @include media(768px){
+        margin-bottom: 40px;
+    }
 }
 
 .text_let_spac{
@@ -99,15 +133,34 @@ html{
 
 .mb25{
     margin-bottom: 25px;
+    @include media(1024px){
+        margin-bottom: 30px;
+    }
+    @include media(768px){
+        margin-bottom: 40px;
+    }
 }
 
 .mb39{
     margin-bottom: 39px;
+    @include media(1024px){
+        margin-bottom: 15px;
+    }
+    @include media(768px){
+        margin-bottom: 28px;
+    }
 }
 
 .pd_b40{
     padding-bottom: 40px;
+    @include media(1024px){
+        padding-bottom: 50px;
+    }
+    @include media(768px){
+        padding-bottom: 38px;
+    }
 }
+
 
 .pd10{
     padding-bottom: 10px;
@@ -124,6 +177,9 @@ html{
 .logo_foot{
     padding-top: 10px;
     background-position-y: 7px;
+    @include media(768px){
+        padding-top: 0;
+    }
 }
 
 .nav_link{
@@ -154,29 +210,133 @@ html{
     text-decoration: none;
 }
 
+.active+.header_nav{
+    left: 0;
+}
+
 .header{
     background-color: $bg-dark;
     line-height: 33px;
-
     padding-top: 59px;
     padding-bottom: 58px;
+    
+    @include media(1024px){
+        padding-top: 49px;
+        padding-bottom: 48px;
+
+        
+    }
+
+    @include media(768px){
+        padding-top: 38px;
+        padding-bottom: 27px;
+    }
+
+    @include media(420px){
+        padding-top: 28px;
+        padding-bottom: 32px;
+    }
+    
 
     &_container{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        
+        @include media(768px){
+            align-items: flex-start;
+        }
+
+        @include media(420px){
+            align-items: center;
+        }
+
     }
 
+    .burger_menu{
+        display: none;
+        width: 32px;
+        height: 18px;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 5;
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        @include media(1024px){
+            display: flex;
+            position: relative;
+            z-index: 4;
+            transition: all 0.3s ease 0s;
+        }
+
+        @include media(768px){
+            height: 34px;
+            justify-content: space-evenly;
+        }
+        span{
+            width: 100%;
+            background-color: #fff;
+            height: 2px;
+            transition: all 0.3s ease 0s;
+        }
+
+        &.active{
+            .tp{
+                transform: rotate(-45deg) translate(-15px, 10px);
+                width: 30px;
+            }
+
+            .bt{
+                transform: rotate(45deg) translate(-10px, -5px);
+                width: 30px;
+            }
+            
+            .ct{
+                opacity: 0;
+            }
+            
+        }
+    }
+    
     &_nav{
         max-width: 775px;
         width: 100%;
+        @media screen and (max-width:1024px) {
+            position: fixed;
+            left: -200%; 
+            top: 130px;
+            padding-top: 35px;
+            padding-left: 55px;
+            width: 297px;
+            // height: 100%;
+            justify-content: space-around ;
+            
+            background-color: $bg-dark;
+            
+            transition: all 0.3s ease 0s;
+            z-index: 4;
+
+            .nav_list{
+                flex-direction: column;
+                row-gap: 25px;
+
+                li{
+                    position: relative;
+                    &::after{
+                        content: ">";
+                        position: absolute;
+                        right: 80px;
+                        color: white;
+                    }
+                }
+            }
+        }
 
         .nav_list{
             display: flex;
             width: 100%;
             justify-content: space-between;
+            
             li{
                 list-style: none;
             }
@@ -190,7 +350,18 @@ html{
     padding-left: 75px;
     background-image: url("./assets/svg/logo.svg");
     background-repeat: no-repeat;
+    
     transition: all 0.3s;
+
+
+    @include media(768px){
+        background-position-y: 5px;
+    }
+    @include media(420px){
+        background-size: contain;
+        background-position-y: top;
+        padding-left: 54px;
+    }
     
     &_text{
         font-family: Forum;
@@ -200,6 +371,15 @@ html{
         letter-spacing: 5px;
         text-transform: uppercase;
         color: #FFFFFF;
+        @include media(768px){
+            line-height: 45px;
+            
+        }
+
+        @include media(420px){
+            font-size: 16px;
+            line-height: 18px;
+        }
     }
 
     &:hover{
@@ -212,10 +392,35 @@ html{
     
     background-color: $bg-dark;
 
+    &_title{
+        @include media(1024px){
+            line-height: 90px;
+        }
+        @include media(768px){
+            text-align: center;
+            font-size: 40px;
+            line-height: 60px;
+        }
+        @include media(420px){
+            font-size: 28px;
+            line-height: 40px;
+        }
+    }
+
     &_text{
         // width: 598px;
         position: relative;
         z-index: 3;
+        @include media(768px){
+            position: static;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 23px;
+            letter-spacing: 2px;
+        }
     }
 
     &_container{
@@ -223,6 +428,16 @@ html{
         position: relative;
         padding-top: 150px;
         padding-bottom: 271px;
+        @include media(1024px){
+            padding-top: 50px;
+            padding-bottom: 192px;
+        }
+        @include media(768px){
+            flex-direction: column;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        
     }
 
     &_subtitle{
@@ -235,6 +450,21 @@ html{
         line-height: 33px;
         letter-spacing: 2px;
         color: #FFFFFF;
+        @include media(1024px){
+            margin-top: 26px;
+            margin-bottom: 50px;
+            font-size: 24px;
+            line-height: 28px;
+            letter-spacing: 2px;
+        }
+
+        @include media(768px){
+            font-size: 20px;
+            line-height: 19px;
+        }
+        @include media(420px){
+            font-size: 16px;
+        }
     }
 
     
@@ -261,6 +491,17 @@ html{
         &:hover{
             background-color: $font-gold;
         }
+
+        @include media(1024px){
+            max-width: 300px;
+            font-size: 20px;
+            line-height: 23px;
+            padding: 18px 0 18px;
+        }
+
+        @include media(768px){
+            display: none;
+        }
     }
 
     .slider{
@@ -270,11 +511,30 @@ html{
         z-index: 1;
         right: 0;
         top: 0;
+        @media screen and (max-width: 1024px) {
+            max-width: 700px;
+            right: 20px;
+            height: 100%;
+        }
 
+        @include media(768px){
+            position: static;
+            max-width: 728px;
+        }
         &_image{
             display: flex;
             overflow-x: hidden;
             position: relative;
+            img{
+               @include media(1024px){
+                   width: 100%;
+               }
+            }
+            .img_wrap{
+                max-width: 1000px;
+                width: 100%;
+                
+            }
         }
 
         &_grad{
@@ -284,12 +544,22 @@ html{
             max-width: 300px;
             width: 100%;
             background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+            @include media(768px){
+                display: none;
+            }
 
         }
 
         &_wrapper{
             position: relative;
             padding-bottom: 60px;
+            @include media(768px){
+                padding-bottom: 100px;
+            }
+            @include media(420px){
+                padding-bottom: 80px;
+            }
+            
         }
 
 
@@ -306,7 +576,22 @@ html{
             width: 100%;
             padding-left: 74px;
             padding-right: 74px;
+            @include media(1024px){
+                max-width: 100%;
+                justify-content: flex-end;
+                padding-left: 30px;
+                column-gap: 43px;
+            }
 
+            @include media(768px){
+                justify-content: center;
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            @include media(420px){
+                column-gap: 25px;
+            }
             // padding:40px ;
 
             .slide_count{
@@ -322,6 +607,15 @@ html{
                 text-transform: uppercase;
 
                 color: #FFFFFF;
+
+                @include media(1024px){
+                    max-width: 71px;
+                    font-size: 20px;
+                }
+                @include media(420px){
+                    max-width: 50px;
+                    font-size: 16px;
+                }
             }
 
             .slide_positions{
@@ -331,18 +625,49 @@ html{
                 justify-content: space-between;
                 align-items: center;
                 padding: 52px 0 52px;
+                @include media(1024px){
+                    max-width: 160px;
+                    padding: 54px 0 54px;
+                }
+
+                @include media(768px){
+                    padding: 44px 0 44px;
+                }
+
+                @include media(420px){
+                    max-width: 75px;
+                    padding: 37px 0 36px;
+                }
+                
             }
 
             .slide_position{
                 width: 16px;
                 height: 16px;
                 background-color: #fff;
-                
+                @include media(1024px){
+                    width: 12px;
+                    height: 12px;
+                }
+                @include media(420px){
+                    width: 7px;
+                    height: 7px;
+                }
 
             }
 
             .current_position{
                 background-color: $font-gold;
+            }
+
+            .slider_nav{
+                @include media(420px){
+                    max-width: 55px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                }
+                
             }
 
             .slide_btn{
@@ -354,6 +679,10 @@ html{
                 cursor: pointer;
                 background-repeat: no-repeat;
                 background-position: center center;
+                background-size: contain;
+                @include media(420px){
+                    width: 20px;
+                }
                 
             }
 
@@ -366,7 +695,10 @@ html{
             .btn_prev{
                 background-image: url("./assets/img/arrow.png");
                 
-                transform: rotate(180deg);
+                transform: rotate(180deg) ;
+                @include media(420px){
+                    transform: rotate(180deg) translateY(-1px);
+                }
             }
         }
     }
@@ -377,6 +709,17 @@ html{
     &_container{
         padding-bottom: 74px;
         padding-top: 73px;
+        @include media(1024px){
+            padding-bottom: 60px;
+        }
+        @include media(768px){
+            padding-top: 50px;
+            padding-bottom: 80px;
+        }
+        @include media(420px){
+            padding-top: 45px;
+            padding-bottom: 38px;
+        }
     }
 
     .cards_container{
@@ -385,6 +728,13 @@ html{
         justify-content: center;
         flex-wrap: wrap;
         gap: 75px 60px;
+        @include media(1024px){
+            gap:60px 110px;
+        }
+
+        @include media(768px){
+            gap:40px 56px;
+        }
         
         .card{
             display: block;
@@ -393,11 +743,20 @@ html{
             cursor: pointer;
             text-decoration: none;
             transition: transform 0.5s ease;
+            @include media(1024px){
+                max-width: 330px;
+            }
+            @include media(768px){
+                max-width: 280px;
+            }
         }
         
         .card_img{
             width: 100%;
             margin-bottom: 25px;
+            @include media(768px){
+                margin-bottom: 20px;
+            }
         }
         
         .card_title{
@@ -413,6 +772,23 @@ html{
             padding-bottom: 9px;
             position: relative;
             margin-bottom: 10px;
+            @include media(1024px){
+                font-size: 28px;
+                line-height: 31px;
+                letter-spacing: 3px;
+            }
+
+            @include media(768px){
+                font-size: 22px;
+                line-height: 24px;
+                padding-bottom: 11px;
+            }
+            @include media(420px){
+                font-size: 18px;
+                line-height: 20px;
+                letter-spacing: 5px;
+                padding-bottom: 12px;
+            }
         }
         
         .card_title::after{
@@ -424,6 +800,12 @@ html{
             height: 2px;
             background-color: $dark-red;
             transition: all 0.5s;
+            @include media(1024px){
+                width: 155px;
+            }
+            @include media(768px){
+                width: 150px;
+            }
         }
         
         .card:hover{
@@ -440,6 +822,19 @@ html{
             line-height: 26px;
             color: #000000;    
             margin-bottom: 10px;
+            @include media(1024px){
+                font-size: 20px;
+                line-height: 23px;
+            }
+
+            @include media(768px){
+                font-size: 18px;
+                line-height: 21px;
+            }
+            @include media(420px){
+                font-size: 16px;
+                line-height: 19px;
+            }
         }
         
         .card_text_info{
@@ -449,6 +844,10 @@ html{
             font-size: 18px;
             line-height: 21px;
             color: #000000;
+            @include media(1024px){
+                font-size: 16px;
+                line-height: 19px;
+            }
         }
     }
 
@@ -464,11 +863,31 @@ html{
         padding-top: 75px;
         flex-wrap: wrap;
         column-gap: 60px;
-        
+        @include media(1024px){
+            padding-top: 70px;
+            padding-bottom: 58px;
+        }
+        @include media(768px){
+            padding-top: 50px;
+            padding-bottom: 37px;
+        }
+
+        @include media(420px){
+            padding-top: 45px;
+            padding-bottom: 38px;
+        }
         &_text{
             max-width: 660px;
             width: 100%;
-
+            @include media(1024px){
+                max-width: 100%;
+                margin-bottom: 45px;
+            }
+            @include media(768px){
+                max-width: 100%;
+                margin-bottom: 0;
+            }
+            
             span{
                 color: #CAAA7D;
             }
@@ -483,16 +902,35 @@ html{
         line-height: 38px;
         color: #FFFFFF;
         margin-bottom: 25px;
+
+        @media screen and (max-width:1024px) {
+            margin-bottom: auto;
+            font-size: 20px;
+            &:nth-child(4){
+                display: none;
+            }
+            
+        }
+        @include media(768px){
+            display: none;
+        }
     }
     
     &_slider{
         padding-top: 15px;
         max-width: 720px;
         width: 100%;
+        @include media(768px){
+            padding-top: 0;
+            max-width: 728px;
+        }
         .exp_slid_container{
             max-width: 720px;
             width: 100%;
             // overflow-x: hidden;
+            @include media(768px){
+                max-width: 100%;
+            }
         }
 
         .explore_card{
@@ -502,6 +940,21 @@ html{
             top: 0;
             left: 0;
             z-index: 1;
+
+            // img{
+            //     width: 100%;
+            // }
+
+            @include media(768px){
+                width: 100%;
+                .img_explore{
+                    width: 100%;
+                }
+                
+                img{
+                    height: 100%;
+                }
+            }
         }
 
         .card_cur{
@@ -512,6 +965,12 @@ html{
             overflow-x: hidden;
             width: 441px;
             z-index: 2;
+            @include media(768px){
+                height: 100%;
+            }
+            @include media(420px){
+                width: 60%;
+            }
         }
 
         .spliter{
@@ -529,10 +988,7 @@ html{
             .line{
                 flex: 1;
                 background-color: #fff;
-            }
-
-
-            
+            }            
             z-index: 3;
             &::after{
                 content: '';
@@ -544,6 +1000,17 @@ html{
                 border-radius: 50%;
                 background: transparent;
                 transform: translate(-50%, -50%);
+                @include media(420px){
+                    width: 20px;
+                    height: 20px;
+                    border-width: 2px;
+                }
+            }
+
+            @include media(420px){
+                min-width: 2px;
+                left: 60%;
+                row-gap: 20px;
             }
         }
 
@@ -558,6 +1025,20 @@ html{
     padding-top: 75px;
     padding-bottom: 75px;
 
+    @include media(1024px){
+        padding-bottom: 62px;
+    }
+
+    @include media(768px){
+        padding-top: 48px;
+        padding-bottom: 80px;
+    }
+
+    @include media(420px){
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
     &_container{
         display: flex;
         flex-direction: column;
@@ -568,6 +1049,16 @@ html{
         display: flex;
         justify-content: space-between;
         margin-bottom: 77px;
+        @include media(1024px){
+            margin-bottom: 43px;
+        }
+
+        @include media(768px){
+            margin-bottom: 28px;
+        }
+        @include media(420px){
+            margin-bottom: 25px;
+        }
     }
 
     &_text{
@@ -582,11 +1073,20 @@ html{
 
         display: flex;
         align-items: center;
+        @media screen and(max-width: 1024px) {
+            display: none;
+        }
     }
 
     &_wrapper{
         position: relative;
         margin-bottom: 40px;
+        @include media(768px){
+            margin-bottom: 21px;
+        }
+        @include media(420px){
+            margin-bottom: 40px;
+        }
 
         .player{
             display: block;
@@ -605,6 +1105,32 @@ html{
             top:calc(50% - 152px);
             left:calc(50% - 110px);
             cursor: pointer;
+
+            @include media(1024px){
+                width: 152px;
+                height: 152px;
+                background-size: contain;
+                top:calc(50% - 104px);
+                left:calc(50% - 78px);
+            }
+
+            @include media(768px){
+                width: 80px;
+                height: 80px;
+                background-size: contain;
+                top: calc(50%);
+                left: calc(50%);
+                transform: translate(-50%, -85%);
+            }
+            @include media(420px){
+                width: 50px;
+                height: 50px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                top: calc(47%);
+                left: calc(50%);
+                transform: translate(-50%, -85%);
+            }
         }
 
         .video_control{
@@ -613,6 +1139,31 @@ html{
             align-items: center;
             background-color: #000;
             // padding: 25px 0;
+            @include media(768px){
+                position: relative;
+            }
+            &_wrap{
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+                @include media(1024px){
+                    justify-content: center;
+                    column-gap: 14px;
+                }
+                @include media(768px){
+                    column-gap: 32px;
+                    padding: 14px 0 14px;
+                }
+
+                @include media(420px){
+                    column-gap: 27px;
+                    justify-content: center;
+                    padding: 21px 0 16px;
+                }
+
+            }
+           
         }
         
         .btn_control{
@@ -623,6 +1174,18 @@ html{
             background-repeat: no-repeat;
             width: 85px;
             height: 85px;
+            @include media(1024px){
+                width: 60px;
+                height: 60px;
+            }
+            @include media(768px){
+                width: 29px;
+                height: 29px;
+            }
+            @include media(768px){
+                width: 18px;
+                height: 18px;
+            }
         }
         
         .btn_control_play{
@@ -630,18 +1193,33 @@ html{
 
             background-position: center center;
             background-size: 23px;
+            @include media(768px){
+                background-size: contain;
+            }
         }
         
        .btn_control_sound{
             background-image: url("./assets/svg/volume.svg");
             background-position: center center;
             background-size: 38px;
+            @include media(1024px){
+                background-size: 30px;
+            }
+            @include media(768px){
+                background-size: contain;
+            }
         }
         
         .btn_control_fullscreen{
             background-image: url("./assets/svg/fullScrean.svg");
             background-position: center center;
             background-size: 35px;
+            @include media(1024px){
+                background-size: 25px;
+            }
+            @include media(768px){
+                background-size: contain;
+            }
         }
         
         .btn_control:hover{
@@ -665,18 +1243,46 @@ html{
             -webkit-appearance: none;
             cursor: pointer;
             background: #FFF;
+            @include media(420px){
+                width: 10px;
+                height: 10px;
+            }
         }
         
         .video_progress{
             background: linear-gradient(to right, $dark-red 0%, $dark-red 53%, #fff 53%, #fff 100%);
             max-width: 930px;
             width: 100%;
+            @include media(1024px){
+                max-width: 564px;
+                height: 5px;
+            }
+
+            @include media(768px){
+                position: absolute;
+                left: 0;
+                top: 0;
+                max-width: 100%;
+            }
         }
         
         .sound_progress{
             background: linear-gradient(to right, $dark-red 0%, $dark-red 41%, #fff 41%, #fff 100%);
             max-width: 155px;
             width: 100%;
+
+            @include media(1024px){
+                max-width: 143px;
+                height: 5px;
+            }
+
+            @include media(768px){
+                max-width: 67%;                
+            }
+
+            @include media(420px){
+                max-width: 54%;                
+            }
         }
         
         .video_title_text{
@@ -706,18 +1312,65 @@ html{
         flex-direction: column;
         row-gap: 40px;
 
+        @include media(768px){
+            row-gap: 20px;
+        }
+
+        @include media(420px){
+            row-gap: 40px;
+        }
+
         &_wrapper{
             display: flex;
             justify-content: space-between;
             min-width: calc(452px * 5 + 42px * 4);
+            @include media(1024px){
+                min-width: calc(300px * 5 + 42px * 4);
+            }
+            @include media(1024px){
+                min-width: calc(354px * 5 + 20px * 4);
+            }
+
+            @include media(1024px){
+                min-width: calc(180px * 5 + 20px * 4);
+            }
 
             .video_card{
                 max-width: 452px;
                 width: 100%;
                 display: flex;
 
+                @include media(1024px){
+                    max-width: 300px;
+                }
+                @include media(768px){
+                    max-width: 354px;
+                }
+                @include media(420px){
+                    max-width: 180px;
+                }
                 .video_slide{
                     flex: 1;
+                    @include media(420px){
+                        // height: ;
+                    }
+                }
+
+                iframe{
+                    height: 254px;
+                    @include media(1024px){
+                        height: 170px;
+                        border: none;
+                        outline: none;
+                    }
+
+                    @include media(1024px){
+                        height: 199px;
+                    }
+
+                    @include media(420px){
+                        height: 101px;
+                    }
                 }
             }
         }
@@ -734,6 +1387,14 @@ html{
                 justify-content: space-between;
                 align-items: center;
 
+                @include media(768px){
+                    max-width: 190px;
+                }
+
+                @include media(420px){
+                    max-width:175px;
+                }
+
                 .nav_btn{
                     width: 10px;
                     height: 12px;
@@ -743,6 +1404,10 @@ html{
                     border: none;
                     outline: none;
                     cursor: pointer;
+                    @include media(420px){
+                        width: 8px;
+                        height: 8px;
+                    }
                 }
 
                 .nav_next{
@@ -754,6 +1419,10 @@ html{
                     height: 12px;
                     border-radius: 500%;
                     background-color: #999;
+                    @include media(420px){
+                        width: 8px;
+                        height: 8px;
+                    }
                 }
 
                 .nav_cur{
@@ -770,10 +1439,37 @@ html{
     background-color: $bg-dark;
     padding-top: 75px;
 
+    @include media(1024px){
+        padding-top: 70px;
+        .mb1024{
+            margin-bottom: 70px;
+            @include media(768px){
+                margin-bottom: 48px;
+            }
+        }
+    }
+
+    @include media(768px){
+        padding-top: 48px;
+    }
+
+    @include media(420px){
+        padding-top: 45px;
+    }
+
     .gallery_pictures{
         position: relative;
         max-height: 1960px;
         overflow-y: hidden;
+        @include media(1024px){
+            max-height: 1265px;
+        }
+        @include media(768px){
+            max-height: 1080px;
+        }
+        @include media(420px){
+            max-height: 633px;
+        }
     }
 
     .picture_container{
@@ -790,23 +1486,86 @@ html{
         height: 3000px;
         row-gap: 24px;
         column-gap: 18px;
+        
         &::before,&::after{
             content: "";
             flex-basis: 100%;
             width: 0;
             order: 2;
+            @include media(999px){
+                // order:0;
+            }
         }
+
 
         .picture{
             max-width: 456px;
+            width: 100%;
+            img{
+                width: 100%;
+                object-fit: cover;
+            }
+            @include media(1465px){
+                max-width: 304px;
+            }
+            @include media(999px){
+                // max-width: 352px;
+                max-width: calc(100% / 2 - 24px);
+                width: 100%;
+                
+            }
+            @include media(420px){
+                max-width: calc(100% / 2 - 12px);
+                width: 100%;
+                
+            }
         }
 
-        .picture:nth-child(3n+1) { order: 1; }
-        .picture:nth-child(3n+2) { order: 2; }
-        .picture:nth-child(3n) { order: 3; }
+        
+        @media screen and (min-width:1000px) {
+            .picture:nth-child(3n+1) { order: 1; }
+            .picture:nth-child(3n+2) { order: 2; }
+            .picture:nth-child(3n) { order: 3; }
+            .picture:first-child,.picture:nth-child(3){
+                margin-top: 50px;
+            }
+        }
 
-        .picture:first-child,.picture:nth-child(3){
-            margin-top: 50px;
+        @include media(999px){
+            max-width: 728px;
+            column-gap: normal;
+            height: 4000px;
+            margin: 0 auto;
+            
+            .picture:nth-child(2n+1) { order: 1; };
+            .picture:nth-child(2n) { order: 2; };
+            
+            .picture:first-child{
+                margin-top: 50px;
+            }
+        }
+
+        @include media(768px){
+            column-gap: 12px;
+        }
+
+        @include media(420px){
+            // justify-content: space-between;
+            // align-content: space-between;
+            // column-gap: normal;
+            max-width: 380px;
+        }
+        
+
+        
+
+        @media screen and (max-width:1465px) {
+            align-items: center;
+
+            // &::before,&::after{
+                // flex-basis: 984px;
+            // }
+            
         }
     }
     
@@ -824,9 +1583,29 @@ html{
 
 .tickets{
     padding-top: 75px;
+
+    @include media(1024px){
+        padding-top: 70px;
+    }
+
+    @include media(768px){
+        padding-top: 48px;
+    }
+
+    @include media(420px){
+        padding-top: 45px;
+    }
+
     
     &_container{
         padding-bottom: 75px;
+        @include media(1024px){
+            padding-bottom: 55px;
+        }
+
+        @include media(768px){
+            padding-bottom: 40px;
+        }
     }
 
 
@@ -834,13 +1613,52 @@ html{
     &_content{
         display: flex;
         justify-content: space-between;
+        column-gap: 20px;
+
+        @include media(768px){
+            column-gap: 0;
+            justify-content: flex-start;
+        }
+        @include media(700px){
+            flex-direction: column;
+            align-items: center;
+        }
+
 
         .tickets_picture{
             max-width: 720px;
             width: 100%;
+            @include media(1024px){
+                max-width: 700px;
+                width: 100%;
+            }
 
+            @include media(768px){
+                max-width: 504px;
+                
+            }
+
+            @include media(700px){
+                max-width: 100%;
+                
+            }
             img{
                 width: 100%;
+                @include media(1024px){
+                    height: 440px;
+                }
+
+                @include media(768px){
+                    width: 444px;
+                    height: 340px;
+                }
+
+                @include media(700px){
+                    width: 100%;
+                }
+                @include media(420px){
+                    height:160px;
+                }
             }
 
 
@@ -852,6 +1670,10 @@ html{
         width: 100%;
         display: flex;
         justify-content: space-between;
+        @include media(1024px){
+            width: auto;
+            padding-right: 29px;
+        }
     }
     
     .ticket_subtitle{
@@ -871,7 +1693,9 @@ html{
     &_type{
         display: flex;
         flex-direction: column;
-
+        @include media(1024px){
+            display: none;
+        }
         .radio_group{
             display: flex;
             flex-direction: column;
@@ -959,13 +1783,27 @@ html{
         max-width: 175px;
         width: 100%;
         align-items: flex-end;
-        
+        @include media(1024px){
+            width: 175px;
+            align-items: flex-start;
+            .mb35{
+                margin-bottom: 19px;
+                @include media(768px){
+                    margin-bottom: 15px;
+                }
+            }
+        }
         
 
         .amount_item{
             max-width: 150px;
             width: 100%;
+            @include media(1024px){
+                max-width: 100%;
+            }
         }
+
+
         
         .item_title{
             font-family: Roboto;
@@ -975,6 +1813,9 @@ html{
             line-height: 26px;  
             color: #000;
             margin-bottom: 14px;
+            @include media(1024px){
+                margin-bottom: 9px;
+            }
         }
         
         .amount_count{
@@ -985,6 +1826,10 @@ html{
             padding-top: 5px;
             padding-bottom: 2px;
             margin-bottom: 11px;
+            @include media(1024px){
+                padding-right: 5px;
+                padding-left: 5px;
+            }
         }
         
         .amount_btn{
@@ -1015,6 +1860,10 @@ html{
             line-height: 37px;
             text-align: center;
             color: #000;
+
+            @include media(1024px){
+                font-size: 32px;
+            }
         }
         
         .number{
@@ -1047,8 +1896,14 @@ html{
             line-height: 33px;
             letter-spacing: 1.65px;
             color: #000;
-
             margin-bottom: 60px;
+            @include media(1024px){
+                column-gap: 15px;
+                margin-bottom: 68px;
+            }
+            @include media(768px){
+                margin-bottom: 40px;
+            }
         }
         
         .btn_buy{
@@ -1091,21 +1946,39 @@ html{
         background-attachment: fixed;
         background-position: center;
         padding-top: 400px;
+        @include media(768px){
+            padding-top: 300px;
+        }
     }
 }
 
 .contacts{
     padding-top: 75px;
     padding-bottom: 69px;
+    @include media(1024px){
+        padding-bottom: 60px;
+    }
+    @include media(768px){
+        padding-top: 49px;
+        padding-bottom: 67px;
+    }
 
     &_content{
         display: flex;
         justify-content: space-between;
-
+        @include media(1024px){
+            column-gap: 16px;
+        }
+        @include media(768px){
+            flex-direction: column;
+            row-gap: 26px;
+        }
         .content_txt{
             max-width: 282px;
             width: 100%;
-
+            @include media(1024px){
+                max-width: 274px;
+            }
             .contacts_subtitle{
                 font-family: Roboto;
                 font-style: normal;
@@ -1117,6 +1990,19 @@ html{
                 max-width: 240px;
                 width: 100%;
                 margin-bottom: 50px;
+                @include media(1024px){
+                    max-width: 185px;
+                    font-size: 24px;
+                    line-height: 28px;
+                    margin-bottom: 35px;
+                }
+
+                @include media(768px){
+                    font-size: 20px;
+                    line-height: 23px;
+                    max-width: 155px;
+                    margin-bottom: 40px;
+                }
             }
 
             .contact_item{
@@ -1128,6 +2014,16 @@ html{
                 line-height: 26px;
                 color: #000000;
                 margin-bottom: 25px;
+                @include media(1024px){
+                    font-size: 20px;
+                    line-height: 23px;
+                    margin-bottom: 15px;
+                }
+
+                @include media(768px){
+                    font-size: 18px;
+                    line-height: 21px;
+                }
             }
 
             .link_tel,.link_mail{
@@ -1155,38 +2051,98 @@ html{
 .footer{
     background-color: $bg-dark;
     padding-top: 75px;
-
+    @include media(1024px){
+        padding-top: 53px;
+    }
+    @include media(768px){
+        padding-top: 43px;
+    }
     &_container{
+        
+
         display: flex;
         justify-content: space-between;
         column-gap: 145px;
+        @include media(1024px){
+            column-gap: 30px;
+        }
+        @include media(510px){
+            flex-direction: column;
+        }
+        // @media screen and (max-width:1465px) {
+        //     
+        // }
 
+        
         .nav_footer{
             display: flex;
-            max-width: 366px;
+            // max-width: 366px;
+            justify-content: space-between;
+            
             width: 100%;
+            @include media(950px){
+                flex-direction: column;
+                align-items: center;
+                row-gap: 42px;
+            }
+            @include media(768px){
+                row-gap: 48px;
+            }
 
             .nav_list{
                 display: flex;
                 flex-wrap: wrap;
                 column-gap: 152px;
+                max-width: 370px;
+                width:100%;
+                @include media(1120px){
+                    column-gap: 135px;
+                    row-gap: 25px;
+                    padding-left: 11px;
+                    padding-top: 12px;
+                }
+                @include media(768px){
+                    padding-left: 3px;
+                    column-gap: 186px;
+                    row-gap: 18px;
+                }
+                li{
+                    width: 107px;
+                    @include media(1024px){
+                        width: 70px;
+                        font-size: 22px;
+                        line-height: 26px;
+                    }
+                    
+                }
             }
 
             .nav_link{
                 line-height: 50px;
                 transition: all 0.3s;
+                @include media(1120px){
+                    font-size: 22px;
+                    line-height: 26px;
+                }
+                @include media(768px){
+                    font-size: 18px;
+                }
             }
 
-            li{
-                width: 107px;
-            }
+            
         }
 
         .soc_wrap{
+            max-width: 340px;
             width: 100%;
             display: flex;
             justify-content: flex-end;
             align-items: flex-end;
+
+            @include media(768px){
+                max-width: 358px;
+                justify-content: flex-start;
+            }
 
             .soc_list{
                 display: flex;
@@ -1195,6 +2151,9 @@ html{
                 width:100%;
                 justify-content: space-between;
                 margin-bottom: 16px;
+                @include media(1024px){
+                    margin-bottom: 0;
+                }
             }
             
             .soc_link{
@@ -1243,7 +2202,32 @@ html{
 
         padding: 50px 0 50px;
 
+        @include media(1024px){
+            .nav_link{
+                font-size: 22px;    
+                line-height: 22px;
+
+                &:nth-child(2){
+                    padding-left: 33px;
+                    @include media(420px){
+                        display: none;
+                    }
+                }
+            }
+
+        }
+
+        @include media(768px){
+            padding: 40px 0 40px;
+        }
+
+        @include media(420px){
+            .footer_container{
+                flex-direction: row;
+            }
+        }
         span{
+            
             font-family: Roboto;
             font-style: normal;
             font-weight: 200;
@@ -1271,6 +2255,7 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 5;
     transition: all 0.5s;
 
     &_container{
@@ -1280,6 +2265,10 @@ html{
         background-color: white;
         padding:91px 0 91px;
         position: relative;
+
+        @include media(768px){
+            max-width: 590px;
+        }
 
         .btn_close{
             position: absolute;
@@ -1301,11 +2290,19 @@ html{
         justify-content: space-between;
         max-width: 970px;
         width: 100%;
+        @include media(768px){
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     .ticket_info{
         max-width: 400px;
         width: 100%;
+        @include media(768px){
+            max-width: 530px;
+            margin-bottom: 50px;
+        }
     }
 
     .logo_ticket{
@@ -1476,6 +2473,9 @@ html{
         background-image: url("./assets/img/name.png");
         background-repeat: no-repeat;
         background-position: 15px center;
+        @include media(768px){
+            max-width: 100%;
+        }
     }
 
     .ticket_mail{
@@ -1484,6 +2484,9 @@ html{
         background-image: url("./assets/img/email.png");
         background-repeat: no-repeat;
         background-position: 15px center;
+        @include media(768px){
+            max-width: 100%;
+        }
     }
 
     .ticket_phone{
@@ -1492,6 +2495,9 @@ html{
         background-image: url("./assets/img/tel.png");
         background-repeat: no-repeat;
         background-position: 15px center;
+        @include media(768px){
+            max-width: 100%;
+        }
     }
 
     .ticket_type{

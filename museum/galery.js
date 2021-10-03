@@ -21,11 +21,14 @@ const galery = document.querySelector(".picture_container");
 function setGalery(){
     shuffle(images_path);
     images_path.map((item)=>{
+        const pic_wrap = document.createElement('div'); 
+        pic_wrap.classList.add('picture');
         const img = document.createElement('img');
-        img.classList.add('picture');
+        // img.classList.add('picture');
         img.src = item;
         img.alt = `galery1`;
-        galery.append(img);
+        pic_wrap.append(img);
+        galery.append(pic_wrap);
     })
 }
 
