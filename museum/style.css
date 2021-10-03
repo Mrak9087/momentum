@@ -65,6 +65,9 @@ html {
   @media screen and (max-width: 768px) {
     .title_section {
       font-size: 40px; } }
+  @media screen and (max-width: 420px) {
+    .title_section {
+      font-size: 28px; } }
 
 .title_section_white {
   color: #FFFFFF; }
@@ -75,6 +78,12 @@ html {
 .title_underline {
   border-bottom: 3px solid #710707;
   padding-bottom: 27px; }
+  @media screen and (max-width: 420px) {
+    .title_underline {
+      padding-bottom: 20px; } }
+  @media screen and (max-width: 420px) {
+    .title_underline {
+      padding-bottom: 24px; } }
 
 .indent_bottom_title73 {
   margin-bottom: 75px; }
@@ -170,6 +179,10 @@ html {
     .header {
       padding-top: 38px;
       padding-bottom: 27px; } }
+  @media screen and (max-width: 420px) {
+    .header {
+      padding-top: 28px;
+      padding-bottom: 32px; } }
   .header_container {
     display: flex;
     flex-direction: row;
@@ -178,6 +191,9 @@ html {
     @media screen and (max-width: 768px) {
       .header_container {
         align-items: flex-start; } }
+    @media screen and (max-width: 420px) {
+      .header_container {
+        align-items: center; } }
   .header .burger_menu {
     display: none;
     width: 32px;
@@ -216,7 +232,7 @@ html {
     @media screen and (max-width: 1024px) {
       .header_nav {
         position: fixed;
-        left: -100%;
+        left: -200%;
         top: 130px;
         padding-top: 35px;
         padding-left: 55px;
@@ -250,6 +266,11 @@ html {
   @media screen and (max-width: 768px) {
     .logo {
       background-position-y: 5px; } }
+  @media screen and (max-width: 420px) {
+    .logo {
+      background-size: contain;
+      background-position-y: top;
+      padding-left: 54px; } }
   .logo_text {
     font-family: Forum;
     font-style: normal;
@@ -261,6 +282,10 @@ html {
     @media screen and (max-width: 768px) {
       .logo_text {
         line-height: 45px; } }
+    @media screen and (max-width: 420px) {
+      .logo_text {
+        font-size: 16px;
+        line-height: 18px; } }
   .logo:hover {
     cursor: pointer;
     filter: invert(57%) sepia(8%) saturate(1508%) hue-rotate(356deg) brightness(93%) contrast(82%); }
@@ -275,6 +300,10 @@ html {
       text-align: center;
       font-size: 40px;
       line-height: 60px; } }
+  @media screen and (max-width: 420px) {
+    .welcome_title {
+      font-size: 28px;
+      line-height: 40px; } }
   .welcome_text {
     position: relative;
     z-index: 3; }
@@ -323,6 +352,9 @@ html {
       .welcome_subtitle {
         font-size: 20px;
         line-height: 19px; } }
+    @media screen and (max-width: 420px) {
+      .welcome_subtitle {
+        font-size: 16px; } }
   .welcome_btn {
     outline: none;
     border: none;
@@ -395,6 +427,9 @@ html {
       @media screen and (max-width: 768px) {
         .welcome .slider_wrapper {
           padding-bottom: 100px; } }
+      @media screen and (max-width: 420px) {
+        .welcome .slider_wrapper {
+          padding-bottom: 80px; } }
     .welcome .slider_panel {
       background-color: #030303;
       position: absolute;
@@ -418,6 +453,9 @@ html {
           justify-content: center;
           padding-left: 0;
           padding-right: 0; } }
+      @media screen and (max-width: 420px) {
+        .welcome .slider_panel {
+          column-gap: 25px; } }
       .welcome .slider_panel .slide_count {
         display: flex;
         max-width: 76px;
@@ -434,6 +472,10 @@ html {
           .welcome .slider_panel .slide_count {
             max-width: 71px;
             font-size: 20px; } }
+        @media screen and (max-width: 420px) {
+          .welcome .slider_panel .slide_count {
+            max-width: 50px;
+            font-size: 16px; } }
       .welcome .slider_panel .slide_positions {
         display: flex;
         max-width: 180px;
@@ -448,6 +490,10 @@ html {
         @media screen and (max-width: 768px) {
           .welcome .slider_panel .slide_positions {
             padding: 44px 0 44px; } }
+        @media screen and (max-width: 420px) {
+          .welcome .slider_panel .slide_positions {
+            max-width: 75px;
+            padding: 37px 0 36px; } }
       .welcome .slider_panel .slide_position {
         width: 16px;
         height: 16px;
@@ -456,8 +502,18 @@ html {
           .welcome .slider_panel .slide_position {
             width: 12px;
             height: 12px; } }
+        @media screen and (max-width: 420px) {
+          .welcome .slider_panel .slide_position {
+            width: 7px;
+            height: 7px; } }
       .welcome .slider_panel .current_position {
         background-color: #9d8665; }
+      @media screen and (max-width: 420px) {
+        .welcome .slider_panel .slider_nav {
+          max-width: 55px;
+          width: 100%;
+          display: flex;
+          justify-content: space-between; } }
       .welcome .slider_panel .slide_btn {
         width: 40px;
         height: 40px;
@@ -466,12 +522,19 @@ html {
         background-color: #030303;
         cursor: pointer;
         background-repeat: no-repeat;
-        background-position: center center; }
+        background-position: center center;
+        background-size: contain; }
+        @media screen and (max-width: 420px) {
+          .welcome .slider_panel .slide_btn {
+            width: 20px; } }
       .welcome .slider_panel .btn_next {
         background-image: url("./assets/img/arrow.png"); }
       .welcome .slider_panel .btn_prev {
         background-image: url("./assets/img/arrow.png");
         transform: rotate(180deg); }
+        @media screen and (max-width: 420px) {
+          .welcome .slider_panel .btn_prev {
+            transform: rotate(180deg) translateY(-1px); } }
 
 .visiting_container {
   padding-bottom: 74px;
@@ -483,6 +546,10 @@ html {
     .visiting_container {
       padding-top: 50px;
       padding-bottom: 80px; } }
+  @media screen and (max-width: 420px) {
+    .visiting_container {
+      padding-top: 45px;
+      padding-bottom: 38px; } }
 
 .visiting .cards_container {
   display: flex;
@@ -537,6 +604,12 @@ html {
         font-size: 22px;
         line-height: 24px;
         padding-bottom: 11px; } }
+    @media screen and (max-width: 420px) {
+      .visiting .cards_container .card_title {
+        font-size: 18px;
+        line-height: 20px;
+        letter-spacing: 5px;
+        padding-bottom: 12px; } }
   .visiting .cards_container .card_title::after {
     content: "";
     position: absolute;
@@ -570,6 +643,10 @@ html {
       .visiting .cards_container .card_text_deg {
         font-size: 18px;
         line-height: 21px; } }
+    @media screen and (max-width: 420px) {
+      .visiting .cards_container .card_text_deg {
+        font-size: 16px;
+        line-height: 19px; } }
   .visiting .cards_container .card_text_info {
     font-family: Roboto;
     font-style: normal;
@@ -599,6 +676,10 @@ html {
       .explore_container {
         padding-top: 50px;
         padding-bottom: 37px; } }
+    @media screen and (max-width: 420px) {
+      .explore_container {
+        padding-top: 45px;
+        padding-bottom: 38px; } }
     .explore_container_text {
       max-width: 660px;
       width: 100%; }
@@ -666,6 +747,9 @@ html {
       @media screen and (max-width: 768px) {
         .explore_slider .card_cur {
           height: 100%; } }
+      @media screen and (max-width: 420px) {
+        .explore_slider .card_cur {
+          width: 60%; } }
     .explore_slider .spliter {
       min-height: 100%;
       min-width: 5px;
@@ -691,6 +775,16 @@ html {
         border-radius: 50%;
         background: transparent;
         transform: translate(-50%, -50%); }
+        @media screen and (max-width: 420px) {
+          .explore_slider .spliter::after {
+            width: 20px;
+            height: 20px;
+            border-width: 2px; } }
+      @media screen and (max-width: 420px) {
+        .explore_slider .spliter {
+          min-width: 2px;
+          left: 60%;
+          row-gap: 20px; } }
     .explore_slider_wrap {
       display: flex;
       position: relative; }
@@ -705,6 +799,10 @@ html {
     .video {
       padding-top: 48px;
       padding-bottom: 80px; } }
+  @media screen and (max-width: 420px) {
+    .video {
+      padding-top: 40px;
+      padding-bottom: 40px; } }
   .video_container {
     display: flex;
     flex-direction: column;
@@ -719,6 +817,9 @@ html {
     @media screen and (max-width: 768px) {
       .video_title_text {
         margin-bottom: 28px; } }
+    @media screen and (max-width: 420px) {
+      .video_title_text {
+        margin-bottom: 25px; } }
   .video_text {
     max-width: 720px;
     width: 100%;
@@ -739,6 +840,9 @@ html {
     @media screen and (max-width: 768px) {
       .video_wrapper {
         margin-bottom: 21px; } }
+    @media screen and (max-width: 420px) {
+      .video_wrapper {
+        margin-bottom: 40px; } }
     .video_wrapper .player {
       display: block;
       width: 100%; }
@@ -769,6 +873,15 @@ html {
           top: calc(50%);
           left: calc(50%);
           transform: translate(-50%, -85%); } }
+      @media screen and (max-width: 420px) {
+        .video_wrapper .btn_play_video {
+          width: 50px;
+          height: 50px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          top: calc(47%);
+          left: calc(50%);
+          transform: translate(-50%, -85%); } }
     .video_wrapper .video_control {
       display: flex;
       justify-content: space-between;
@@ -790,6 +903,11 @@ html {
           .video_wrapper .video_control_wrap {
             column-gap: 32px;
             padding: 14px 0 14px; } }
+        @media screen and (max-width: 420px) {
+          .video_wrapper .video_control_wrap {
+            column-gap: 27px;
+            justify-content: center;
+            padding: 21px 0 16px; } }
     .video_wrapper .btn_control {
       border: none;
       outline: none;
@@ -806,6 +924,10 @@ html {
         .video_wrapper .btn_control {
           width: 29px;
           height: 29px; } }
+      @media screen and (max-width: 768px) {
+        .video_wrapper .btn_control {
+          width: 18px;
+          height: 18px; } }
     .video_wrapper .btn_control_play {
       background-image: url("./assets/svg/play.svg");
       background-position: center center;
@@ -848,6 +970,10 @@ html {
       -webkit-appearance: none;
       cursor: pointer;
       background: #FFF; }
+      @media screen and (max-width: 420px) {
+        .video_wrapper .progress::-webkit-slider-thumb {
+          width: 10px;
+          height: 10px; } }
     .video_wrapper .video_progress {
       background: linear-gradient(to right, #710707 0%, #710707 53%, #fff 53%, #fff 100%);
       max-width: 930px;
@@ -873,6 +999,9 @@ html {
       @media screen and (max-width: 768px) {
         .video_wrapper .sound_progress {
           max-width: 67%; } }
+      @media screen and (max-width: 420px) {
+        .video_wrapper .sound_progress {
+          max-width: 54%; } }
     .video_wrapper .video_title_text {
       display: flex;
       justify-content: space-between; }
@@ -896,6 +1025,9 @@ html {
     @media screen and (max-width: 768px) {
       .video_slider {
         row-gap: 20px; } }
+    @media screen and (max-width: 420px) {
+      .video_slider {
+        row-gap: 40px; } }
     .video_slider_wrapper {
       display: flex;
       justify-content: space-between;
@@ -906,6 +1038,9 @@ html {
       @media screen and (max-width: 1024px) {
         .video_slider_wrapper {
           min-width: calc(354px * 5 + 20px * 4); } }
+      @media screen and (max-width: 1024px) {
+        .video_slider_wrapper {
+          min-width: calc(180px * 5 + 20px * 4); } }
       .video_slider_wrapper .video_card {
         max-width: 452px;
         width: 100%;
@@ -916,6 +1051,9 @@ html {
         @media screen and (max-width: 768px) {
           .video_slider_wrapper .video_card {
             max-width: 354px; } }
+        @media screen and (max-width: 420px) {
+          .video_slider_wrapper .video_card {
+            max-width: 180px; } }
         .video_slider_wrapper .video_card .video_slide {
           flex: 1; }
         .video_slider_wrapper .video_card iframe {
@@ -928,6 +1066,9 @@ html {
           @media screen and (max-width: 1024px) {
             .video_slider_wrapper .video_card iframe {
               height: 199px; } }
+          @media screen and (max-width: 420px) {
+            .video_slider_wrapper .video_card iframe {
+              height: 101px; } }
     .video_slider_nav {
       width: 100%;
       display: flex;
@@ -941,6 +1082,9 @@ html {
         @media screen and (max-width: 768px) {
           .video_slider_nav_wrapper {
             max-width: 190px; } }
+        @media screen and (max-width: 420px) {
+          .video_slider_nav_wrapper {
+            max-width: 175px; } }
         .video_slider_nav_wrapper .nav_btn {
           width: 10px;
           height: 12px;
@@ -950,6 +1094,10 @@ html {
           border: none;
           outline: none;
           cursor: pointer; }
+          @media screen and (max-width: 420px) {
+            .video_slider_nav_wrapper .nav_btn {
+              width: 8px;
+              height: 8px; } }
         .video_slider_nav_wrapper .nav_next {
           transform: rotate(180deg); }
         .video_slider_nav_wrapper .nav_position {
@@ -957,6 +1105,10 @@ html {
           height: 12px;
           border-radius: 500%;
           background-color: #999; }
+          @media screen and (max-width: 420px) {
+            .video_slider_nav_wrapper .nav_position {
+              width: 8px;
+              height: 8px; } }
         .video_slider_nav_wrapper .nav_cur {
           background-color: #333; }
 
@@ -974,6 +1126,9 @@ html {
   @media screen and (max-width: 768px) {
     .gallery {
       padding-top: 48px; } }
+  @media screen and (max-width: 420px) {
+    .gallery {
+      padding-top: 45px; } }
   .gallery .gallery_pictures {
     position: relative;
     max-height: 1960px;
@@ -984,6 +1139,9 @@ html {
     @media screen and (max-width: 768px) {
       .gallery .gallery_pictures {
         max-height: 1080px; } }
+    @media screen and (max-width: 420px) {
+      .gallery .gallery_pictures {
+        max-height: 633px; } }
   .gallery .picture_container {
     display: flex;
     flex-flow: column wrap;
@@ -996,13 +1154,21 @@ html {
       width: 0;
       order: 2; }
     .gallery .picture_container .picture {
-      max-width: 456px; }
+      max-width: 456px;
+      width: 100%; }
+      .gallery .picture_container .picture img {
+        width: 100%;
+        object-fit: cover; }
       @media screen and (max-width: 1465px) {
         .gallery .picture_container .picture {
           max-width: 304px; } }
       @media screen and (max-width: 999px) {
         .gallery .picture_container .picture {
-          max-width: 352px;
+          max-width: calc(100% / 2 - 24px);
+          width: 100%; } }
+      @media screen and (max-width: 420px) {
+        .gallery .picture_container .picture {
+          max-width: calc(100% / 2 - 12px);
           width: 100%; } }
     @media screen and (min-width: 1000px) {
       .gallery .picture_container .picture:nth-child(3n+1) {
@@ -1017,7 +1183,8 @@ html {
       .gallery .picture_container {
         max-width: 728px;
         column-gap: normal;
-        height: 4000px; }
+        height: 4000px;
+        margin: 0 auto; }
         .gallery .picture_container .picture:nth-child(2n+1) {
           order: 1; }
         .gallery .picture_container .picture:nth-child(2n) {
@@ -1027,6 +1194,9 @@ html {
     @media screen and (max-width: 768px) {
       .gallery .picture_container {
         column-gap: 12px; } }
+    @media screen and (max-width: 420px) {
+      .gallery .picture_container {
+        max-width: 380px; } }
     @media screen and (max-width: 1465px) {
       .gallery .picture_container {
         align-items: center; } }
@@ -1044,9 +1214,12 @@ html {
   @media screen and (max-width: 1024px) {
     .tickets {
       padding-top: 70px; } }
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 768px) {
     .tickets {
       padding-top: 48px; } }
+  @media screen and (max-width: 420px) {
+    .tickets {
+      padding-top: 45px; } }
   .tickets_container {
     padding-bottom: 75px; }
     @media screen and (max-width: 1024px) {
@@ -1063,6 +1236,10 @@ html {
       .tickets_content {
         column-gap: 0;
         justify-content: flex-start; } }
+    @media screen and (max-width: 700px) {
+      .tickets_content {
+        flex-direction: column;
+        align-items: center; } }
     .tickets_content .tickets_picture {
       max-width: 720px;
       width: 100%; }
@@ -1073,6 +1250,9 @@ html {
       @media screen and (max-width: 768px) {
         .tickets_content .tickets_picture {
           max-width: 504px; } }
+      @media screen and (max-width: 700px) {
+        .tickets_content .tickets_picture {
+          max-width: 100%; } }
       .tickets_content .tickets_picture img {
         width: 100%; }
         @media screen and (max-width: 1024px) {
@@ -1082,6 +1262,12 @@ html {
           .tickets_content .tickets_picture img {
             width: 444px;
             height: 340px; } }
+        @media screen and (max-width: 700px) {
+          .tickets_content .tickets_picture img {
+            width: 100%; } }
+        @media screen and (max-width: 420px) {
+          .tickets_content .tickets_picture img {
+            height: 160px; } }
   .tickets_type_amount {
     max-width: 660px;
     width: 100%;
@@ -1389,6 +1575,9 @@ html {
     @media screen and (max-width: 1024px) {
       .footer_container {
         column-gap: 30px; } }
+    @media screen and (max-width: 510px) {
+      .footer_container {
+        flex-direction: column; } }
     .footer_container .nav_footer {
       display: flex;
       justify-content: space-between;
@@ -1488,9 +1677,15 @@ html {
         line-height: 22px; }
         .footer .footer_info .nav_link:nth-child(2) {
           padding-left: 33px; } }
+    @media screen and (max-width: 1024px) and (max-width: 420px) {
+      .footer .footer_info .nav_link:nth-child(2) {
+        display: none; } }
     @media screen and (max-width: 768px) {
       .footer .footer_info {
         padding: 40px 0 40px; } }
+    @media screen and (max-width: 420px) {
+      .footer .footer_info .footer_container {
+        flex-direction: row; } }
     .footer .footer_info span {
       font-family: Roboto;
       font-style: normal;

@@ -86,6 +86,10 @@ html{
     @include media(768px){
         font-size: 40px;
     }
+
+    @include media(420px){
+        font-size: 28px;
+    }
     
 }
 
@@ -100,6 +104,12 @@ html{
 .title_underline{
     border-bottom: 3px solid $dark-red;
     padding-bottom: 27px;
+    @include media(420px){
+        padding-bottom: 20px;
+    }
+    @include media(420px){
+        padding-bottom: 24px;
+    }
 }
 
 .indent_bottom_title73{
@@ -220,10 +230,12 @@ html{
     @include media(768px){
         padding-top: 38px;
         padding-bottom: 27px;
-
-        
     }
 
+    @include media(420px){
+        padding-top: 28px;
+        padding-bottom: 32px;
+    }
     
 
     &_container{
@@ -233,6 +245,10 @@ html{
         align-items: center;
         @include media(768px){
             align-items: flex-start;
+        }
+
+        @include media(420px){
+            align-items: center;
         }
 
     }
@@ -287,7 +303,7 @@ html{
         width: 100%;
         @media screen and (max-width:1024px) {
             position: fixed;
-            left: -100%; 
+            left: -200%; 
             top: 130px;
             padding-top: 35px;
             padding-left: 55px;
@@ -337,8 +353,14 @@ html{
     
     transition: all 0.3s;
 
+
     @include media(768px){
         background-position-y: 5px;
+    }
+    @include media(420px){
+        background-size: contain;
+        background-position-y: top;
+        padding-left: 54px;
     }
     
     &_text{
@@ -352,6 +374,11 @@ html{
         @include media(768px){
             line-height: 45px;
             
+        }
+
+        @include media(420px){
+            font-size: 16px;
+            line-height: 18px;
         }
     }
 
@@ -373,6 +400,10 @@ html{
             text-align: center;
             font-size: 40px;
             line-height: 60px;
+        }
+        @include media(420px){
+            font-size: 28px;
+            line-height: 40px;
         }
     }
 
@@ -406,6 +437,7 @@ html{
             padding-top: 0;
             padding-bottom: 0;
         }
+        
     }
 
     &_subtitle{
@@ -429,6 +461,9 @@ html{
         @include media(768px){
             font-size: 20px;
             line-height: 19px;
+        }
+        @include media(420px){
+            font-size: 16px;
         }
     }
 
@@ -521,6 +556,9 @@ html{
             @include media(768px){
                 padding-bottom: 100px;
             }
+            @include media(420px){
+                padding-bottom: 80px;
+            }
             
         }
 
@@ -550,6 +588,10 @@ html{
                 padding-left: 0;
                 padding-right: 0;
             }
+
+            @include media(420px){
+                column-gap: 25px;
+            }
             // padding:40px ;
 
             .slide_count{
@@ -570,6 +612,10 @@ html{
                     max-width: 71px;
                     font-size: 20px;
                 }
+                @include media(420px){
+                    max-width: 50px;
+                    font-size: 16px;
+                }
             }
 
             .slide_positions{
@@ -587,6 +633,12 @@ html{
                 @include media(768px){
                     padding: 44px 0 44px;
                 }
+
+                @include media(420px){
+                    max-width: 75px;
+                    padding: 37px 0 36px;
+                }
+                
             }
 
             .slide_position{
@@ -597,11 +649,25 @@ html{
                     width: 12px;
                     height: 12px;
                 }
+                @include media(420px){
+                    width: 7px;
+                    height: 7px;
+                }
 
             }
 
             .current_position{
                 background-color: $font-gold;
+            }
+
+            .slider_nav{
+                @include media(420px){
+                    max-width: 55px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                }
+                
             }
 
             .slide_btn{
@@ -613,6 +679,10 @@ html{
                 cursor: pointer;
                 background-repeat: no-repeat;
                 background-position: center center;
+                background-size: contain;
+                @include media(420px){
+                    width: 20px;
+                }
                 
             }
 
@@ -625,7 +695,10 @@ html{
             .btn_prev{
                 background-image: url("./assets/img/arrow.png");
                 
-                transform: rotate(180deg);
+                transform: rotate(180deg) ;
+                @include media(420px){
+                    transform: rotate(180deg) translateY(-1px);
+                }
             }
         }
     }
@@ -642,6 +715,10 @@ html{
         @include media(768px){
             padding-top: 50px;
             padding-bottom: 80px;
+        }
+        @include media(420px){
+            padding-top: 45px;
+            padding-bottom: 38px;
         }
     }
 
@@ -706,6 +783,12 @@ html{
                 line-height: 24px;
                 padding-bottom: 11px;
             }
+            @include media(420px){
+                font-size: 18px;
+                line-height: 20px;
+                letter-spacing: 5px;
+                padding-bottom: 12px;
+            }
         }
         
         .card_title::after{
@@ -748,6 +831,10 @@ html{
                 font-size: 18px;
                 line-height: 21px;
             }
+            @include media(420px){
+                font-size: 16px;
+                line-height: 19px;
+            }
         }
         
         .card_text_info{
@@ -783,6 +870,11 @@ html{
         @include media(768px){
             padding-top: 50px;
             padding-bottom: 37px;
+        }
+
+        @include media(420px){
+            padding-top: 45px;
+            padding-bottom: 38px;
         }
         &_text{
             max-width: 660px;
@@ -876,6 +968,9 @@ html{
             @include media(768px){
                 height: 100%;
             }
+            @include media(420px){
+                width: 60%;
+            }
         }
 
         .spliter{
@@ -893,10 +988,7 @@ html{
             .line{
                 flex: 1;
                 background-color: #fff;
-            }
-
-
-            
+            }            
             z-index: 3;
             &::after{
                 content: '';
@@ -908,6 +1000,17 @@ html{
                 border-radius: 50%;
                 background: transparent;
                 transform: translate(-50%, -50%);
+                @include media(420px){
+                    width: 20px;
+                    height: 20px;
+                    border-width: 2px;
+                }
+            }
+
+            @include media(420px){
+                min-width: 2px;
+                left: 60%;
+                row-gap: 20px;
             }
         }
 
@@ -931,6 +1034,11 @@ html{
         padding-bottom: 80px;
     }
 
+    @include media(420px){
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
     &_container{
         display: flex;
         flex-direction: column;
@@ -947,6 +1055,9 @@ html{
 
         @include media(768px){
             margin-bottom: 28px;
+        }
+        @include media(420px){
+            margin-bottom: 25px;
         }
     }
 
@@ -972,6 +1083,9 @@ html{
         margin-bottom: 40px;
         @include media(768px){
             margin-bottom: 21px;
+        }
+        @include media(420px){
+            margin-bottom: 40px;
         }
 
         .player{
@@ -1008,6 +1122,15 @@ html{
                 left: calc(50%);
                 transform: translate(-50%, -85%);
             }
+            @include media(420px){
+                width: 50px;
+                height: 50px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                top: calc(47%);
+                left: calc(50%);
+                transform: translate(-50%, -85%);
+            }
         }
 
         .video_control{
@@ -1033,6 +1156,12 @@ html{
                     padding: 14px 0 14px;
                 }
 
+                @include media(420px){
+                    column-gap: 27px;
+                    justify-content: center;
+                    padding: 21px 0 16px;
+                }
+
             }
            
         }
@@ -1052,7 +1181,10 @@ html{
             @include media(768px){
                 width: 29px;
                 height: 29px;
-                
+            }
+            @include media(768px){
+                width: 18px;
+                height: 18px;
             }
         }
         
@@ -1111,6 +1243,10 @@ html{
             -webkit-appearance: none;
             cursor: pointer;
             background: #FFF;
+            @include media(420px){
+                width: 10px;
+                height: 10px;
+            }
         }
         
         .video_progress{
@@ -1144,6 +1280,9 @@ html{
                 max-width: 67%;                
             }
 
+            @include media(420px){
+                max-width: 54%;                
+            }
         }
         
         .video_title_text{
@@ -1177,6 +1316,10 @@ html{
             row-gap: 20px;
         }
 
+        @include media(420px){
+            row-gap: 40px;
+        }
+
         &_wrapper{
             display: flex;
             justify-content: space-between;
@@ -1188,6 +1331,10 @@ html{
                 min-width: calc(354px * 5 + 20px * 4);
             }
 
+            @include media(1024px){
+                min-width: calc(180px * 5 + 20px * 4);
+            }
+
             .video_card{
                 max-width: 452px;
                 width: 100%;
@@ -1195,14 +1342,18 @@ html{
 
                 @include media(1024px){
                     max-width: 300px;
-
                 }
                 @include media(768px){
                     max-width: 354px;
-
+                }
+                @include media(420px){
+                    max-width: 180px;
                 }
                 .video_slide{
                     flex: 1;
+                    @include media(420px){
+                        // height: ;
+                    }
                 }
 
                 iframe{
@@ -1215,6 +1366,10 @@ html{
 
                     @include media(1024px){
                         height: 199px;
+                    }
+
+                    @include media(420px){
+                        height: 101px;
                     }
                 }
             }
@@ -1236,6 +1391,10 @@ html{
                     max-width: 190px;
                 }
 
+                @include media(420px){
+                    max-width:175px;
+                }
+
                 .nav_btn{
                     width: 10px;
                     height: 12px;
@@ -1245,6 +1404,10 @@ html{
                     border: none;
                     outline: none;
                     cursor: pointer;
+                    @include media(420px){
+                        width: 8px;
+                        height: 8px;
+                    }
                 }
 
                 .nav_next{
@@ -1256,6 +1419,10 @@ html{
                     height: 12px;
                     border-radius: 500%;
                     background-color: #999;
+                    @include media(420px){
+                        width: 8px;
+                        height: 8px;
+                    }
                 }
 
                 .nav_cur{
@@ -1286,6 +1453,10 @@ html{
         padding-top: 48px;
     }
 
+    @include media(420px){
+        padding-top: 45px;
+    }
+
     .gallery_pictures{
         position: relative;
         max-height: 1960px;
@@ -1295,6 +1466,9 @@ html{
         }
         @include media(768px){
             max-height: 1080px;
+        }
+        @include media(420px){
+            max-height: 633px;
         }
     }
 
@@ -1326,12 +1500,24 @@ html{
 
         .picture{
             max-width: 456px;
+            width: 100%;
+            img{
+                width: 100%;
+                object-fit: cover;
+            }
             @include media(1465px){
                 max-width: 304px;
             }
             @include media(999px){
-                max-width: 352px;
+                // max-width: 352px;
+                max-width: calc(100% / 2 - 24px);
                 width: 100%;
+                
+            }
+            @include media(420px){
+                max-width: calc(100% / 2 - 12px);
+                width: 100%;
+                
             }
         }
 
@@ -1349,6 +1535,7 @@ html{
             max-width: 728px;
             column-gap: normal;
             height: 4000px;
+            margin: 0 auto;
             
             .picture:nth-child(2n+1) { order: 1; };
             .picture:nth-child(2n) { order: 2; };
@@ -1360,6 +1547,13 @@ html{
 
         @include media(768px){
             column-gap: 12px;
+        }
+
+        @include media(420px){
+            // justify-content: space-between;
+            // align-content: space-between;
+            // column-gap: normal;
+            max-width: 380px;
         }
         
 
@@ -1394,9 +1588,14 @@ html{
         padding-top: 70px;
     }
 
-    @include media(1024px){
+    @include media(768px){
         padding-top: 48px;
     }
+
+    @include media(420px){
+        padding-top: 45px;
+    }
+
     
     &_container{
         padding-bottom: 75px;
@@ -1415,10 +1614,16 @@ html{
         display: flex;
         justify-content: space-between;
         column-gap: 20px;
+
         @include media(768px){
             column-gap: 0;
             justify-content: flex-start;
         }
+        @include media(700px){
+            flex-direction: column;
+            align-items: center;
+        }
+
 
         .tickets_picture{
             max-width: 720px;
@@ -1432,6 +1637,11 @@ html{
                 max-width: 504px;
                 
             }
+
+            @include media(700px){
+                max-width: 100%;
+                
+            }
             img{
                 width: 100%;
                 @include media(1024px){
@@ -1441,6 +1651,13 @@ html{
                 @include media(768px){
                     width: 444px;
                     height: 340px;
+                }
+
+                @include media(700px){
+                    width: 100%;
+                }
+                @include media(420px){
+                    height:160px;
                 }
             }
 
@@ -1849,6 +2066,9 @@ html{
         @include media(1024px){
             column-gap: 30px;
         }
+        @include media(510px){
+            flex-direction: column;
+        }
         // @media screen and (max-width:1465px) {
         //     
         // }
@@ -1989,6 +2209,9 @@ html{
 
                 &:nth-child(2){
                     padding-left: 33px;
+                    @include media(420px){
+                        display: none;
+                    }
                 }
             }
 
@@ -1998,6 +2221,11 @@ html{
             padding: 40px 0 40px;
         }
 
+        @include media(420px){
+            .footer_container{
+                flex-direction: row;
+            }
+        }
         span{
             
             font-family: Roboto;
