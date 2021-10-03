@@ -139,6 +139,9 @@ html{
     @include media(768px){
         margin-bottom: 40px;
     }
+    @include media(420px){
+        margin-bottom: 20px;
+    }
 }
 
 .mb39{
@@ -148,6 +151,9 @@ html{
     }
     @include media(768px){
         margin-bottom: 28px;
+    }
+    @include media(420px){
+        margin-bottom: 35px;
     }
 }
 
@@ -174,13 +180,7 @@ html{
     margin-bottom: 18px;
 }
 
-.logo_foot{
-    padding-top: 10px;
-    background-position-y: 7px;
-    @include media(768px){
-        padding-top: 0;
-    }
-}
+
 
 .nav_link{
     text-decoration: none;
@@ -1642,6 +1642,10 @@ html{
                 max-width: 100%;
                 
             }
+
+            @include media(420px){
+                margin-bottom: 36px;
+            }
             img{
                 width: 100%;
                 @include media(1024px){
@@ -1674,6 +1678,10 @@ html{
             width: auto;
             padding-right: 29px;
         }
+        @include media(420px){
+            
+            padding-right: 0;
+        }
     }
     
     .ticket_subtitle{
@@ -1683,11 +1691,19 @@ html{
         font-size: 28px;
         line-height: 33px;
         color: $bg-dark;
+        @include media(420px){
+            font-size: 16px;
+            line-height: 19px;
+        }
     }
 
     .amount_title{
         display: flex;
         justify-content: flex-end;
+        @include media(420px){
+            width: 100%;
+            justify-content: center;
+        }
     }
 
     &_type{
@@ -1793,6 +1809,10 @@ html{
                 }
             }
         }
+
+        @include media(420px){
+            align-items: center;
+        }
         
 
         .amount_item{
@@ -1816,6 +1836,11 @@ html{
             @include media(1024px){
                 margin-bottom: 9px;
             }
+            @include media(420px){
+                font-size: 16px;
+                line-height: 19px;
+                margin-bottom: 15px;
+            }
         }
         
         .amount_count{
@@ -1829,6 +1854,9 @@ html{
             @include media(1024px){
                 padding-right: 5px;
                 padding-left: 5px;
+            }
+            @include media(420px){
+                margin-bottom: 5px;
             }
         }
         
@@ -1904,6 +1932,13 @@ html{
             @include media(768px){
                 margin-bottom: 40px;
             }
+
+            @include media(420px){
+                font-size: 16px;
+                line-height: 19px;
+                letter-spacing: 0;
+                column-gap: 5px;
+            }
         }
         
         .btn_buy{
@@ -1923,6 +1958,11 @@ html{
             letter-spacing: 2px;
         
             color: #fff;
+
+            @include media(420px){
+                font-size: 16px;
+                
+            }
 
             &:hover{
                 color: $bg-dark;
@@ -1961,6 +2001,10 @@ html{
     @include media(768px){
         padding-top: 49px;
         padding-bottom: 67px;
+    }
+    @include media(420px){
+        padding-top: 45px;
+        padding-bottom: 37px;
     }
 
     &_content{
@@ -2003,6 +2047,12 @@ html{
                     max-width: 155px;
                     margin-bottom: 40px;
                 }
+
+                @include media(420px){
+                    font-size: 16px;
+                    line-height: 19px;
+                    max-width: 135px;
+                }
             }
 
             .contact_item{
@@ -2023,6 +2073,11 @@ html{
                 @include media(768px){
                     font-size: 18px;
                     line-height: 21px;
+                }
+
+                @include media(420px){
+                    font-size: 16px;
+                    line-height: 19px;
                 }
             }
 
@@ -2057,6 +2112,25 @@ html{
     @include media(768px){
         padding-top: 43px;
     }
+
+    @include media(420px){
+        padding-top: 40px;
+        background-size: 29px;
+    }
+
+    .logo_foot{
+        padding-top: 10px;
+        background-position-y: 7px;
+        @include media(768px){
+            padding-top: 0;
+        }
+        @include media(420px){
+            padding-left: 49px;
+            background-position-y: 0;
+        }
+        
+    }
+
     &_container{
         
 
@@ -2069,6 +2143,10 @@ html{
         @include media(510px){
             flex-direction: column;
         }
+        @include media(420px){
+            row-gap: 26px;
+        }
+
         // @media screen and (max-width:1465px) {
         //     
         // }
@@ -2088,6 +2166,9 @@ html{
             @include media(768px){
                 row-gap: 48px;
             }
+            @include media(420px){
+                row-gap: 38px;
+            }
 
             .nav_list{
                 display: flex;
@@ -2106,6 +2187,13 @@ html{
                     column-gap: 186px;
                     row-gap: 18px;
                 }
+
+                @include media(420px){
+                    column-gap: 82px;
+                    padding-left: 0;
+                    max-width: 380px;
+                    row-gap: 22px;
+                }
                 li{
                     width: 107px;
                     @include media(1024px){
@@ -2113,7 +2201,24 @@ html{
                         font-size: 22px;
                         line-height: 26px;
                     }
-                    
+                    &:nth-child(1){
+                        order: 0;
+                    }
+                    &:nth-child(2){
+                        order: 4;
+                    }
+                    &:nth-child(3){
+                        order: 3;
+                    }
+                    &:nth-child(4){
+                        order: 2;
+                    }
+                    &:nth-child(5){
+                        order: 1;
+                    }
+                    &:nth-child(6){
+                        order: 5;
+                    }
                 }
             }
 
@@ -2126,6 +2231,10 @@ html{
                 }
                 @include media(768px){
                     font-size: 18px;
+                }
+                @include media(420px){
+                    font-size: 16px;
+                    line-height: 19px;
                 }
             }
 
@@ -2153,6 +2262,11 @@ html{
                 margin-bottom: 16px;
                 @include media(1024px){
                     margin-bottom: 0;
+                }
+                @include media(420px){
+                    justify-content: center;
+                    max-width: 100%;
+                    column-gap: 5px;
                 }
             }
             
@@ -2207,6 +2321,9 @@ html{
                 font-size: 22px;    
                 line-height: 22px;
 
+                @include media(420px){
+                    font-size: 16px;
+                }
                 &:nth-child(2){
                     padding-left: 33px;
                     @include media(420px){
@@ -2214,7 +2331,6 @@ html{
                     }
                 }
             }
-
         }
 
         @include media(768px){
@@ -2238,7 +2354,9 @@ html{
             letter-spacing: 2px;
 
             color: #FFFFFF;
-
+            @include media(420px){
+                font-size: 16px;
+            }
 
         }
     }
