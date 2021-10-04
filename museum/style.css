@@ -225,10 +225,10 @@ html {
       height: 2px;
       transition: all 0.3s ease 0s; }
     .header .burger_menu.active .tp {
-      transform: rotate(-45deg) translate(-12px, 0px);
+      transform: rotate(-45deg) translate(-5px, 7px);
       width: 30px; }
     .header .burger_menu.active .bt {
-      transform: rotate(45deg) translate(-10px, 0px);
+      transform: rotate(45deg) translate(-6px, -7px);
       width: 30px; }
     .header .burger_menu.active .ct {
       opacity: 0; }
@@ -242,7 +242,6 @@ html {
         top: 100%;
         padding-top: 35px;
         padding-left: 55px;
-        padding-bottom: 90%;
         width: 297px;
         justify-content: space-around;
         background-color: #030303;
