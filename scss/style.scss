@@ -223,7 +223,7 @@ html{
     @include media(1024px){
         padding-top: 49px;
         padding-bottom: 48px;
-
+        position: relative;
         
     }
 
@@ -282,12 +282,12 @@ html{
 
         &.active{
             .tp{
-                transform: rotate(-45deg) translate(-15px, 10px);
+                transform: rotate(-45deg) translate(-12px, 0px);
                 width: 30px;
             }
 
             .bt{
-                transform: rotate(45deg) translate(-10px, -5px);
+                transform: rotate(45deg) translate(-10px, 0px);
                 width: 30px;
             }
             
@@ -302,11 +302,12 @@ html{
         max-width: 775px;
         width: 100%;
         @media screen and (max-width:1024px) {
-            position: fixed;
+            position: absolute;
             left: -200%; 
-            top: 130px;
+            top: 100%;
             padding-top: 35px;
             padding-left: 55px;
+            padding-bottom: 90%;
             width: 297px;
             // height: 100%;
             justify-content: space-around ;
@@ -319,15 +320,62 @@ html{
             .nav_list{
                 flex-direction: column;
                 row-gap: 25px;
-
-                li{
+                
+                
+                .nav_link{
+                    display: block;
                     position: relative;
+                    max-width: 122px;
+                    width: 100%;
                     &::after{
                         content: ">";
                         position: absolute;
-                        right: 80px;
+                        right: 0;
                         color: white;
                     }
+                }
+            }
+        }
+
+        @include media(768px){
+            max-width: 100%;
+            width: 100%;
+            padding-bottom: 0;
+            padding-left: 0;
+            .nav_list{
+                max-width: 658px;
+                width: 100%;
+                margin: 0 auto;
+            }
+        }
+        
+        .sub_nav{
+            display: none;
+            
+
+            @include media(768px){
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                row-gap: 24px;
+                padding-bottom: 24px;
+            }
+            .pictures{
+                max-width: 658px;
+                width: 100%;
+                margin: 0 auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                row-gap: 20px;
+                padding-bottom: 35px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+                img {
+                    width: 100%;
+                }
+                @include media(659px){
+                    max-width: 310px;
+                    padding-bottom: 20px;
                 }
             }
         }
@@ -336,6 +384,13 @@ html{
             display: flex;
             width: 100%;
             justify-content: space-between;
+
+            @include media(768px){
+                margin-bottom: 35px;
+            }
+            @include media(659px){
+                max-width: 310px;
+            }
             
             li{
                 list-style: none;
@@ -963,7 +1018,7 @@ html{
             left: 0;
             /* right: 0; */
             overflow-x: hidden;
-            width: 441px;
+            width: 60%;//441px;
             z-index: 2;
             @include media(768px){
                 height: 100%;
@@ -977,7 +1032,7 @@ html{
             min-height: 100%;
             min-width: 5px;
             position: absolute;
-            left: 441px;
+            left: 60%;//441px;
             transform: translateX(-50%);
             // background-color: #fff;
             display: flex;
@@ -1149,10 +1204,10 @@ html{
                 align-items: center;
                 @include media(1024px){
                     justify-content: center;
-                    column-gap: 14px;
+                    column-gap: 1.5%;//14px;
                 }
                 @include media(768px){
-                    column-gap: 32px;
+                    column-gap: 4.5%;//32px;
                     padding: 14px 0 14px;
                 }
 
@@ -1182,7 +1237,7 @@ html{
                 width: 29px;
                 height: 29px;
             }
-            @include media(768px){
+            @include media(420px){
                 width: 18px;
                 height: 18px;
             }
@@ -1243,6 +1298,10 @@ html{
             -webkit-appearance: none;
             cursor: pointer;
             background: #FFF;
+            @include media(768px){
+                width: 13px;
+                height: 13px;
+            }
             @include media(420px){
                 width: 10px;
                 height: 10px;
@@ -1327,11 +1386,11 @@ html{
             @include media(1024px){
                 min-width: calc(300px * 5 + 42px * 4);
             }
-            @include media(1024px){
+            @include media(768px){
                 min-width: calc(354px * 5 + 20px * 4);
             }
 
-            @include media(1024px){
+            @include media(420px){
                 min-width: calc(180px * 5 + 20px * 4);
             }
 
@@ -1364,7 +1423,7 @@ html{
                         outline: none;
                     }
 
-                    @include media(1024px){
+                    @include media(768px){
                         height: 199px;
                     }
 
@@ -1981,7 +2040,7 @@ html{
     }
     
     .paralax{
-        background-image: url("./assets/img/parallax.jpg");
+        background-image: url("./assets/img/parallax1.jpg");
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
@@ -2253,60 +2312,61 @@ html{
                 justify-content: flex-start;
             }
 
-            .soc_list{
-                display: flex;
-                list-style: none;
-                max-width: 336px;
-                width:100%;
-                justify-content: space-between;
-                margin-bottom: 16px;
-                @include media(1024px){
-                    margin-bottom: 0;
-                }
-                @include media(420px){
-                    justify-content: center;
-                    max-width: 100%;
-                    column-gap: 5px;
-                }
-            }
+            // .soc_list{
+            //     display: flex;
+            //     list-style: none;
+            //     max-width: 336px;
+            //     width:100%;
+            //     justify-content: space-between;
+            //     margin-bottom: 16px;
+            //     @include media(1024px){
+            //         margin-bottom: 0;
+            //     }
+            //     @include media(420px){
+            //         justify-content: center;
+            //         max-width: 100%;
+            //         column-gap: 5px;
+            //     }
+            //     .soc_link{
+            //         display: block;
+            //         width: 48px;
+            //         height: 48px;
+            //         cursor: pointer;
+            //         transition: all 0.5s ease;
+            //     }
+                
+            //     .soc_link:hover{
+            //         cursor: pointer;
+            //         filter:invert(57%) sepia(8%) saturate(1508%) hue-rotate(356deg) brightness(93%) contrast(82%)
+            //     }
+                
+            //     .youtube{
+            //         background-image: url("./assets/svg/Youtube.svg");
+            //         background-repeat: no-repeat;
+            //     }
+                
+            //     .instagram{
+            //         background-image: url("./assets/svg/Instagram.svg");
+            //         background-repeat: no-repeat;
+            //     }
+                
+            //     .facebook{
+            //         background-image: url("./assets/svg/Facebook.svg");
+            //         background-repeat: no-repeat;
+            //     }
+                
+            //     .twitter{
+            //         background-image: url("./assets/svg/Twitter.svg");
+            //         background-repeat: no-repeat;
+            //     }
+                
+            //     .pinterest{
+            //         background-image: url("./assets/svg/Pinterest.svg");
+            //         background-repeat: no-repeat;
+            //     }
+            // }
             
-            .soc_link{
-                display: block;
-                width: 48px;
-                height: 48px;
-                cursor: pointer;
-                transition: all 0.5s ease;
-            }
             
-            .soc_link:hover{
-                cursor: pointer;
-                filter:invert(57%) sepia(8%) saturate(1508%) hue-rotate(356deg) brightness(93%) contrast(82%)
-            }
-            
-            .youtube{
-                background-image: url("./assets/svg/Youtube.svg");
-                background-repeat: no-repeat;
-            }
-            
-            .instagram{
-                background-image: url("./assets/svg/Instagram.svg");
-                background-repeat: no-repeat;
-            }
-            
-            .facebook{
-                background-image: url("./assets/svg/Facebook.svg");
-                background-repeat: no-repeat;
-            }
-            
-            .twitter{
-                background-image: url("./assets/svg/Twitter.svg");
-                background-repeat: no-repeat;
-            }
-            
-            .pinterest{
-                background-image: url("./assets/svg/Pinterest.svg");
-                background-repeat: no-repeat;
-            }
         }
         
     }
@@ -2362,6 +2422,60 @@ html{
     }
 }
 
+.soc_list{
+    display: flex;
+    list-style: none;
+    max-width: 336px;
+    width:100%;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    @include media(1024px){
+        margin-bottom: 0;
+    }
+    @include media(420px){
+        justify-content: center;
+        max-width: 100%;
+        column-gap: 5px;
+    }
+    .soc_link{
+        display: block;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        transition: all 0.5s ease;
+    }
+    
+    .soc_link:hover{
+        cursor: pointer;
+        filter:invert(57%) sepia(8%) saturate(1508%) hue-rotate(356deg) brightness(93%) contrast(82%)
+    }
+    
+    .youtube{
+        background-image: url("./assets/svg/Youtube.svg");
+        background-repeat: no-repeat;
+    }
+    
+    .instagram{
+        background-image: url("./assets/svg/Instagram.svg");
+        background-repeat: no-repeat;
+    }
+    
+    .facebook{
+        background-image: url("./assets/svg/Facebook.svg");
+        background-repeat: no-repeat;
+    }
+    
+    .twitter{
+        background-image: url("./assets/svg/Twitter.svg");
+        background-repeat: no-repeat;
+    }
+    
+    .pinterest{
+        background-image: url("./assets/svg/Pinterest.svg");
+        background-repeat: no-repeat;
+    }
+}
+
 .buy{
     
     position: fixed;
@@ -2386,6 +2500,10 @@ html{
 
         @include media(768px){
             max-width: 590px;
+        }
+
+        @include media(590px){
+            padding: 30px 30px;
         }
 
         .btn_close{
@@ -2458,6 +2576,9 @@ html{
         width: 100%;
         display:flex;
         justify-content: space-between;
+        @include media(590px){
+            flex-direction: column;
+        }
     }
 
     
@@ -2469,6 +2590,9 @@ html{
         background-image: url("./assets/img/date.png");
         background-repeat: no-repeat;
         background-position: 15px center;
+        @include media(590px){
+            max-width: 100%;
+        }
 
         &::after{
             content: "";
@@ -2511,6 +2635,9 @@ html{
         background-image: url("./assets/img/time.png");
         background-repeat: no-repeat;
         background-position: 15px center;
+        @include media(590px){
+            max-width: 100%;
+        }
         &::after{
             content: "";
             position: absolute;
@@ -2709,7 +2836,9 @@ html{
         max-width: 530px;
         width: 100%;
         padding: 25px 30px;
-
+        @include media(420px){
+            padding: 25px 19px;
+        }
         .pay_overview{
             display: flex;
             justify-content: space-between;
@@ -2857,6 +2986,12 @@ html{
             position: relative;
             padding-bottom: 30px;
             margin-bottom: 26px;
+            @include media(590px){
+                display: flex;
+                align-items: center;
+                row-gap: 25px;
+                flex-direction: column;
+            }
         }
 
         .card{
@@ -2957,6 +3092,9 @@ html{
             padding-top: 25px;
             padding-bottom: 15px;
             z-index: 1;
+            @include media(590px){
+                position: static;
+            }
 
             .black_band{
                 background-color: #161615;
@@ -3068,3 +3206,7 @@ html{
     }
 }
   
+
+.hide{
+    opacity: 0;
+}

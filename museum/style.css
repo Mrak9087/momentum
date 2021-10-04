@@ -173,7 +173,8 @@ html {
   @media screen and (max-width: 1024px) {
     .header {
       padding-top: 49px;
-      padding-bottom: 48px; } }
+      padding-bottom: 48px;
+      position: relative; } }
   @media screen and (max-width: 768px) {
     .header {
       padding-top: 38px;
@@ -218,10 +219,10 @@ html {
       height: 2px;
       transition: all 0.3s ease 0s; }
     .header .burger_menu.active .tp {
-      transform: rotate(-45deg) translate(-15px, 10px);
+      transform: rotate(-45deg) translate(-12px, 0px);
       width: 30px; }
     .header .burger_menu.active .bt {
-      transform: rotate(45deg) translate(-10px, -5px);
+      transform: rotate(45deg) translate(-10px, 0px);
       width: 30px; }
     .header .burger_menu.active .ct {
       opacity: 0; }
@@ -230,11 +231,12 @@ html {
     width: 100%; }
     @media screen and (max-width: 1024px) {
       .header_nav {
-        position: fixed;
+        position: absolute;
         left: -200%;
-        top: 130px;
+        top: 100%;
         padding-top: 35px;
         padding-left: 55px;
+        padding-bottom: 90%;
         width: 297px;
         justify-content: space-around;
         background-color: #030303;
@@ -243,17 +245,61 @@ html {
         .header_nav .nav_list {
           flex-direction: column;
           row-gap: 25px; }
-          .header_nav .nav_list li {
-            position: relative; }
-            .header_nav .nav_list li::after {
+          .header_nav .nav_list .nav_link {
+            display: block;
+            position: relative;
+            max-width: 122px;
+            width: 100%; }
+            .header_nav .nav_list .nav_link::after {
               content: ">";
               position: absolute;
-              right: 80px;
+              right: 0;
               color: white; } }
+    @media screen and (max-width: 768px) {
+      .header_nav {
+        max-width: 100%;
+        width: 100%;
+        padding-bottom: 0;
+        padding-left: 0; }
+        .header_nav .nav_list {
+          max-width: 658px;
+          width: 100%;
+          margin: 0 auto; } }
+    .header_nav .sub_nav {
+      display: none; }
+      @media screen and (max-width: 768px) {
+        .header_nav .sub_nav {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          row-gap: 24px;
+          padding-bottom: 24px; } }
+      .header_nav .sub_nav .pictures {
+        max-width: 658px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 20px;
+        padding-bottom: 35px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
+        .header_nav .sub_nav .pictures img {
+          width: 100%; }
+        @media screen and (max-width: 659px) {
+          .header_nav .sub_nav .pictures {
+            max-width: 310px;
+            padding-bottom: 20px; } }
     .header_nav .nav_list {
       display: flex;
       width: 100%;
       justify-content: space-between; }
+      @media screen and (max-width: 768px) {
+        .header_nav .nav_list {
+          margin-bottom: 35px; } }
+      @media screen and (max-width: 659px) {
+        .header_nav .nav_list {
+          max-width: 310px; } }
       .header_nav .nav_list li {
         list-style: none; }
 
@@ -741,7 +787,7 @@ html {
       left: 0;
       /* right: 0; */
       overflow-x: hidden;
-      width: 441px;
+      width: 60%;
       z-index: 2; }
       @media screen and (max-width: 768px) {
         .explore_slider .card_cur {
@@ -753,7 +799,7 @@ html {
       min-height: 100%;
       min-width: 5px;
       position: absolute;
-      left: 441px;
+      left: 60%;
       transform: translateX(-50%);
       display: flex;
       flex-direction: column;
@@ -897,10 +943,10 @@ html {
         @media screen and (max-width: 1024px) {
           .video_wrapper .video_control_wrap {
             justify-content: center;
-            column-gap: 14px; } }
+            column-gap: 1.5%; } }
         @media screen and (max-width: 768px) {
           .video_wrapper .video_control_wrap {
-            column-gap: 32px;
+            column-gap: 4.5%;
             padding: 14px 0 14px; } }
         @media screen and (max-width: 420px) {
           .video_wrapper .video_control_wrap {
@@ -923,7 +969,7 @@ html {
         .video_wrapper .btn_control {
           width: 29px;
           height: 29px; } }
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 420px) {
         .video_wrapper .btn_control {
           width: 18px;
           height: 18px; } }
@@ -969,6 +1015,10 @@ html {
       -webkit-appearance: none;
       cursor: pointer;
       background: #FFF; }
+      @media screen and (max-width: 768px) {
+        .video_wrapper .progress::-webkit-slider-thumb {
+          width: 13px;
+          height: 13px; } }
       @media screen and (max-width: 420px) {
         .video_wrapper .progress::-webkit-slider-thumb {
           width: 10px;
@@ -1034,10 +1084,10 @@ html {
       @media screen and (max-width: 1024px) {
         .video_slider_wrapper {
           min-width: calc(300px * 5 + 42px * 4); } }
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 768px) {
         .video_slider_wrapper {
           min-width: calc(354px * 5 + 20px * 4); } }
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 420px) {
         .video_slider_wrapper {
           min-width: calc(180px * 5 + 20px * 4); } }
       .video_slider_wrapper .video_card {
@@ -1062,7 +1112,7 @@ html {
               height: 170px;
               border: none;
               outline: none; } }
-          @media screen and (max-width: 1024px) {
+          @media screen and (max-width: 768px) {
             .video_slider_wrapper .video_card iframe {
               height: 199px; } }
           @media screen and (max-width: 420px) {
@@ -1505,7 +1555,7 @@ html {
       .tickets .tickets_amount .btn_buy:active {
         color: #7E6C51; }
   .tickets .paralax {
-    background-image: url("./assets/img/parallax.jpg");
+    background-image: url("./assets/img/parallax1.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -1722,45 +1772,6 @@ html {
         .footer_container .soc_wrap {
           max-width: 358px;
           justify-content: flex-start; } }
-      .footer_container .soc_wrap .soc_list {
-        display: flex;
-        list-style: none;
-        max-width: 336px;
-        width: 100%;
-        justify-content: space-between;
-        margin-bottom: 16px; }
-        @media screen and (max-width: 1024px) {
-          .footer_container .soc_wrap .soc_list {
-            margin-bottom: 0; } }
-        @media screen and (max-width: 420px) {
-          .footer_container .soc_wrap .soc_list {
-            justify-content: center;
-            max-width: 100%;
-            column-gap: 5px; } }
-      .footer_container .soc_wrap .soc_link {
-        display: block;
-        width: 48px;
-        height: 48px;
-        cursor: pointer;
-        transition: all 0.5s ease; }
-      .footer_container .soc_wrap .soc_link:hover {
-        cursor: pointer;
-        filter: invert(57%) sepia(8%) saturate(1508%) hue-rotate(356deg) brightness(93%) contrast(82%); }
-      .footer_container .soc_wrap .youtube {
-        background-image: url("./assets/svg/Youtube.svg");
-        background-repeat: no-repeat; }
-      .footer_container .soc_wrap .instagram {
-        background-image: url("./assets/svg/Instagram.svg");
-        background-repeat: no-repeat; }
-      .footer_container .soc_wrap .facebook {
-        background-image: url("./assets/svg/Facebook.svg");
-        background-repeat: no-repeat; }
-      .footer_container .soc_wrap .twitter {
-        background-image: url("./assets/svg/Twitter.svg");
-        background-repeat: no-repeat; }
-      .footer_container .soc_wrap .pinterest {
-        background-image: url("./assets/svg/Pinterest.svg");
-        background-repeat: no-repeat; }
   .footer .footer_info {
     border-top: 3px solid #666;
     padding: 50px 0 50px; }
@@ -1796,6 +1807,46 @@ html {
         .footer .footer_info span {
           font-size: 16px; } }
 
+.soc_list {
+  display: flex;
+  list-style: none;
+  max-width: 336px;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 16px; }
+  @media screen and (max-width: 1024px) {
+    .soc_list {
+      margin-bottom: 0; } }
+  @media screen and (max-width: 420px) {
+    .soc_list {
+      justify-content: center;
+      max-width: 100%;
+      column-gap: 5px; } }
+  .soc_list .soc_link {
+    display: block;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    transition: all 0.5s ease; }
+  .soc_list .soc_link:hover {
+    cursor: pointer;
+    filter: invert(57%) sepia(8%) saturate(1508%) hue-rotate(356deg) brightness(93%) contrast(82%); }
+  .soc_list .youtube {
+    background-image: url("./assets/svg/Youtube.svg");
+    background-repeat: no-repeat; }
+  .soc_list .instagram {
+    background-image: url("./assets/svg/Instagram.svg");
+    background-repeat: no-repeat; }
+  .soc_list .facebook {
+    background-image: url("./assets/svg/Facebook.svg");
+    background-repeat: no-repeat; }
+  .soc_list .twitter {
+    background-image: url("./assets/svg/Twitter.svg");
+    background-repeat: no-repeat; }
+  .soc_list .pinterest {
+    background-image: url("./assets/svg/Pinterest.svg");
+    background-repeat: no-repeat; }
+
 .buy {
   position: fixed;
   top: 0;
@@ -1818,6 +1869,9 @@ html {
     @media screen and (max-width: 768px) {
       .buy_container {
         max-width: 590px; } }
+    @media screen and (max-width: 590px) {
+      .buy_container {
+        padding: 30px 30px; } }
     .buy_container .btn_close {
       position: absolute;
       width: 25px;
@@ -1871,6 +1925,9 @@ html {
     width: 100%;
     display: flex;
     justify-content: space-between; }
+    @media screen and (max-width: 590px) {
+      .buy .ticket_date_time {
+        flex-direction: column; } }
   .buy .ticket_date {
     max-width: 190px;
     width: 100%;
@@ -1878,6 +1935,9 @@ html {
     background-image: url("./assets/img/date.png");
     background-repeat: no-repeat;
     background-position: 15px center; }
+    @media screen and (max-width: 590px) {
+      .buy .ticket_date {
+        max-width: 100%; } }
     .buy .ticket_date::after {
       content: "";
       position: absolute;
@@ -1907,6 +1967,9 @@ html {
     background-image: url("./assets/img/time.png");
     background-repeat: no-repeat;
     background-position: 15px center; }
+    @media screen and (max-width: 590px) {
+      .buy .ticket_time {
+        max-width: 100%; } }
     .buy .ticket_time::after {
       content: "";
       position: absolute;
@@ -2057,6 +2120,9 @@ html {
     max-width: 530px;
     width: 100%;
     padding: 25px 30px; }
+    @media screen and (max-width: 420px) {
+      .buy .ticket_pay {
+        padding: 25px 19px; } }
     .buy .ticket_pay .pay_overview {
       display: flex;
       justify-content: space-between;
@@ -2166,6 +2232,12 @@ html {
       position: relative;
       padding-bottom: 30px;
       margin-bottom: 26px; }
+      @media screen and (max-width: 590px) {
+        .buy .ticket_pay .pay_card {
+          display: flex;
+          align-items: center;
+          row-gap: 25px;
+          flex-direction: column; } }
     .buy .ticket_pay .card {
       max-width: 360px;
       width: 100%;
@@ -2230,6 +2302,9 @@ html {
       padding-top: 25px;
       padding-bottom: 15px;
       z-index: 1; }
+      @media screen and (max-width: 590px) {
+        .buy .ticket_pay .card_back {
+          position: static; } }
       .buy .ticket_pay .card_back .black_band {
         background-color: #161615;
         padding-top: 45px;
@@ -2309,3 +2384,6 @@ html {
   to {
     transform: translate(-50%, -50%) scale(3);
     opacity: 0; } }
+
+.hide {
+  opacity: 0; }
