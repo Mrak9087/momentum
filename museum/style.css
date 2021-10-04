@@ -1555,7 +1555,7 @@ html {
       .tickets .tickets_amount .btn_buy:active {
         color: #7E6C51; }
   .tickets .paralax {
-    background-image: url("./assets/img/parallax.jpg");
+    background-image: url("./assets/img/parallax1.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
