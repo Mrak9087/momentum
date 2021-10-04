@@ -71,7 +71,7 @@ html {
   @media screen and (max-width: 768px) {
     .title_section {
       font-size: 40px; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 425px) {
     .title_section {
       font-size: 28px; } }
 
@@ -84,10 +84,10 @@ html {
 .title_underline {
   border-bottom: 3px solid #710707;
   padding-bottom: 27px; }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 425px) {
     .title_underline {
       padding-bottom: 20px; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 425px) {
     .title_underline {
       padding-bottom: 24px; } }
 
@@ -114,7 +114,7 @@ html {
   @media screen and (max-width: 768px) {
     .mb25 {
       margin-bottom: 40px; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 425px) {
     .mb25 {
       margin-bottom: 20px; } }
 
@@ -126,7 +126,7 @@ html {
   @media screen and (max-width: 768px) {
     .mb39 {
       margin-bottom: 28px; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 425px) {
     .mb39 {
       margin-bottom: 35px; } }
 
@@ -185,7 +185,7 @@ html {
     .header {
       padding-top: 38px;
       padding-bottom: 27px; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 425px) {
     .header {
       padding-top: 28px;
       padding-bottom: 32px; } }
@@ -197,7 +197,7 @@ html {
     @media screen and (max-width: 768px) {
       .header_container {
         align-items: flex-start; } }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 425px) {
       .header_container {
         align-items: center; } }
   .header .burger_menu {
@@ -225,10 +225,10 @@ html {
       height: 2px;
       transition: all 0.3s ease 0s; }
     .header .burger_menu.active .tp {
-      transform: rotate(-45deg) translate(-12px, 0px);
+      transform: rotate(-45deg) translate(-5px, 7px);
       width: 30px; }
     .header .burger_menu.active .bt {
-      transform: rotate(45deg) translate(-10px, 0px);
+      transform: rotate(45deg) translate(-6px, -7px);
       width: 30px; }
     .header .burger_menu.active .ct {
       opacity: 0; }
@@ -242,7 +242,6 @@ html {
         top: 100%;
         padding-top: 35px;
         padding-left: 55px;
-        padding-bottom: 90%;
         width: 297px;
         justify-content: space-around;
         background-color: #030303;
@@ -317,7 +316,7 @@ html {
   @media screen and (max-width: 768px) {
     .logo {
       background-position-y: 5px; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 425px) {
     .logo {
       background-size: contain;
       background-position-y: top;
@@ -333,7 +332,7 @@ html {
     @media screen and (max-width: 768px) {
       .logo_text {
         line-height: 45px; } }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 425px) {
       .logo_text {
         font-size: 16px;
         line-height: 18px; } }
@@ -351,7 +350,7 @@ html {
       text-align: center;
       font-size: 40px;
       line-height: 60px; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 425px) {
     .welcome_title {
       font-size: 28px;
       line-height: 40px; } }
@@ -403,7 +402,7 @@ html {
       .welcome_subtitle {
         font-size: 20px;
         line-height: 19px; } }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 425px) {
       .welcome_subtitle {
         font-size: 16px; } }
   .welcome_btn {
@@ -478,7 +477,7 @@ html {
       @media screen and (max-width: 768px) {
         .welcome .slider_wrapper {
           padding-bottom: 100px; } }
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 425px) {
         .welcome .slider_wrapper {
           padding-bottom: 80px; } }
     .welcome .slider_panel {
@@ -504,7 +503,7 @@ html {
           justify-content: center;
           padding-left: 0;
           padding-right: 0; } }
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 425px) {
         .welcome .slider_panel {
           column-gap: 25px; } }
       .welcome .slider_panel .slide_count {
@@ -523,7 +522,7 @@ html {
           .welcome .slider_panel .slide_count {
             max-width: 71px;
             font-size: 20px; } }
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 425px) {
           .welcome .slider_panel .slide_count {
             max-width: 50px;
             font-size: 16px; } }
@@ -541,7 +540,7 @@ html {
         @media screen and (max-width: 768px) {
           .welcome .slider_panel .slide_positions {
             padding: 44px 0 44px; } }
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 425px) {
           .welcome .slider_panel .slide_positions {
             max-width: 75px;
             padding: 37px 0 36px; } }
@@ -553,13 +552,13 @@ html {
           .welcome .slider_panel .slide_position {
             width: 12px;
             height: 12px; } }
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 425px) {
           .welcome .slider_panel .slide_position {
             width: 7px;
             height: 7px; } }
       .welcome .slider_panel .current_position {
         background-color: #9d8665; }
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 425px) {
         .welcome .slider_panel .slider_nav {
           max-width: 55px;
           width: 100%;
@@ -575,7 +574,7 @@ html {
         background-repeat: no-repeat;
         background-position: center center;
         background-size: contain; }
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 425px) {
           .welcome .slider_panel .slide_btn {
             width: 20px; } }
       .welcome .slider_panel .btn_next {
@@ -583,7 +582,7 @@ html {
       .welcome .slider_panel .btn_prev {
         background-image: url("./assets/img/arrow.png");
         transform: rotate(180deg); }
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 425px) {
           .welcome .slider_panel .btn_prev {
             transform: rotate(180deg) translateY(-1px); } }
 
@@ -597,7 +596,7 @@ html {
     .visiting_container {
       padding-top: 50px;
       padding-bottom: 80px; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 425px) {
     .visiting_container {
       padding-top: 45px;
       padding-bottom: 38px; } }
@@ -655,7 +654,7 @@ html {
         font-size: 22px;
         line-height: 24px;
         padding-bottom: 11px; } }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 425px) {
       .visiting .cards_container .card_title {
         font-size: 18px;
         line-height: 20px;
@@ -694,7 +693,7 @@ html {
       .visiting .cards_container .card_text_deg {
         font-size: 18px;
         line-height: 21px; } }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 425px) {
       .visiting .cards_container .card_text_deg {
         font-size: 16px;
         line-height: 19px; } }
@@ -727,7 +726,7 @@ html {
       .explore_container {
         padding-top: 50px;
         padding-bottom: 37px; } }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 425px) {
       .explore_container {
         padding-top: 45px;
         padding-bottom: 38px; } }
@@ -798,7 +797,7 @@ html {
       @media screen and (max-width: 768px) {
         .explore_slider .card_cur {
           height: 100%; } }
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 425px) {
         .explore_slider .card_cur {
           width: 60%; } }
     .explore_slider .spliter {
@@ -826,12 +825,12 @@ html {
         border-radius: 50%;
         background: transparent;
         transform: translate(-50%, -50%); }
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 425px) {
           .explore_slider .spliter::after {
             width: 20px;
             height: 20px;
             border-width: 2px; } }
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 425px) {
         .explore_slider .spliter {
           min-width: 2px;
           left: 60%;
@@ -868,7 +867,7 @@ html {
     @media screen and (max-width: 768px) {
       .video_title_text {
         margin-bottom: 28px; } }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 425px) {
       .video_title_text {
         margin-bottom: 25px; } }
   .video_text {
@@ -891,7 +890,7 @@ html {
     @media screen and (max-width: 768px) {
       .video_wrapper {
         margin-bottom: 21px; } }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 425px) {
       .video_wrapper {
         margin-bottom: 40px; } }
     .video_wrapper .player {
@@ -924,7 +923,7 @@ html {
           top: calc(50%);
           left: calc(50%);
           transform: translate(-50%, -85%); } }
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 425px) {
         .video_wrapper .btn_play_video {
           width: 50px;
           height: 50px;
@@ -954,7 +953,7 @@ html {
           .video_wrapper .video_control_wrap {
             column-gap: 4.5%;
             padding: 14px 0 14px; } }
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 425px) {
           .video_wrapper .video_control_wrap {
             column-gap: 27px;
             justify-content: center;
@@ -975,7 +974,7 @@ html {
         .video_wrapper .btn_control {
           width: 29px;
           height: 29px; } }
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 425px) {
         .video_wrapper .btn_control {
           width: 18px;
           height: 18px; } }
@@ -1025,7 +1024,7 @@ html {
         .video_wrapper .progress::-webkit-slider-thumb {
           width: 13px;
           height: 13px; } }
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 425px) {
         .video_wrapper .progress::-webkit-slider-thumb {
           width: 10px;
           height: 10px; } }
@@ -1054,7 +1053,7 @@ html {
       @media screen and (max-width: 768px) {
         .video_wrapper .sound_progress {
           max-width: 67%; } }
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 425px) {
         .video_wrapper .sound_progress {
           max-width: 54%; } }
     .video_wrapper .video_title_text {
@@ -1080,7 +1079,7 @@ html {
     @media screen and (max-width: 768px) {
       .video_slider {
         row-gap: 20px; } }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 425px) {
       .video_slider {
         row-gap: 40px; } }
     .video_slider_wrapper {
@@ -1093,7 +1092,7 @@ html {
       @media screen and (max-width: 768px) {
         .video_slider_wrapper {
           min-width: calc(354px * 5 + 20px * 4); } }
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 425px) {
         .video_slider_wrapper {
           min-width: calc(180px * 5 + 20px * 4); } }
       .video_slider_wrapper .video_card {
@@ -1111,7 +1110,7 @@ html {
         @media screen and (max-width: 768px) {
           .video_slider_wrapper .video_card {
             max-width: 354px; } }
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 425px) {
           .video_slider_wrapper .video_card {
             max-width: 180px; } }
         .video_slider_wrapper .video_card .video__link {
@@ -1167,7 +1166,7 @@ html {
         @media screen and (max-width: 768px) {
           .video_slider_nav_wrapper {
             max-width: 190px; } }
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 425px) {
           .video_slider_nav_wrapper {
             max-width: 175px; } }
         .video_slider_nav_wrapper .nav_btn {
@@ -1179,7 +1178,7 @@ html {
           border: none;
           outline: none;
           cursor: pointer; }
-          @media screen and (max-width: 420px) {
+          @media screen and (max-width: 425px) {
             .video_slider_nav_wrapper .nav_btn {
               width: 8px;
               height: 8px; } }
@@ -1190,7 +1189,7 @@ html {
           height: 12px;
           border-radius: 500%;
           background-color: #999; }
-          @media screen and (max-width: 420px) {
+          @media screen and (max-width: 425px) {
             .video_slider_nav_wrapper .nav_position {
               width: 8px;
               height: 8px; } }
@@ -1211,7 +1210,7 @@ html {
   @media screen and (max-width: 768px) {
     .gallery {
       padding-top: 48px; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 425px) {
     .gallery {
       padding-top: 45px; } }
   .gallery .gallery_pictures {
@@ -1224,7 +1223,7 @@ html {
     @media screen and (max-width: 768px) {
       .gallery .gallery_pictures {
         max-height: 1080px; } }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 425px) {
       .gallery .gallery_pictures {
         max-height: 633px; } }
   .gallery .picture_container {
@@ -1251,7 +1250,7 @@ html {
         .gallery .picture_container .picture {
           max-width: calc(100% / 2 - 24px);
           width: 100%; } }
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 425px) {
         .gallery .picture_container .picture {
           max-width: calc(100% / 2 - 12px);
           width: 100%; } }
@@ -1279,7 +1278,7 @@ html {
     @media screen and (max-width: 768px) {
       .gallery .picture_container {
         column-gap: 12px; } }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 425px) {
       .gallery .picture_container {
         max-width: 380px; } }
     @media screen and (max-width: 1465px) {
@@ -1302,7 +1301,7 @@ html {
   @media screen and (max-width: 768px) {
     .tickets {
       padding-top: 48px; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 425px) {
     .tickets {
       padding-top: 45px; } }
   .tickets_container {
@@ -1338,7 +1337,7 @@ html {
       @media screen and (max-width: 700px) {
         .tickets_content .tickets_picture {
           max-width: 100%; } }
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 425px) {
         .tickets_content .tickets_picture {
           margin-bottom: 36px; } }
       .tickets_content .tickets_picture img {
@@ -1353,7 +1352,7 @@ html {
         @media screen and (max-width: 700px) {
           .tickets_content .tickets_picture img {
             width: 100%; } }
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 425px) {
           .tickets_content .tickets_picture img {
             height: 160px; } }
   .tickets_type_amount {
@@ -1365,7 +1364,7 @@ html {
       .tickets_type_amount {
         width: auto;
         padding-right: 29px; } }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 425px) {
       .tickets_type_amount {
         padding-right: 0; } }
   .tickets .ticket_subtitle {
@@ -1375,14 +1374,14 @@ html {
     font-size: 28px;
     line-height: 33px;
     color: #030303; }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 425px) {
       .tickets .ticket_subtitle {
         font-size: 16px;
         line-height: 19px; } }
   .tickets .amount_title {
     display: flex;
     justify-content: flex-end; }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 425px) {
       .tickets .amount_title {
         width: 100%;
         justify-content: center; } }
@@ -1461,7 +1460,7 @@ html {
     @media screen and (max-width: 1024px) and (max-width: 768px) {
       .tickets .tickets_amount .mb35 {
         margin-bottom: 15px; } }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 425px) {
       .tickets .tickets_amount {
         align-items: center; } }
     .tickets .tickets_amount .amount_item {
@@ -1481,7 +1480,7 @@ html {
       @media screen and (max-width: 1024px) {
         .tickets .tickets_amount .item_title {
           margin-bottom: 9px; } }
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 425px) {
         .tickets .tickets_amount .item_title {
           font-size: 16px;
           line-height: 19px;
@@ -1497,7 +1496,7 @@ html {
         .tickets .tickets_amount .amount_count {
           padding-right: 5px;
           padding-left: 5px; } }
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 425px) {
         .tickets .tickets_amount .amount_count {
           margin-bottom: 5px; } }
     .tickets .tickets_amount .amount_btn {
@@ -1561,7 +1560,7 @@ html {
       @media screen and (max-width: 768px) {
         .tickets .tickets_amount .total_sum {
           margin-bottom: 40px; } }
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 425px) {
         .tickets .tickets_amount .total_sum {
           font-size: 16px;
           line-height: 19px;
@@ -1582,7 +1581,7 @@ html {
       line-height: 26px;
       letter-spacing: 2px;
       color: #fff; }
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 425px) {
         .tickets .tickets_amount .btn_buy {
           font-size: 16px; } }
       .tickets .tickets_amount .btn_buy:hover {
@@ -1610,7 +1609,7 @@ html {
     .contacts {
       padding-top: 49px;
       padding-bottom: 62px; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 425px) {
     .contacts {
       padding-top: 45px;
       padding-bottom: 37px; } }
@@ -1652,7 +1651,7 @@ html {
             line-height: 23px;
             max-width: 155px;
             margin-bottom: 40px; } }
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 425px) {
           .contacts_content .content_txt .contacts_subtitle {
             font-size: 16px;
             line-height: 19px;
@@ -1675,7 +1674,7 @@ html {
           .contacts_content .content_txt .contact_item {
             font-size: 18px;
             line-height: 21px; } }
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 425px) {
           .contacts_content .content_txt .contact_item {
             font-size: 16px;
             line-height: 19px; } }
@@ -1700,7 +1699,7 @@ html {
   @media screen and (max-width: 768px) {
     .footer {
       padding-top: 43px; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 425px) {
     .footer {
       padding-top: 40px;
       background-size: 29px; } }
@@ -1710,7 +1709,7 @@ html {
     @media screen and (max-width: 768px) {
       .footer .logo_foot {
         padding-top: 0; } }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 425px) {
       .footer .logo_foot {
         padding-left: 49px;
         background-position-y: 0; } }
@@ -1724,7 +1723,7 @@ html {
     @media screen and (max-width: 510px) {
       .footer_container {
         flex-direction: column; } }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 425px) {
       .footer_container {
         row-gap: 26px; } }
     .footer_container .nav_footer {
@@ -1739,7 +1738,7 @@ html {
       @media screen and (max-width: 768px) {
         .footer_container .nav_footer {
           row-gap: 48px; } }
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 425px) {
         .footer_container .nav_footer {
           row-gap: 38px; } }
       .footer_container .nav_footer .nav_list {
@@ -1759,7 +1758,7 @@ html {
             padding-left: 3px;
             column-gap: 186px;
             row-gap: 18px; } }
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 425px) {
           .footer_container .nav_footer .nav_list {
             column-gap: 82px;
             padding-left: 0;
@@ -1794,7 +1793,7 @@ html {
         @media screen and (max-width: 768px) {
           .footer_container .nav_footer .nav_link {
             font-size: 18px; } }
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 425px) {
           .footer_container .nav_footer .nav_link {
             font-size: 16px;
             line-height: 19px; } }
@@ -1815,19 +1814,19 @@ html {
       .footer .footer_info .nav_link {
         font-size: 22px;
         line-height: 22px; } }
-  @media screen and (max-width: 1024px) and (max-width: 420px) {
+  @media screen and (max-width: 1024px) and (max-width: 425px) {
     .footer .footer_info .nav_link {
       font-size: 16px; } }
     @media screen and (max-width: 1024px) {
         .footer .footer_info .nav_link:nth-child(2) {
           padding-left: 33px; } }
-    @media screen and (max-width: 1024px) and (max-width: 420px) {
+    @media screen and (max-width: 1024px) and (max-width: 425px) {
       .footer .footer_info .nav_link:nth-child(2) {
         display: none; } }
     @media screen and (max-width: 768px) {
       .footer .footer_info {
         padding: 40px 0 40px; } }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 425px) {
       .footer .footer_info .footer_container {
         flex-direction: row; } }
     .footer .footer_info span {
@@ -1839,7 +1838,7 @@ html {
       /* identical to box height, or 100% */
       letter-spacing: 2px;
       color: #FFFFFF; }
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 425px) {
         .footer .footer_info span {
           font-size: 16px; } }
 
@@ -1853,7 +1852,7 @@ html {
   @media screen and (max-width: 1024px) {
     .soc_list {
       margin-bottom: 0; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 425px) {
     .soc_list {
       justify-content: center;
       max-width: 100%;
@@ -2156,7 +2155,7 @@ html {
     max-width: 530px;
     width: 100%;
     padding: 25px 30px; }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 425px) {
       .buy .ticket_pay {
         padding: 25px 19px; } }
     .buy .ticket_pay .pay_overview {

@@ -93,7 +93,7 @@ html{
         font-size: 40px;
     }
 
-    @include media(420px){
+    @include media(425px){
         font-size: 28px;
     }
     
@@ -110,10 +110,10 @@ html{
 .title_underline{
     border-bottom: 3px solid $dark-red;
     padding-bottom: 27px;
-    @include media(420px){
+    @include media(425px){
         padding-bottom: 20px;
     }
-    @include media(420px){
+    @include media(425px){
         padding-bottom: 24px;
     }
 }
@@ -145,7 +145,7 @@ html{
     @include media(768px){
         margin-bottom: 40px;
     }
-    @include media(420px){
+    @include media(425px){
         margin-bottom: 20px;
     }
 }
@@ -158,7 +158,7 @@ html{
     @include media(768px){
         margin-bottom: 28px;
     }
-    @include media(420px){
+    @include media(425px){
         margin-bottom: 35px;
     }
 }
@@ -238,7 +238,7 @@ html{
         padding-bottom: 27px;
     }
 
-    @include media(420px){
+    @include media(425px){
         padding-top: 28px;
         padding-bottom: 32px;
     }
@@ -253,7 +253,7 @@ html{
             align-items: flex-start;
         }
 
-        @include media(420px){
+        @include media(425px){
             align-items: center;
         }
 
@@ -288,12 +288,12 @@ html{
 
         &.active{
             .tp{
-                transform: rotate(-45deg) translate(-12px, 0px);
+                transform: rotate(-45deg) translate(-5px, 7px);
                 width: 30px;
             }
 
             .bt{
-                transform: rotate(45deg) translate(-10px, 0px);
+                transform: rotate(45deg) translate(-6px, -7px);
                 width: 30px;
             }
             
@@ -313,7 +313,7 @@ html{
             top: 100%;
             padding-top: 35px;
             padding-left: 55px;
-            padding-bottom: 90%;
+            // padding-bottom: 90%;
             width: 297px;
             // height: 100%;
             justify-content: space-around ;
@@ -418,7 +418,7 @@ html{
     @include media(768px){
         background-position-y: 5px;
     }
-    @include media(420px){
+    @include media(425px){
         background-size: contain;
         background-position-y: top;
         padding-left: 54px;
@@ -437,7 +437,7 @@ html{
             
         }
 
-        @include media(420px){
+        @include media(425px){
             font-size: 16px;
             line-height: 18px;
         }
@@ -462,7 +462,7 @@ html{
             font-size: 40px;
             line-height: 60px;
         }
-        @include media(420px){
+        @include media(425px){
             font-size: 28px;
             line-height: 40px;
         }
@@ -523,7 +523,7 @@ html{
             font-size: 20px;
             line-height: 19px;
         }
-        @include media(420px){
+        @include media(425px){
             font-size: 16px;
         }
     }
@@ -617,7 +617,7 @@ html{
             @include media(768px){
                 padding-bottom: 100px;
             }
-            @include media(420px){
+            @include media(425px){
                 padding-bottom: 80px;
             }
             
@@ -650,7 +650,7 @@ html{
                 padding-right: 0;
             }
 
-            @include media(420px){
+            @include media(425px){
                 column-gap: 25px;
             }
             // padding:40px ;
@@ -673,7 +673,7 @@ html{
                     max-width: 71px;
                     font-size: 20px;
                 }
-                @include media(420px){
+                @include media(425px){
                     max-width: 50px;
                     font-size: 16px;
                 }
@@ -695,7 +695,7 @@ html{
                     padding: 44px 0 44px;
                 }
 
-                @include media(420px){
+                @include media(425px){
                     max-width: 75px;
                     padding: 37px 0 36px;
                 }
@@ -710,7 +710,7 @@ html{
                     width: 12px;
                     height: 12px;
                 }
-                @include media(420px){
+                @include media(425px){
                     width: 7px;
                     height: 7px;
                 }
@@ -722,7 +722,7 @@ html{
             }
 
             .slider_nav{
-                @include media(420px){
+                @include media(425px){
                     max-width: 55px;
                     width: 100%;
                     display: flex;
@@ -741,7 +741,7 @@ html{
                 background-repeat: no-repeat;
                 background-position: center center;
                 background-size: contain;
-                @include media(420px){
+                @include media(425px){
                     width: 20px;
                 }
                 
@@ -757,7 +757,7 @@ html{
                 background-image: url("./assets/img/arrow.png");
                 
                 transform: rotate(180deg) ;
-                @include media(420px){
+                @include media(425px){
                     transform: rotate(180deg) translateY(-1px);
                 }
             }
@@ -777,7 +777,7 @@ html{
             padding-top: 50px;
             padding-bottom: 80px;
         }
-        @include media(420px){
+        @include media(425px){
             padding-top: 45px;
             padding-bottom: 38px;
         }
@@ -844,7 +844,7 @@ html{
                 line-height: 24px;
                 padding-bottom: 11px;
             }
-            @include media(420px){
+            @include media(425px){
                 font-size: 18px;
                 line-height: 20px;
                 letter-spacing: 5px;
@@ -892,7 +892,7 @@ html{
                 font-size: 18px;
                 line-height: 21px;
             }
-            @include media(420px){
+            @include media(425px){
                 font-size: 16px;
                 line-height: 19px;
             }
@@ -933,7 +933,7 @@ html{
             padding-bottom: 37px;
         }
 
-        @include media(420px){
+        @include media(425px){
             padding-top: 45px;
             padding-bottom: 38px;
         }
@@ -1029,7 +1029,7 @@ html{
             @include media(768px){
                 height: 100%;
             }
-            @include media(420px){
+            @include media(425px){
                 width: 60%;
             }
         }
@@ -1061,14 +1061,14 @@ html{
                 border-radius: 50%;
                 background: transparent;
                 transform: translate(-50%, -50%);
-                @include media(420px){
+                @include media(425px){
                     width: 20px;
                     height: 20px;
                     border-width: 2px;
                 }
             }
 
-            @include media(420px){
+            @include media(425px){
                 min-width: 2px;
                 left: 60%;
                 row-gap: 20px;
@@ -1117,7 +1117,7 @@ html{
         @include media(768px){
             margin-bottom: 28px;
         }
-        @include media(420px){
+        @include media(425px){
             margin-bottom: 25px;
         }
     }
@@ -1145,7 +1145,7 @@ html{
         @include media(768px){
             margin-bottom: 21px;
         }
-        @include media(420px){
+        @include media(425px){
             margin-bottom: 40px;
         }
 
@@ -1183,7 +1183,7 @@ html{
                 left: calc(50%);
                 transform: translate(-50%, -85%);
             }
-            @include media(420px){
+            @include media(425px){
                 width: 50px;
                 height: 50px;
                 background-size: contain;
@@ -1217,7 +1217,7 @@ html{
                     padding: 14px 0 14px;
                 }
 
-                @include media(420px){
+                @include media(425px){
                     column-gap: 27px;
                     justify-content: center;
                     padding: 21px 0 16px;
@@ -1243,7 +1243,7 @@ html{
                 width: 29px;
                 height: 29px;
             }
-            @include media(420px){
+            @include media(425px){
                 width: 18px;
                 height: 18px;
             }
@@ -1308,7 +1308,7 @@ html{
                 width: 13px;
                 height: 13px;
             }
-            @include media(420px){
+            @include media(425px){
                 width: 10px;
                 height: 10px;
             }
@@ -1345,7 +1345,7 @@ html{
                 max-width: 67%;                
             }
 
-            @include media(420px){
+            @include media(425px){
                 max-width: 54%;                
             }
         }
@@ -1381,7 +1381,7 @@ html{
             row-gap: 20px;
         }
 
-        @include media(420px){
+        @include media(425px){
             row-gap: 40px;
         }
 
@@ -1396,7 +1396,7 @@ html{
                 min-width: calc(354px * 5 + 20px * 4);
             }
 
-            @include media(420px){
+            @include media(425px){
                 min-width: calc(180px * 5 + 20px * 4);
             }
 
@@ -1415,7 +1415,7 @@ html{
                 @include media(768px){
                     max-width: 354px;
                 }
-                @include media(420px){
+                @include media(425px){
                     max-width: 180px;
                 }
                 .video__link {
@@ -1480,7 +1480,7 @@ html{
                 }
                 // .video_slide{
                 //     flex: 1;
-                //     @include media(420px){
+                //     @include media(425px){
                 //         // height: ;
                 //     }
                 // }
@@ -1497,7 +1497,7 @@ html{
                 //         height: 199px;
                 //     }
 
-                //     @include media(420px){
+                //     @include media(425px){
                 //         height: 101px;
                 //     }
                 // }
@@ -1520,7 +1520,7 @@ html{
                     max-width: 190px;
                 }
 
-                @include media(420px){
+                @include media(425px){
                     max-width:175px;
                 }
 
@@ -1533,7 +1533,7 @@ html{
                     border: none;
                     outline: none;
                     cursor: pointer;
-                    @include media(420px){
+                    @include media(425px){
                         width: 8px;
                         height: 8px;
                     }
@@ -1548,7 +1548,7 @@ html{
                     height: 12px;
                     border-radius: 500%;
                     background-color: #999;
-                    @include media(420px){
+                    @include media(425px){
                         width: 8px;
                         height: 8px;
                     }
@@ -1582,7 +1582,7 @@ html{
         padding-top: 48px;
     }
 
-    @include media(420px){
+    @include media(425px){
         padding-top: 45px;
     }
 
@@ -1596,7 +1596,7 @@ html{
         @include media(768px){
             max-height: 1080px;
         }
-        @include media(420px){
+        @include media(425px){
             max-height: 633px;
         }
     }
@@ -1643,7 +1643,7 @@ html{
                 width: 100%;
                 
             }
-            @include media(420px){
+            @include media(425px){
                 max-width: calc(100% / 2 - 12px);
                 width: 100%;
                 
@@ -1678,7 +1678,7 @@ html{
             column-gap: 12px;
         }
 
-        @include media(420px){
+        @include media(425px){
             // justify-content: space-between;
             // align-content: space-between;
             // column-gap: normal;
@@ -1721,7 +1721,7 @@ html{
         padding-top: 48px;
     }
 
-    @include media(420px){
+    @include media(425px){
         padding-top: 45px;
     }
 
@@ -1772,7 +1772,7 @@ html{
                 
             }
 
-            @include media(420px){
+            @include media(425px){
                 margin-bottom: 36px;
             }
             img{
@@ -1789,7 +1789,7 @@ html{
                 @include media(700px){
                     width: 100%;
                 }
-                @include media(420px){
+                @include media(425px){
                     height:160px;
                 }
             }
@@ -1807,7 +1807,7 @@ html{
             width: auto;
             padding-right: 29px;
         }
-        @include media(420px){
+        @include media(425px){
             
             padding-right: 0;
         }
@@ -1820,7 +1820,7 @@ html{
         font-size: 28px;
         line-height: 33px;
         color: $bg-dark;
-        @include media(420px){
+        @include media(425px){
             font-size: 16px;
             line-height: 19px;
         }
@@ -1829,7 +1829,7 @@ html{
     .amount_title{
         display: flex;
         justify-content: flex-end;
-        @include media(420px){
+        @include media(425px){
             width: 100%;
             justify-content: center;
         }
@@ -1939,7 +1939,7 @@ html{
             }
         }
 
-        @include media(420px){
+        @include media(425px){
             align-items: center;
         }
         
@@ -1965,7 +1965,7 @@ html{
             @include media(1024px){
                 margin-bottom: 9px;
             }
-            @include media(420px){
+            @include media(425px){
                 font-size: 16px;
                 line-height: 19px;
                 margin-bottom: 15px;
@@ -1984,7 +1984,7 @@ html{
                 padding-right: 5px;
                 padding-left: 5px;
             }
-            @include media(420px){
+            @include media(425px){
                 margin-bottom: 5px;
             }
         }
@@ -2062,7 +2062,7 @@ html{
                 margin-bottom: 40px;
             }
 
-            @include media(420px){
+            @include media(425px){
                 font-size: 16px;
                 line-height: 19px;
                 letter-spacing: 0;
@@ -2088,7 +2088,7 @@ html{
         
             color: #fff;
 
-            @include media(420px){
+            @include media(425px){
                 font-size: 16px;
                 
             }
@@ -2131,7 +2131,7 @@ html{
         padding-top: 49px;
         padding-bottom: 62px;
     }
-    @include media(420px){
+    @include media(425px){
         padding-top: 45px;
         padding-bottom: 37px;
     }
@@ -2177,7 +2177,7 @@ html{
                     margin-bottom: 40px;
                 }
 
-                @include media(420px){
+                @include media(425px){
                     font-size: 16px;
                     line-height: 19px;
                     max-width: 135px;
@@ -2204,7 +2204,7 @@ html{
                     line-height: 21px;
                 }
 
-                @include media(420px){
+                @include media(425px){
                     font-size: 16px;
                     line-height: 19px;
                 }
@@ -2242,7 +2242,7 @@ html{
         padding-top: 43px;
     }
 
-    @include media(420px){
+    @include media(425px){
         padding-top: 40px;
         background-size: 29px;
     }
@@ -2253,7 +2253,7 @@ html{
         @include media(768px){
             padding-top: 0;
         }
-        @include media(420px){
+        @include media(425px){
             padding-left: 49px;
             background-position-y: 0;
         }
@@ -2272,7 +2272,7 @@ html{
         @include media(510px){
             flex-direction: column;
         }
-        @include media(420px){
+        @include media(425px){
             row-gap: 26px;
         }
 
@@ -2295,7 +2295,7 @@ html{
             @include media(768px){
                 row-gap: 48px;
             }
-            @include media(420px){
+            @include media(425px){
                 row-gap: 38px;
             }
 
@@ -2317,7 +2317,7 @@ html{
                     row-gap: 18px;
                 }
 
-                @include media(420px){
+                @include media(425px){
                     column-gap: 82px;
                     padding-left: 0;
                     max-width: 380px;
@@ -2361,7 +2361,7 @@ html{
                 @include media(768px){
                     font-size: 18px;
                 }
-                @include media(420px){
+                @include media(425px){
                     font-size: 16px;
                     line-height: 19px;
                 }
@@ -2392,7 +2392,7 @@ html{
             //     @include media(1024px){
             //         margin-bottom: 0;
             //     }
-            //     @include media(420px){
+            //     @include media(425px){
             //         justify-content: center;
             //         max-width: 100%;
             //         column-gap: 5px;
@@ -2451,12 +2451,12 @@ html{
                 font-size: 22px;    
                 line-height: 22px;
 
-                @include media(420px){
+                @include media(425px){
                     font-size: 16px;
                 }
                 &:nth-child(2){
                     padding-left: 33px;
-                    @include media(420px){
+                    @include media(425px){
                         display: none;
                     }
                 }
@@ -2467,7 +2467,7 @@ html{
             padding: 40px 0 40px;
         }
 
-        @include media(420px){
+        @include media(425px){
             .footer_container{
                 flex-direction: row;
             }
@@ -2484,7 +2484,7 @@ html{
             letter-spacing: 2px;
 
             color: #FFFFFF;
-            @include media(420px){
+            @include media(425px){
                 font-size: 16px;
             }
 
@@ -2502,7 +2502,7 @@ html{
     @include media(1024px){
         margin-bottom: 0;
     }
-    @include media(420px){
+    @include media(425px){
         justify-content: center;
         max-width: 100%;
         column-gap: 5px;
@@ -2906,7 +2906,7 @@ html{
         max-width: 530px;
         width: 100%;
         padding: 25px 30px;
-        @include media(420px){
+        @include media(425px){
             padding: 25px 19px;
         }
         .pay_overview{
