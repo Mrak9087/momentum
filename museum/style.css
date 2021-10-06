@@ -453,7 +453,6 @@ html {
         max-width: 728px; } }
     .welcome .slider_image {
       display: flex;
-      overflow-x: hidden;
       position: relative; }
       @media screen and (max-width: 1024px) {
         .welcome .slider_image img {
@@ -461,25 +460,29 @@ html {
       .welcome .slider_image .img_wrap {
         max-width: 1000px;
         width: 100%; }
-    .welcome .slider_grad {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      max-width: 300px;
-      width: 100%;
-      background-image: linear-gradient(to right, black, rgba(0, 0, 0, 0)); }
-      @media screen and (max-width: 768px) {
-        .welcome .slider_grad {
-          display: none; } }
+    .welcome .slider_image.shifting {
+      transition: left .2s ease-out; }
     .welcome .slider_wrapper {
       position: relative;
-      padding-bottom: 60px; }
+      padding-bottom: 60px;
+      overflow-x: hidden; }
       @media screen and (max-width: 768px) {
         .welcome .slider_wrapper {
           padding-bottom: 100px; } }
       @media screen and (max-width: 425px) {
         .welcome .slider_wrapper {
           padding-bottom: 80px; } }
+    .welcome .slider_grad {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      max-width: 300px;
+      width: 100%;
+      z-index: 3;
+      background-image: linear-gradient(to right, black, rgba(0, 0, 0, 0)); }
+      @media screen and (max-width: 768px) {
+        .welcome .slider_grad {
+          display: none; } }
     .welcome .slider_panel {
       background-color: #030303;
       position: absolute;

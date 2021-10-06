@@ -565,6 +565,8 @@ html{
         }
     }
 
+    
+
     .slider{
         position: absolute;
         max-width: 1000px;
@@ -584,7 +586,7 @@ html{
         }
         &_image{
             display: flex;
-            overflow-x: hidden;
+            // overflow-x: hidden;
             position: relative;
             img{
                @include media(1024px){
@@ -598,22 +600,14 @@ html{
             }
         }
 
-        &_grad{
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            max-width: 300px;
-            width: 100%;
-            background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
-            @include media(768px){
-                display: none;
-            }
-
+        &_image.shifting {
+            transition: left .2s ease-out;
         }
 
         &_wrapper{
             position: relative;
             padding-bottom: 60px;
+            overflow-x: hidden;
             @include media(768px){
                 padding-bottom: 100px;
             }
@@ -623,7 +617,19 @@ html{
             
         }
 
+        &_grad{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            max-width: 300px;
+            width: 100%;
+            z-index: 3;
+            background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+            @include media(768px){
+                display: none;
+            }
 
+        }
 
         &_panel{
             background-color: $bg-dark;
@@ -763,6 +769,7 @@ html{
             }
         }
     }
+    
 }
 
 .visiting{
