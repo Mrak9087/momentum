@@ -2,6 +2,8 @@ const slider = document.querySelector('.slider');
 let items = document.querySelector('.slider_image');
 const prev = document.querySelector('.btn_prev');
 const next = document.querySelector('.btn_next');
+let crSlide = document.querySelector('.slide_current');
+const positions = document.querySelectorAll('.slider .slide_position');
 
 const slides = items.querySelectorAll('img');
 console.log(slides)
@@ -70,6 +72,10 @@ function checkIndex (){
     items.style.left = -(1 * slideSize) + "px";
     index = 0;
     }
-
+    crSlide.textContent = `0${index+1}`;
     allowShift = true;
+    positions.forEach((item)=>{
+        item.classList.remove('current_position');
+    })
+    positions[index].classList.add('current_position');
 }
