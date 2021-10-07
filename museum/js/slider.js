@@ -9,6 +9,8 @@ const slides = items.querySelectorAll('img');
 console.log(slides)
 let slidesLength = slides.length;
 // let slideSize = slides[0].offsetWidth;
+let posX1 = 0;
+let posX2 = 0;
 let posInitial = 100;
 let posFinal = 100;
 let threshold = 100;
@@ -42,12 +44,10 @@ next.addEventListener('click', function () { shiftSlide(-1) });
 items.addEventListener('transitionend', checkIndex);
 
 items.onmousedown = dragStart;
-  
-  // Touch events
 items.addEventListener('touchstart', dragStart);
 items.addEventListener('touchend', dragEnd);
 items.addEventListener('touchmove', dragAction);
-console.log(prev);
+
 
 function dragStart (e) {
     // e = e || window.event;

@@ -1235,7 +1235,8 @@ html {
     flex-flow: column wrap;
     height: 3000px;
     row-gap: 24px;
-    column-gap: 18px; }
+    column-gap: 18px;
+    contain: layout paint; }
     .gallery .picture_container::before, .gallery .picture_container::after {
       content: "";
       flex-basis: 100%;

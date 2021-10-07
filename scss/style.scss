@@ -1623,7 +1623,7 @@ html{
         height: 3000px;
         row-gap: 24px;
         column-gap: 18px;
-        
+        contain: layout paint;
         &::before,&::after{
             content: "";
             flex-basis: 100%;
