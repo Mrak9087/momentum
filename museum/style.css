@@ -535,7 +535,8 @@ html {
         width: 100%;
         justify-content: space-between;
         align-items: center;
-        padding: 52px 0 52px; }
+        padding: 52px 0 52px;
+        cursor: pointer; }
         @media screen and (max-width: 1024px) {
           .welcome .slider_panel .slide_positions {
             max-width: 160px;

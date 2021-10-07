@@ -40,7 +40,56 @@ let imageInterval = setInterval(() => {
 prev.addEventListener('click', function () { shiftSlide(1) });
 next.addEventListener('click', function () { shiftSlide(-1) });
 items.addEventListener('transitionend', checkIndex);
+
+items.onmousedown = dragStart;
+  
+  // Touch events
+items.addEventListener('touchstart', dragStart);
+items.addEventListener('touchend', dragEnd);
+items.addEventListener('touchmove', dragAction);
 console.log(prev);
+
+function dragStart (e) {
+    // e = e || window.event;
+    e.preventDefault();
+    posInitial = items.offsetLeft;
+
+    if (e.type == 'touchstart') {
+        posX1 = e.touches[0].clientX;
+    } else {
+        posX1 = e.clientX;
+        document.onmouseup = dragEnd;
+        document.onmousemove = dragAction;
+    }
+}
+
+function dragAction (e) {
+    // e = e || window.event;
+
+    if (e.type == 'touchmove') {
+        posX2 = posX1 - e.touches[0].clientX;
+        posX1 = e.touches[0].clientX;
+    } else {
+        posX2 = posX1 - e.clientX;
+        posX1 = e.clientX;
+    }
+    items.style.left = (items.offsetLeft - posX2) + "px";
+}
+  
+function dragEnd (e) {
+    posFinal = items.offsetLeft;
+    if (posFinal - posInitial < -threshold) {
+        shiftSlide(1, 'drag');
+    } else if (posFinal - posInitial > threshold) {
+        shiftSlide(-1, 'drag');
+    } else {
+        items.style.left = (posInitial) + "px";
+    }
+
+    document.onmouseup = null;
+    document.onmousemove = null;
+}
+
 function shiftSlide(dir, action) {
     items.classList.add('shifting');
 
@@ -62,7 +111,7 @@ function shiftSlide(dir, action) {
 function checkIndex (){
     slideSize = slides[0].offsetWidth;
     items.classList.remove('shifting');
-
+    console.log('work');
     if (index == -1) {
     items.style.left = -(slidesLength * slideSize) + "px";
     index = slidesLength - 1;
@@ -74,6 +123,29 @@ function checkIndex (){
     }
     crSlide.textContent = `0${index+1}`;
     allowShift = true;
+    positions.forEach((item)=>{
+        item.classList.remove('current_position');
+    })
+    positions[index].classList.add('current_position');
+}
+
+positions.forEach((item,idx)=>{
+    item.addEventListener('click',()=>{
+        if (idx == index) return;
+        if (idx < index) {
+            shiftItems(-1,idx,index-idx)
+        }
+        else {
+            shiftItems(1,idx,idx-index)
+        }
+    })
+    
+})
+
+function shiftItems(dir,idx,countLoop){
+    slideSize = slides[0].offsetWidth * countLoop;
+    shiftSlide(dir);
+    index = idx;
     positions.forEach((item)=>{
         item.classList.remove('current_position');
     })

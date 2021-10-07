@@ -692,6 +692,7 @@ html{
                 justify-content: space-between;
                 align-items: center;
                 padding: 52px 0 52px;
+                cursor: pointer;
                 @include media(1024px){
                     max-width: 160px;
                     padding: 54px 0 54px;
