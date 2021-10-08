@@ -1381,6 +1381,11 @@ html{
         }
     }
 
+    .active_video{
+        border: 8px solid red;
+        box-sizing: border-box;
+    }
+
     &_slider{
         position: relative;
         width: 100%;

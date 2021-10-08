@@ -7,6 +7,7 @@ function videoSlider(){
     const positions = document.querySelectorAll('.nav_position');
 
     const slides = wrapper.querySelectorAll('.video_card');
+    
     console.log(slides)
     let slidesLength = slides.length;
     // let slideSize = slides[0].offsetWidth;
@@ -26,6 +27,8 @@ function videoSlider(){
     wrapper.appendChild(cloneFirst);
     wrapper.insertBefore(cloneLast, firstSlide);
     wrapper.style.left = `${-(slideSize+42)}px`;
+
+    slides[0].classList.add('active_video');
     
     prev.addEventListener('click', function () { shiftSlide(-1) });
     next.addEventListener('click', function () { shiftSlide(1) });
@@ -115,6 +118,12 @@ function videoSlider(){
             item.classList.remove('nav_cur');
         })
         positions[index].classList.add('nav_cur');
+
+        slides.forEach((item)=>{
+            console.log(item)
+            item.classList.remove('active_video');
+        })
+        slides[index].classList.add('active_video');
     }
 
     positions.forEach((item,idx)=>{
@@ -138,6 +147,11 @@ function videoSlider(){
             item.classList.remove('nav_cur');
         })
         positions[index].classList.add('nav_cur');
+
+        slides.forEach((item)=>{
+            item.classList.remove('active_video');
+        })
+        slides[index].classList.add('active_video');
     }
 }
 
