@@ -1250,7 +1250,9 @@ html {
       order: 2; }
     .gallery .picture_container .picture {
       max-width: 456px;
-      width: 100%; }
+      width: 100%;
+      opacity: 0;
+      transition: all 1s; }
       .gallery .picture_container .picture img {
         width: 100%;
         object-fit: cover; }
@@ -1265,6 +1267,9 @@ html {
         .gallery .picture_container .picture {
           max-width: calc(100% / 2 - 12px);
           width: 100%; } }
+    .gallery .picture_container .pic_show {
+      opacity: 1;
+      transition: all 1s; }
     @media screen and (min-width: 1000px) {
       .gallery .picture_container .picture:nth-child(3n+1) {
         order: 1; }

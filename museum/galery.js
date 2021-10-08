@@ -17,7 +17,7 @@ const images_path = [
 ];
 
 const galery = document.querySelector(".picture_container");
-
+const imagesGalery = [];
 function setGalery(){
     shuffle(images_path);
     images_path.map((item)=>{
@@ -28,6 +28,7 @@ function setGalery(){
         img.src = item;
         img.alt = `galery1`;
         pic_wrap.append(img);
+        imagesGalery.push(pic_wrap);
         galery.append(pic_wrap);
     })
 }
@@ -37,3 +38,43 @@ function shuffle(array) {
 }
 
 setGalery();
+
+const glr = document.querySelector('.gallery_pictures')
+const parentTop = glr.offsetTop; 
+
+function debounce(func, wait = 30, immediate = true){
+    let timeout;
+    return function(){
+        let context = this;
+        let args = arguments;
+        const later = function(){
+            timeout = null;
+            if (!immediate) func.apply(context,args);
+        }
+        let callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context,args);
+    }
+}
+
+function checkSlide(e){
+    imagesGalery.forEach((item)=>{
+        const imgInAt = (window.scrollY + window.innerHeight) - item.clientHeight;
+        console.log(imgInAt)
+        const imgBottom = parentTop + item.offsetTop + item.clientHeight;
+        const isHalfShown = imgInAt > parentTop + item.offsetTop;
+        const isNotScrolledPast = window.scrollY < imgBottom;
+        console.log(isHalfShown, isNotScrolledPast);
+        if (isHalfShown && isNotScrolledPast){
+            item.classList.add('pic_show');
+        } else {
+            item.classList.remove('pic_show');
+        }
+    })
+}
+
+window.addEventListener('scroll',debounce(checkSlide))
+
+
+

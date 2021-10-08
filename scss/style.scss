@@ -1648,6 +1648,8 @@ html{
         .picture{
             max-width: 456px;
             width: 100%;
+            opacity: 0;
+            transition: all 1s;
             img{
                 width: 100%;
                 object-fit: cover;
@@ -1666,6 +1668,11 @@ html{
                 width: 100%;
                 
             }
+        }
+
+        .pic_show{
+            opacity: 1;
+            transition: all 1s;
         }
 
         
