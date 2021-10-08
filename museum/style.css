@@ -148,6 +148,9 @@ html {
 .mb18 {
   margin-bottom: 18px; }
 
+.shifting {
+  transition: left .2s ease-out; }
+
 .nav_link {
   text-decoration: none;
   font-family: Roboto;
@@ -460,8 +463,6 @@ html {
       .welcome .slider_image .img_wrap {
         max-width: 1000px;
         width: 100%; }
-    .welcome .slider_image.shifting {
-      transition: left .2s ease-out; }
     .welcome .slider_wrapper {
       position: relative;
       padding-bottom: 60px;
@@ -535,8 +536,7 @@ html {
         width: 100%;
         justify-content: space-between;
         align-items: center;
-        padding: 52px 0 52px;
-        cursor: pointer; }
+        padding: 52px 0 52px; }
         @media screen and (max-width: 1024px) {
           .welcome .slider_panel .slide_positions {
             max-width: 160px;
@@ -551,7 +551,8 @@ html {
       .welcome .slider_panel .slide_position {
         width: 16px;
         height: 16px;
-        background-color: #fff; }
+        background-color: #fff;
+        cursor: pointer; }
         @media screen and (max-width: 1024px) {
           .welcome .slider_panel .slide_position {
             width: 12px;
@@ -1075,6 +1076,7 @@ html {
       display: flex;
       align-items: center; }
   .video_slider {
+    position: relative;
     width: 100%;
     overflow-x: hidden;
     display: flex;
@@ -1087,18 +1089,19 @@ html {
       .video_slider {
         row-gap: 40px; } }
     .video_slider_wrapper {
+      position: relative;
       display: flex;
       justify-content: space-between;
-      min-width: calc(452px * 5 + 42px * 4); }
+      min-width: calc(452px * 7 + 42px * 6); }
       @media screen and (max-width: 1024px) {
         .video_slider_wrapper {
-          min-width: calc(300px * 5 + 42px * 4); } }
+          min-width: calc(300px * 7 + 42px * 6); } }
       @media screen and (max-width: 768px) {
         .video_slider_wrapper {
-          min-width: calc(354px * 5 + 20px * 4); } }
+          min-width: calc(354px * 7 + 20px * 6); } }
       @media screen and (max-width: 425px) {
         .video_slider_wrapper {
-          min-width: calc(180px * 5 + 20px * 4); } }
+          min-width: calc(180px * 7 + 20px * 6); } }
       .video_slider_wrapper .video_card {
         max-width: 452px;
         position: relative;

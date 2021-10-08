@@ -186,7 +186,9 @@ html{
     margin-bottom: 18px;
 }
 
-
+.shifting {
+    transition: left .2s ease-out;
+}
 
 .nav_link{
     text-decoration: none;
@@ -600,9 +602,9 @@ html{
             }
         }
 
-        &_image.shifting {
-            transition: left .2s ease-out;
-        }
+        // &_image.shifting {
+        //     transition: left .2s ease-out;
+        // }
 
         &_wrapper{
             position: relative;
@@ -692,7 +694,7 @@ html{
                 justify-content: space-between;
                 align-items: center;
                 padding: 52px 0 52px;
-                cursor: pointer;
+                
                 @include media(1024px){
                     max-width: 160px;
                     padding: 54px 0 54px;
@@ -713,6 +715,7 @@ html{
                 width: 16px;
                 height: 16px;
                 background-color: #fff;
+                cursor: pointer;
                 @include media(1024px){
                     width: 12px;
                     height: 12px;
@@ -1379,6 +1382,7 @@ html{
     }
 
     &_slider{
+        position: relative;
         width: 100%;
         overflow-x: hidden;
         display: flex;
@@ -1394,18 +1398,19 @@ html{
         }
 
         &_wrapper{
+            position: relative;
             display: flex;
             justify-content: space-between;
-            min-width: calc(452px * 5 + 42px * 4);
+            min-width: calc(452px * 7 + 42px * 6);
             @include media(1024px){
-                min-width: calc(300px * 5 + 42px * 4);
+                min-width: calc(300px * 7 + 42px * 6);
             }
             @include media(768px){
-                min-width: calc(354px * 5 + 20px * 4);
+                min-width: calc(354px * 7 + 20px * 6);
             }
 
             @include media(425px){
-                min-width: calc(180px * 5 + 20px * 4);
+                min-width: calc(180px * 7 + 20px * 6);
             }
 
             .video_card{

@@ -1,12 +1,12 @@
-function slider() {
-    const slider = document.querySelector('.slider');
-    let items = document.querySelector('.slider_image');
-    const prev = document.querySelector('.btn_prev');
-    const next = document.querySelector('.btn_next');
-    let crSlide = document.querySelector('.slide_current');
-    const positions = document.querySelectorAll('.slider .slide_position');
+function videoSlider(){
+    const slider = document.querySelector('.video_slider');
+    let wrapper = document.querySelector('.video_slider_wrapper');
+    const prev = document.querySelector('.video_slider .nav_prev');
+    const next = document.querySelector('.video_slider .nav_next');
+    let crSlide = document.querySelector('.active_video');
+    const positions = document.querySelectorAll('.nav_position');
 
-    const slides = items.querySelectorAll('img');
+    const slides = wrapper.querySelectorAll('.video_card');
     console.log(slides)
     let slidesLength = slides.length;
     // let slideSize = slides[0].offsetWidth;
@@ -23,37 +23,24 @@ function slider() {
     let  cloneLast = lastSlide.cloneNode(true);
     let index = 0;
     let allowShift = true;
-    items.appendChild(cloneFirst);
-    items.insertBefore(cloneLast, firstSlide);
-    let imageInterval = setInterval(() => {
-        if (firstSlide.complete){
-            slideSize = firstSlide.offsetWidth;
-            items.style.left = `${-slideSize}px`;
-            clearInterval(imageInterval);
-        }
-        
-    }, 50);
+    wrapper.appendChild(cloneFirst);
+    wrapper.insertBefore(cloneLast, firstSlide);
+    wrapper.style.left = `${-(slideSize+42)}px`;
+    
+    prev.addEventListener('click', function () { shiftSlide(-1) });
+    next.addEventListener('click', function () { shiftSlide(1) });
+    wrapper.addEventListener('transitionend', checkIndex);
 
-    // items.style.left = `${-slideSize}px`;
-
-    // windows.addEventListener('load',()=>{
-        
-    // })
-
-    prev.addEventListener('click', function () { shiftSlide(1) });
-    next.addEventListener('click', function () { shiftSlide(-1) });
-    items.addEventListener('transitionend', checkIndex);
-
-    items.onmousedown = dragStart;
-    items.addEventListener('touchstart', dragStart);
-    items.addEventListener('touchend', dragEnd);
-    items.addEventListener('touchmove', dragAction);
+    wrapper.onmousedown = dragStart;
+    wrapper.addEventListener('touchstart', dragStart);
+    wrapper.addEventListener('touchend', dragEnd);
+    wrapper.addEventListener('touchmove', dragAction);
 
 
     function dragStart (e) {
         // e = e || window.event;
         e.preventDefault();
-        posInitial = items.offsetLeft;
+        posInitial = wrapper.offsetLeft;
 
         if (e.type == 'touchstart') {
             posX1 = e.touches[0].clientX;
@@ -74,17 +61,17 @@ function slider() {
             posX2 = posX1 - e.clientX;
             posX1 = e.clientX;
         }
-        items.style.left = (items.offsetLeft - posX2) + "px";
+        wrapper.style.left = (wrapper.offsetLeft - posX2) + "px";
     }
     
     function dragEnd (e) {
-        posFinal = items.offsetLeft;
+        posFinal = wrapper.offsetLeft;
         if (posFinal - posInitial < -threshold) {
             shiftSlide(1, 'drag');
         } else if (posFinal - posInitial > threshold) {
             shiftSlide(-1, 'drag');
         } else {
-            items.style.left = (posInitial) + "px";
+            wrapper.style.left = (posInitial) + "px";
         }
 
         document.onmouseup = null;
@@ -92,16 +79,16 @@ function slider() {
     }
 
     function shiftSlide(dir, action) {
-        items.classList.add('shifting');
+        wrapper.classList.add('shifting');
 
         if (allowShift) {
-            if (!action) { posInitial = items.offsetLeft; }
-
+            if (!action) { posInitial = wrapper.offsetLeft; }
+            
             if (dir == 1) {
-                items.style.left = (posInitial - slideSize) + "px";
+                wrapper.style.left = (posInitial - slideSize) + "px";
                 index++;      
             } else if (dir == -1) {
-                items.style.left = (posInitial + slideSize) + "px";
+                wrapper.style.left = (posInitial + slideSize) + "px";
                 index--;      
             }
         };
@@ -111,23 +98,23 @@ function slider() {
         
     function checkIndex (){
         slideSize = slides[0].offsetWidth;
-        items.classList.remove('shifting');
+        wrapper.classList.remove('shifting');
         console.log('work');
         if (index == -1) {
-        items.style.left = -(slidesLength * slideSize) + "px";
-        index = slidesLength - 1;
+            wrapper.style.left = -(slidesLength * slideSize + 42) + "px";
+            index = slidesLength - 1;
         }
 
         if (index == slidesLength) {
-        items.style.left = -(1 * slideSize) + "px";
-        index = 0;
+            wrapper.style.left = -(1 * slideSize + 42) + "px";
+            index = 0;
         }
-        crSlide.textContent = `0${index+1}`;
+        
         allowShift = true;
         positions.forEach((item)=>{
-            item.classList.remove('current_position');
+            item.classList.remove('nav_cur');
         })
-        positions[index].classList.add('current_position');
+        positions[index].classList.add('nav_cur');
     }
 
     positions.forEach((item,idx)=>{
@@ -148,11 +135,10 @@ function slider() {
         shiftSlide(dir);
         index = idx;
         positions.forEach((item)=>{
-            item.classList.remove('current_position');
+            item.classList.remove('nav_cur');
         })
-        positions[index].classList.add('current_position');
+        positions[index].classList.add('nav_cur');
     }
-
 }
 
-slider();
+videoSlider();
