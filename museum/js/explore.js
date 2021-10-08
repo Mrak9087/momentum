@@ -4,6 +4,13 @@ function explore(){
     const img = document.querySelector('.card_cur img');
     
     let w = img.offsetWidth;
+    let imageInterval = setInterval(() => {
+        if (img.complete){
+            w = img.offsetWidth;
+            clearInterval(imageInterval);
+        }
+    }, 50);
+    
     let pos;
 
     spliter.addEventListener("mousedown", slideReady);
