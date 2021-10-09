@@ -15,6 +15,7 @@ function videoSlider(){
     const btnPlay = document.querySelector('.btn_control_play');
     const flScreen = document.querySelector('.btn_control_fullscreen');
     let isFullScreen = false;
+    let isChangeSound = false;
 
     flScreen.addEventListener('click', (e)=>{
         // wrapperVideo.requestFullscreen();
@@ -62,6 +63,13 @@ function videoSlider(){
     sound.addEventListener('change', changeSound);
     sound.addEventListener('mousemove', changeSound);
 
+    sound.addEventListener('mousedown', (e)=>{
+        isChangeSound = true;
+    });
+    sound.addEventListener('mouseup', (e)=>{
+        isChangeSound = false;
+    });
+
     function videoPlay(){
         if (player.paused){
             player.play();
@@ -75,7 +83,8 @@ function videoSlider(){
         }
     }
 
-    function changeSound(){
+    function changeSound(e){
+        if (!isChangeSound) return;
         player.volume = this.value/100;
         
         
