@@ -1409,6 +1409,28 @@ html{
         }
     }
 
+    &_wrapper:fullscreen{
+        
+        .player{
+            max-width: 100%;
+            width: 100%;
+            min-height: 90%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .video_control{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .btn_control_fullscreen{
+            background-image: url("./assets/svg/fullscreen_exit.svg");
+        }
+    }
+
     .active_video{
         box-shadow: inset 0 0 0 5px #a31717, 0 0 0 5px #a31717;
     }
@@ -1594,6 +1616,7 @@ html{
                     height: 12px;
                     border-radius: 500%;
                     background-color: #999;
+                    cursor: pointer;
                     @include media(425px){
                         width: 8px;
                         height: 8px;

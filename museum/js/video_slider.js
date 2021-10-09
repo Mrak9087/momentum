@@ -7,12 +7,31 @@ function videoSlider(){
     const positions = document.querySelectorAll('.nav_position');
 
     const player = document.querySelector('.player');
+    const wrapperVideo = document.querySelector('.video_wrapper');
     const btnBigPlay = document.querySelector('.btn_play_video');
     const sound = document.querySelector('.sound_progress');
     const progress = document.querySelector('.video_progress');
     const muteBtn = document.querySelector('.btn_control_sound');
     const btnPlay = document.querySelector('.btn_control_play');
+    const flScreen = document.querySelector('.btn_control_fullscreen');
+    let isFullScreen = false;
 
+    flScreen.addEventListener('click', (e)=>{
+        // wrapperVideo.requestFullscreen();
+        if (isFullScreen){
+            document.exitFullscreen();
+            isFullScreen = false
+        } else {
+            wrapperVideo.requestFullscreen();
+            isFullScreen = true;
+        }
+        // console.log(player)
+        // if (document.fullscreenElement){
+        //     document.exitFullscreen();
+        // } else {
+        //     document.documentElement.requestFullscreen()
+        // }
+    })
     muteBtn.addEventListener('click',(e) => {
         if (player.muted){
             player.muted = false;
@@ -26,7 +45,11 @@ function videoSlider(){
     player.addEventListener('timeupdate', (e)=>{
         let percent = (player.currentTime / player.duration) * 100;
         progress.value = percent;
-        progress.style.background = `linear-gradient(to right, #710707 0%, #710707 ${progress.value}%, #fff ${progress.value}%, white 100%)`
+        progress.style.background = `linear-gradient(to right, #710707 0%, #710707 ${progress.value}%, #fff ${progress.value}%, white 100%)`;
+        if (player.ended){
+            btnPlay.classList.remove('paused');
+            btnBigPlay.classList.remove('paused');
+        }
     })
     progress.addEventListener('input',(e)=>{
         let scrub = (progress.value * player.duration) / 100;
@@ -54,6 +77,18 @@ function videoSlider(){
 
     function changeSound(){
         player.volume = this.value/100;
+        
+        
+        if (!+this.value){
+            player.muted = true;
+            muteBtn.classList.add('mute');
+        }else{
+            if (player.muted){
+                player.muted = false;
+                muteBtn.classList.remove('mute');
+            }
+        }
+            
     }
 
     const slides = wrapper.querySelectorAll('.video_card');
@@ -67,6 +102,7 @@ function videoSlider(){
     let posFinal = 100;
     let threshold = 100;
     let firstSlide = slides[0];
+    let mrg = 42;
     // console.log(firstSlide.offsetWidth);
     let slideSize = firstSlide.offsetWidth;
     let lastSlide = slides[slidesLength - 1];
@@ -132,16 +168,17 @@ function videoSlider(){
     }
 
     function shiftSlide(dir, action) {
+        if (window.innerWidth < 769) mrg = 20;
         wrapper.classList.add('shifting');
 
         if (allowShift) {
             if (!action) { posInitial = wrapper.offsetLeft; }
             
             if (dir == 1) {
-                wrapper.style.left = (posInitial - slideSize-42) + "px";
+                wrapper.style.left = (posInitial - slideSize-mrg) + "px";
                 index++;      
             } else if (dir == -1) {
-                wrapper.style.left = (posInitial + slideSize+84) + "px";
+                wrapper.style.left = (posInitial + slideSize+mrg*2) + "px";
                 index--;      
             }
         };
@@ -154,7 +191,7 @@ function videoSlider(){
         wrapper.classList.remove('shifting');
         // console.log('work');
         if (index == -1) {
-            wrapper.style.left = -(slidesLength * slideSize)-84 + "px";
+            wrapper.style.left = -(slidesLength * slideSize)-mrg*2 + "px";
             index = slidesLength - 1;
         }
 
@@ -195,7 +232,7 @@ function videoSlider(){
     })
 
     function shiftItems(dir,idx,countLoop){
-        slideSize = slides[0].offsetWidth * countLoop + 42 * (countLoop-1);
+        slideSize = slides[0].offsetWidth * countLoop + mrg * (countLoop-1);
         shiftSlide(dir);
         index = idx;
         positions.forEach((item)=>{
