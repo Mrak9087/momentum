@@ -39,8 +39,9 @@ function shuffle(array) {
 
 setGalery();
 
-const glr = document.querySelector('.gallery_pictures')
-const parentTop = glr.offsetTop; 
+const glr = document.querySelector('.gallery_pictures');
+console.log(glr);
+let parentTop = glr.offsetTop; 
 
 function debounce(func, wait = 30, immediate = true){
     let timeout;
@@ -59,13 +60,15 @@ function debounce(func, wait = 30, immediate = true){
 }
 
 function checkSlide(e){
+    parentTop = glr.offsetTop;
     imagesGalery.forEach((item)=>{
         const imgInAt = (window.scrollY + window.innerHeight) - item.clientHeight;
-        console.log(imgInAt)
+        
+        console.log(parentTop)
         const imgBottom = parentTop + item.offsetTop + item.clientHeight;
         const isHalfShown = imgInAt > parentTop + item.offsetTop;
         const isNotScrolledPast = window.scrollY < imgBottom;
-        console.log(isHalfShown, isNotScrolledPast);
+        // console.log(isHalfShown, isNotScrolledPast);
         if (isHalfShown && isNotScrolledPast){
             item.classList.add('pic_show');
         } else {

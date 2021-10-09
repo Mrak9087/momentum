@@ -1152,7 +1152,7 @@ html{
 
     &_wrapper{
         position: relative;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         @include media(768px){
             margin-bottom: 21px;
         }
@@ -1163,6 +1163,12 @@ html{
         .player{
             display: block;
             width: 100%;
+            max-height: 45.13%;
+            height: 100%;
+            
+            ::poster{
+                object-fit: contain;
+            }
         }
 
         .btn_play_video{
@@ -1281,6 +1287,19 @@ html{
                 background-size: contain;
             }
         }
+
+        .mute{
+            background-image: url("./assets/svg/mute.svg");
+            background-position: center center;
+            background-size: 38px;
+            @include media(1024px){
+                background-size: 30px;
+            }
+            @include media(768px){
+                background-size: contain;
+            }
+        }
+
         
         .btn_control_fullscreen{
             background-image: url("./assets/svg/fullScrean.svg");
@@ -1382,13 +1401,13 @@ html{
     }
 
     .active_video{
-        border: 8px solid red;
-        box-sizing: border-box;
+        box-shadow: inset 0 0 0 5px #a31717, 0 0 0 5px #a31717;
     }
 
     &_slider{
         position: relative;
         width: 100%;
+        padding-top: 10px;
         overflow-x: hidden;
         display: flex;
         flex-direction: column;
@@ -1649,6 +1668,7 @@ html{
             max-width: 456px;
             width: 100%;
             opacity: 0;
+            transform: translateY(10px) scale(0.8);
             transition: all 1s;
             img{
                 width: 100%;
@@ -1672,6 +1692,7 @@ html{
 
         .pic_show{
             opacity: 1;
+            transform: scale(1) translateY(0);
             transition: all 1s;
         }
 

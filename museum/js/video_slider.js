@@ -6,9 +6,53 @@ function videoSlider(){
     let crSlide = document.querySelector('.active_video');
     const positions = document.querySelectorAll('.nav_position');
 
+    const player = document.querySelector('.player');
+    const btnBigPlay = document.querySelector('.btn_play_video');
+    const sound = document.querySelector('.sound_progress');
+    const progress = document.querySelector('.video_progress');
+    const muteBtn = document.querySelector('.btn_control_sound');
+
+    muteBtn.addEventListener('click',(e) => {
+        if (player.muted){
+            player.muted = false;
+            muteBtn.classList.remove('mute');
+        } else {
+            player.muted = true;
+            muteBtn.classList.add('mute');
+            
+        }
+    });
+    player.addEventListener('timeupdate', (e)=>{
+        let percent = (player.currentTime / player.duration) * 100;
+        progress.value = percent;
+        progress.style.background = `linear-gradient(to right, #710707 0%, #710707 ${progress.value}%, #fff ${progress.value}%, white 100%)`
+    })
+    progress.addEventListener('input',(e)=>{
+        let scrub = (progress.value * player.duration) / 100;
+        console.log(e) ;
+        console.log(scrub);
+        player.currentTime = scrub;
+
+    })
+    btnBigPlay.addEventListener('click', videoPlay);
+    sound.addEventListener('change', changeSound);
+    sound.addEventListener('mousemove', changeSound);
+
+    function videoPlay(){
+        if (player.paused){
+            player.play();
+        } else {
+            player.pause();
+        }
+    }
+
+    function changeSound(){
+        player.volume = this.value/100;
+    }
+
     const slides = wrapper.querySelectorAll('.video_card');
     
-    console.log(slides)
+    // console.log(slides)
     let slidesLength = slides.length;
     // let slideSize = slides[0].offsetWidth;
     let posX1 = 0;
@@ -17,7 +61,7 @@ function videoSlider(){
     let posFinal = 100;
     let threshold = 100;
     let firstSlide = slides[0];
-    console.log(firstSlide.offsetWidth);
+    // console.log(firstSlide.offsetWidth);
     let slideSize = firstSlide.offsetWidth;
     let lastSlide = slides[slidesLength - 1];
     let cloneFirst = firstSlide.cloneNode(true);
@@ -26,7 +70,7 @@ function videoSlider(){
     let allowShift = true;
     wrapper.appendChild(cloneFirst);
     wrapper.insertBefore(cloneLast, firstSlide);
-    wrapper.style.left = `${-(slideSize+42)}px`;
+    wrapper.style.left = `0px`;
 
     slides[0].classList.add('active_video');
     
@@ -88,10 +132,10 @@ function videoSlider(){
             if (!action) { posInitial = wrapper.offsetLeft; }
             
             if (dir == 1) {
-                wrapper.style.left = (posInitial - slideSize) + "px";
+                wrapper.style.left = (posInitial - slideSize-42) + "px";
                 index++;      
             } else if (dir == -1) {
-                wrapper.style.left = (posInitial + slideSize) + "px";
+                wrapper.style.left = (posInitial + slideSize+84) + "px";
                 index--;      
             }
         };
@@ -102,14 +146,14 @@ function videoSlider(){
     function checkIndex (){
         slideSize = slides[0].offsetWidth;
         wrapper.classList.remove('shifting');
-        console.log('work');
+        // console.log('work');
         if (index == -1) {
-            wrapper.style.left = -(slidesLength * slideSize + 42) + "px";
+            wrapper.style.left = -(slidesLength * slideSize)-84 + "px";
             index = slidesLength - 1;
         }
 
         if (index == slidesLength) {
-            wrapper.style.left = -(1 * slideSize + 42) + "px";
+            wrapper.style.left = "0px";
             index = 0;
         }
         
@@ -124,6 +168,11 @@ function videoSlider(){
             item.classList.remove('active_video');
         })
         slides[index].classList.add('active_video');
+        let videoPoster = slides[index].querySelector('img').src;
+        player.poster = videoPoster;
+        let srcVideo = slides[index].dataset.video; //querySelector('.video__link').href
+        player.src = srcVideo;
+        
     }
 
     positions.forEach((item,idx)=>{
@@ -140,7 +189,7 @@ function videoSlider(){
     })
 
     function shiftItems(dir,idx,countLoop){
-        slideSize = slides[0].offsetWidth * countLoop;
+        slideSize = slides[0].offsetWidth * countLoop + 42 * (countLoop-1);
         shiftSlide(dir);
         index = idx;
         positions.forEach((item)=>{

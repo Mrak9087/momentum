@@ -7,7 +7,7 @@ function slider() {
     const positions = document.querySelectorAll('.slider .slide_position');
 
     const slides = items.querySelectorAll('img');
-    console.log(slides)
+    // console.log(slides)
     let slidesLength = slides.length;
     // let slideSize = slides[0].offsetWidth;
     let posX1 = 0;
@@ -16,7 +16,7 @@ function slider() {
     let posFinal = 100;
     let threshold = 100;
     let firstSlide = slides[0];
-    console.log(firstSlide.offsetWidth);
+    // console.log(firstSlide.offsetWidth);
     let slideSize = firstSlide.offsetWidth;
     let lastSlide = slides[slidesLength - 1];
     let cloneFirst = firstSlide.cloneNode(true);
