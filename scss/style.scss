@@ -1211,6 +1211,11 @@ html{
             }
         }
 
+        .btn_play_video.paused{
+            opacity: 0;
+            pointer-events: none;
+        }
+
         .video_control{
             display: flex;
             justify-content: space-between;
@@ -1274,6 +1279,10 @@ html{
             @include media(768px){
                 background-size: contain;
             }
+        }
+
+        .btn_control_play.paused{
+            background-image: url("./assets/svg/pause.svg");
         }
         
        .btn_control_sound{

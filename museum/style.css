@@ -941,6 +941,9 @@ html {
           top: calc(47%);
           left: calc(50%);
           transform: translate(-50%, -85%); } }
+    .video_wrapper .btn_play_video.paused {
+      opacity: 0;
+      pointer-events: none; }
     .video_wrapper .video_control {
       display: flex;
       justify-content: space-between;
@@ -994,6 +997,8 @@ html {
       @media screen and (max-width: 768px) {
         .video_wrapper .btn_control_play {
           background-size: contain; } }
+    .video_wrapper .btn_control_play.paused {
+      background-image: url("./assets/svg/pause.svg"); }
     .video_wrapper .btn_control_sound {
       background-image: url("./assets/svg/volume.svg");
       background-position: center center;

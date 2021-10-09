@@ -11,6 +11,7 @@ function videoSlider(){
     const sound = document.querySelector('.sound_progress');
     const progress = document.querySelector('.video_progress');
     const muteBtn = document.querySelector('.btn_control_sound');
+    const btnPlay = document.querySelector('.btn_control_play');
 
     muteBtn.addEventListener('click',(e) => {
         if (player.muted){
@@ -29,20 +30,25 @@ function videoSlider(){
     })
     progress.addEventListener('input',(e)=>{
         let scrub = (progress.value * player.duration) / 100;
-        console.log(e) ;
-        console.log(scrub);
         player.currentTime = scrub;
 
     })
     btnBigPlay.addEventListener('click', videoPlay);
+    btnPlay.addEventListener('click',videoPlay);
+    player.addEventListener('click',videoPlay);
     sound.addEventListener('change', changeSound);
     sound.addEventListener('mousemove', changeSound);
 
     function videoPlay(){
         if (player.paused){
             player.play();
+            btnPlay.classList.add('paused');
+            btnBigPlay.classList.add('paused');
         } else {
             player.pause();
+            btnPlay.classList.remove('paused');
+            btnBigPlay.classList.remove('paused');
+
         }
     }
 
