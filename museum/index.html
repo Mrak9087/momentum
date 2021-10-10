@@ -14,6 +14,7 @@
     <script src="./js/slider.js" defer></script>
     <script src="./js/explore.js" defer></script>
     <script src="./js/video_slider.js" defer></script>
+    <script src="./js/tickets.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -369,17 +370,17 @@
 
                             <div class="radio_group">
                                 <label class="label_radio">
-                                    <input type="radio" checked="checked" name="radio">                                
+                                    <input type="radio" checked="checked" name="radio" data-index="0" >                                
                                     Permanent exhibition
                                     <span class="checkmark"></span>
                                 </label>
                                 <label class="label_radio">
-                                    <input type="radio" name="radio">                                
+                                    <input type="radio" name="radio" data-index="1">                                
                                     Temporary exhibition
                                     <span class="checkmark"></span>
                                 </label>
                                 <label class="label_radio">
-                                    <input type="radio" name="radio">                                
+                                    <input type="radio" name="radio" data-index="2">                                
                                     Combined Admission
                                     <span class="checkmark"></span>
                                 </label>
@@ -396,9 +397,9 @@
                                     Basic 18+
                                 </p>
                                 <div class="amount_count">
-                                    <button class="amount_btn" onclick="this.nextElementSibling.stepDown()"><span class="button_symbol">–</span></button>
-                                    <input type="number" min="0" max="20" value="1" readonly class="number">
-                                    <button class="amount_btn" onclick="this.previousElementSibling.stepUp()"><span class="button_symbol">+</span></button>
+                                    <button class="amount_btn down" /*onclick="this.nextElementSibling.stepDown()"*/><span class="button_symbol">–</span></button>
+                                    <input type="number" min="0" max="20" value="1" readonly class="number basic">
+                                    <button class="amount_btn up" /*onclick="this.previousElementSibling.stepUp()"*/><span class="button_symbol">+</span></button>
                                 </div>
                             </div>
 
@@ -407,15 +408,15 @@
                                     Senior 65+
                                 </p>
                                 <div class="amount_count">
-                                    <button class="amount_btn" onclick="this.nextElementSibling.stepDown()"><span class="button_symbol">–</span></button>
-                                    <input type="number" min="0" max="20" value="1" readonly class="number">
-                                    <button class="amount_btn" onclick="this.previousElementSibling.stepUp()"><span class="button_symbol">+</span></button>
+                                    <button class="amount_btn down" /*onclick="this.nextElementSibling.stepDown()"*/><span class="button_symbol">–</span></button>
+                                    <input type="number" min="0" max="20" value="1" readonly class="number senior">
+                                    <button class="amount_btn up" /*onclick="this.previousElementSibling.stepUp()"*/><span class="button_symbol">+</span></button>
                                 </div>
                             </div>
 
                             <div class="total_sum">
                                 <span class="total_txt">Total €</span>
-                                <span class="total_txt">220</span>
+                                <span class="total_txt totalSum">220</span>
                             </div>
 
                             <button class="btn_buy">
@@ -511,10 +512,31 @@
                     <div class="ticket_data">
                         <div class="ticket_date_time">
                             <div class="ticket_input ticket_date">
-                                <input type="date" name="buyDate" class="inp_date">
+                                <input type="date" name="buyDate" class="inp_date" placeholder="Date">
                             </div>
                             <div class="ticket_input ticket_time">
                                 <input type="time" name="buyTime" class="inp_time">
+                                <div class="time_range">
+                                    <div>09:00</div>
+                                    <div>09:30</div>
+                                    <div>10:00</div>
+                                    <div>10:30</div>
+                                    <div>11:00</div>
+                                    <div>11:30</div>
+                                    <div>12:00</div>
+                                    <div>12:30</div>
+                                    <div>13:00</div>
+                                    <div>13:30</div>
+                                    <div>14:00</div>
+                                    <div>14:30</div>
+                                    <div>15:00</div>
+                                    <div>15:30</div>
+                                    <div>16:00</div>
+                                    <div>16:30</div>
+                                    <div>17:00</div>
+                                    <div>17:30</div>
+                                    <div>18:00</div>
+                                </div>
                             </div>
                         </div>
 
@@ -543,9 +565,9 @@
                                 <span>Basic 18+ (20 €)</span>
 
                                 <div class="entry_count">
-                                    <button class="entry_btn" onclick="return false"><span class="button_symbol">-</span></button>
-                                    <input type="number" min="0" max="20" value="2" readonly class="entry_number">
-                                    <button class="entry_btn" onclick="return false"><span class="button_symbol">+</span></button>
+                                    <button type="button" class="entry_btn down" ><span class="button_symbol">-</span></button>
+                                    <input type="number" min="0" max="20" value="2" readonly class="entry_number basic">
+                                    <button type="button" class="entry_btn up" onclick="return false"><span class="button_symbol">+</span></button>
                                 </div>
                             </div>
 
@@ -553,9 +575,9 @@
                                 <span>Senior 65+ (10 €)</span>
 
                                 <div class="entry_count">
-                                    <button class="entry_btn" onclick="return false"><span class="button_symbol">-</span></button>
-                                    <input type="number" min="0" max="20" value="2" readonly class="entry_number">
-                                    <button class="entry_btn" onclick="return false"><span class="button_symbol">+</span></button>
+                                    <button type="button" class="entry_btn down" ><span class="button_symbol">-</span></button>
+                                    <input type="number" min="0" max="20" value="2" readonly class="entry_number senior">
+                                    <button type="button" class="entry_btn up" onclick="return false"><span class="button_symbol">+</span></button>
                                 </div>
                             </div>
                         </div>
@@ -579,20 +601,20 @@
                     </div>
                     <div class="pay_total">
                         <div class="total_option">
-                            <div class="total_count">2</div>
-                            <div class="option_text">Basic (20 €)</div>
-                            <div class="price">40 €</div>
+                            <div class="total_count cntBasic">2</div>
+                            <div class="option_text optionBasic">Basic (20 €)</div>
+                            <div class="price prcBasic">40 €</div>
                         </div>
                         <div class="total_option">
-                            <div class="total_count">2</div>
-                            <div class="option_text">Senior (10 €)</div>
-                            <div class="price">20 €</div>
+                            <div class="total_count cntSenior">2</div>
+                            <div class="option_text optionSenior">Senior (10 €)</div>
+                            <div class="price prcSenior">20 €</div>
                         </div>
                         <div class="total_sum">
                             <div class="total_text">
                                 Total:
                             </div>
-                            <div class="total_price">
+                            <div class="total_price buyTotalPrice">
                                 60 €
                             </div>
                         </div>
