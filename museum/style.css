@@ -345,18 +345,20 @@ html {
 
 .welcome {
   background-color: #030303; }
-  @media screen and (max-width: 1024px) {
-    .welcome_title {
-      line-height: 90px; } }
-  @media screen and (max-width: 768px) {
-    .welcome_title {
-      text-align: center;
-      font-size: 40px;
-      line-height: 60px; } }
-  @media screen and (max-width: 425px) {
-    .welcome_title {
-      font-size: 28px;
-      line-height: 40px; } }
+  .welcome_title {
+    pointer-events: none; }
+    @media screen and (max-width: 1024px) {
+      .welcome_title {
+        line-height: 90px; } }
+    @media screen and (max-width: 768px) {
+      .welcome_title {
+        text-align: center;
+        font-size: 40px;
+        line-height: 60px; } }
+    @media screen and (max-width: 425px) {
+      .welcome_title {
+        font-size: 28px;
+        line-height: 40px; } }
   .welcome_text {
     position: relative;
     z-index: 3; }
@@ -480,7 +482,8 @@ html {
       max-width: 300px;
       width: 100%;
       z-index: 3;
-      background-image: linear-gradient(to right, black, rgba(0, 0, 0, 0)); }
+      background-image: linear-gradient(to right, black, rgba(0, 0, 0, 0));
+      pointer-events: none; }
       @media screen and (max-width: 768px) {
         .welcome .slider_grad {
           display: none; } }

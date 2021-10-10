@@ -18,7 +18,7 @@ function tickets(){
     const timeRanges = document.querySelectorAll('.time_range div');
     const container = document.querySelector('.buy_container');
     const pTime = document.querySelector('.pay_dt.time_pay');
-    let curSpan;
+    const payTxt = document.querySelector('.pay_dt.txt_pay');
     container.addEventListener('click',(e)=>{
         // if (!e.target.closest('.time_range')){
         //     buyTimeParent.classList.remove('show_time');
@@ -188,6 +188,7 @@ function tickets(){
         cntBasicElem.innerText = countBasic;
         cntSeniorElem.innerText = countSenior;
         spanTotalSum.innerText = totalSum;
+        payTxt.innerText = ticketType.value;
         buyBasic.value = countBasic;
         buySenior.value = countSenior;
         optionBasicElem.innerText = `Basic (${prices[idx]} €)`;
@@ -196,6 +197,8 @@ function tickets(){
         prcSeniorElem.innerText = `${countSenior * (prices[idx] / 2)} €`;
         buyTotalPriceElem.innerText = `${totalSum} €`
     }
+
+    setValues();
 
     function getTotalSum(basic,senior){
         let basicSum = +basic * price;

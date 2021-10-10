@@ -456,6 +456,7 @@ html{
     background-color: $bg-dark;
 
     &_title{
+        pointer-events: none;
         @include media(1024px){
             line-height: 90px;
         }
@@ -474,6 +475,7 @@ html{
         // width: 598px;
         position: relative;
         z-index: 3;
+
         @include media(768px){
             position: static;
             display: flex;
@@ -627,6 +629,7 @@ html{
             width: 100%;
             z-index: 3;
             background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+            pointer-events: none;
             @include media(768px){
                 display: none;
             }
