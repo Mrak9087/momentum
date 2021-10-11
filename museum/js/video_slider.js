@@ -16,6 +16,33 @@ function videoSlider(){
     const flScreen = document.querySelector('.btn_control_fullscreen');
     let isFullScreen = false;
     let isChangeSound = false;
+    const videoContainer = document.querySelector('.video_container');
+
+    videoContainer.addEventListener('keypress',(e)=>{
+        
+        if (e.code == 'KeyM'){
+            muteBtn.click();
+        }
+        if (e.code == 'KeyF'){
+            flScreen.click();
+        }
+        if (e.code == 'Space'){
+            btnPlay.click();
+        }
+        if (e.code == 'Period'){
+            
+            player.playbackRate -= 0.25;
+            if (player.playbackRate < 0.25){
+                player.playbackRate = 0.25;
+            }
+        }
+        if (e.code == 'Comma'){
+            player.playbackRate += 0.25;
+            if (player.playbackRate > 2){
+                player.playbackRate = 2;
+            }
+        }
+    })
 
     flScreen.addEventListener('click', (e)=>{
         // wrapperVideo.requestFullscreen();
@@ -32,7 +59,8 @@ function videoSlider(){
         // } else {
         //     document.documentElement.requestFullscreen()
         // }
-    })
+    });
+
     muteBtn.addEventListener('click',(e) => {
         if (player.muted){
             player.muted = false;
@@ -43,6 +71,7 @@ function videoSlider(){
             
         }
     });
+
     player.addEventListener('timeupdate', (e)=>{
         let percent = (player.currentTime / player.duration) * 100;
         progress.value = percent;
@@ -79,7 +108,9 @@ function videoSlider(){
             player.pause();
             btnPlay.classList.remove('paused');
             btnBigPlay.classList.remove('paused');
-
+            
+            player.playbackRate = 1;
+            
         }
     }
 
