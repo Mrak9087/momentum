@@ -51,7 +51,7 @@ function tickets(){
     })
 
     ticketName.addEventListener('input', (e)=>{
-        let reg = /[а-яА-Яa-zA-Z ]{3,15}/g;
+        let reg = /^[а-яА-Яa-zA-Z ]{3,15}$/g;
         let str = ticketName.value;
 
         if (reg.test(ticketName.value)) {
