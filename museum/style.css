@@ -1741,9 +1741,17 @@ html {
           color: #9d8665; }
     .contacts_content .content_img {
       max-width: 960px;
-      width: 100%; }
+      width: 100%;
+      position: relative;
+      padding-top: 43.05%; }
       .contacts_content .content_img source, .contacts_content .content_img img {
         width: 100%; }
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%; }
 
 .footer {
   background-color: #030303;

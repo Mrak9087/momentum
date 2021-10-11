@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Museum</title>
     <link rel="icon" href="./favicon.ico">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="style.css">
+    
     <script src="./galery.js" defer></script>
     <script src="./amount.js" defer></script>
     <script src="./video.js" defer></script>
@@ -15,6 +17,9 @@
     <script src="./js/explore.js" defer></script>
     <script src="./js/video_slider.js" defer></script>
     <script src="./js/tickets.js" defer></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js'></script>
+    <!--  -->
+
 </head>
 <body>
     <header class="header">
@@ -446,13 +451,41 @@
                         </ul>
                     </div>
                     <div class="content_img">
-                        <picture >
+                        <!-- <picture >
                             <source srcset="./assets/img/map1024.png" media="(max-width: 1024px)">
                             <source srcset="./assets/img/map768.png" media="(max-width: 768px)">
                             <source srcset="./assets/img/map420.png" media="(max-width: 420px)">
                             <img src="./assets/img/map.png" alt="map">
-                        </picture>
-                        
+                        </picture> -->
+                        <!-- <iframe width='100%' height='400px' src="https://api.mapbox.com/styles/v1/mrak9087/ckumgjskv3fm317nsf9uu1cpc.html?title=false&access_token=pk.eyJ1IjoibXJhazkwODciLCJhIjoiY2t1a3R6d2JnMjNwMjJxbnY2ZndoNzN4dyJ9.TYiBe-jCaCtVQxgrvzy3-g&zoomwheel=false#15.96/48.860489/2.33506" title="mrak" style="border:none;"></iframe> -->
+                        <!-- <div id='map' style='width: 400px; height: 300px;'></div> -->
+                        <div id='map'></div>
+                        <script>
+                            mapboxgl.accessToken = 'pk.eyJ1IjoibXJhazkwODciLCJhIjoiY2t1a3R6d2JnMjNwMjJxbnY2ZndoNzN4dyJ9.TYiBe-jCaCtVQxgrvzy3-g';
+                            const map = new mapboxgl.Map({
+                                container: 'map', // container ID
+                                style: 'mapbox://styles/mrak9087/ckumgjskv3fm317nsf9uu1cpc', // style URL
+                                center: [2.336,48.861], // starting position [lng, lat]
+                                zoom: 15.8, // starting zoom
+                                
+                            });
+                            map.addControl(new mapboxgl.NavigationControl());
+                            const marker1 = new mapboxgl.Marker({ color: 'black'})
+                                            .setLngLat([2.3364, 48.86091])
+                                            .addTo(map);
+                            const marker2 = new mapboxgl.Marker({ color: 'gray'})
+                                            .setLngLat([2.3333, 48.8602])
+                                            .addTo(map);
+                            const marker3 = new mapboxgl.Marker({ color: 'gray'})
+                                            .setLngLat([2.3397, 48.8607])
+                                            .addTo(map);
+                            const marker4 = new mapboxgl.Marker({ color: 'gray'})
+                                            .setLngLat([2.3330, 48.8619])
+                                            .addTo(map);
+                            const marker5 = new mapboxgl.Marker({ color: 'gray'})
+                                            .setLngLat([2.3365, 48.8625])
+                                            .addTo(map);
+                        </script>
                     </div>
                 </div>
             </div>
