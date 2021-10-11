@@ -66,6 +66,8 @@ html{
     overflow: hidden;
 }
 
+
+
 .container{
     max-width: $width_container;
     width: 100%;
@@ -186,7 +188,9 @@ html{
     margin-bottom: 18px;
 }
 
-
+.shifting {
+    transition: left .2s ease-out;
+}
 
 .nav_link{
     text-decoration: none;
@@ -454,6 +458,7 @@ html{
     background-color: $bg-dark;
 
     &_title{
+        pointer-events: none;
         @include media(1024px){
             line-height: 90px;
         }
@@ -472,6 +477,7 @@ html{
         // width: 598px;
         position: relative;
         z-index: 3;
+
         @include media(768px){
             position: static;
             display: flex;
@@ -565,6 +571,8 @@ html{
         }
     }
 
+    
+
     .slider{
         position: absolute;
         max-width: 1000px;
@@ -584,7 +592,7 @@ html{
         }
         &_image{
             display: flex;
-            overflow-x: hidden;
+            // overflow-x: hidden;
             position: relative;
             img{
                @include media(1024px){
@@ -598,22 +606,14 @@ html{
             }
         }
 
-        &_grad{
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            max-width: 300px;
-            width: 100%;
-            background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
-            @include media(768px){
-                display: none;
-            }
-
-        }
+        // &_image.shifting {
+        //     transition: left .2s ease-out;
+        // }
 
         &_wrapper{
             position: relative;
             padding-bottom: 60px;
+            overflow-x: hidden;
             @include media(768px){
                 padding-bottom: 100px;
             }
@@ -623,7 +623,20 @@ html{
             
         }
 
+        &_grad{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            max-width: 300px;
+            width: 100%;
+            z-index: 3;
+            background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+            pointer-events: none;
+            @include media(768px){
+                display: none;
+            }
 
+        }
 
         &_panel{
             background-color: $bg-dark;
@@ -686,6 +699,7 @@ html{
                 justify-content: space-between;
                 align-items: center;
                 padding: 52px 0 52px;
+                
                 @include media(1024px){
                     max-width: 160px;
                     padding: 54px 0 54px;
@@ -706,6 +720,7 @@ html{
                 width: 16px;
                 height: 16px;
                 background-color: #fff;
+                cursor: pointer;
                 @include media(1024px){
                     width: 12px;
                     height: 12px;
@@ -763,6 +778,7 @@ html{
             }
         }
     }
+    
 }
 
 .visiting{
@@ -1141,7 +1157,7 @@ html{
 
     &_wrapper{
         position: relative;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         @include media(768px){
             margin-bottom: 21px;
         }
@@ -1152,6 +1168,12 @@ html{
         .player{
             display: block;
             width: 100%;
+            max-height: 45.13%;
+            height: 100%;
+            
+            ::poster{
+                object-fit: contain;
+            }
         }
 
         .btn_play_video{
@@ -1192,6 +1214,11 @@ html{
                 left: calc(50%);
                 transform: translate(-50%, -85%);
             }
+        }
+
+        .btn_play_video.paused{
+            opacity: 0;
+            pointer-events: none;
         }
 
         .video_control{
@@ -1258,6 +1285,10 @@ html{
                 background-size: contain;
             }
         }
+
+        .btn_control_play.paused{
+            background-image: url("./assets/svg/pause.svg");
+        }
         
        .btn_control_sound{
             background-image: url("./assets/svg/volume.svg");
@@ -1270,6 +1301,19 @@ html{
                 background-size: contain;
             }
         }
+
+        .mute{
+            background-image: url("./assets/svg/mute.svg");
+            background-position: center center;
+            background-size: 38px;
+            @include media(1024px){
+                background-size: 30px;
+            }
+            @include media(768px){
+                background-size: contain;
+            }
+        }
+
         
         .btn_control_fullscreen{
             background-image: url("./assets/svg/fullScrean.svg");
@@ -1370,8 +1414,36 @@ html{
         }
     }
 
+    &_wrapper:fullscreen{
+        
+        .player{
+            max-width: 100%;
+            width: 100%;
+            min-height: 90%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .video_control{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .btn_control_fullscreen{
+            background-image: url("./assets/svg/fullscreen_exit.svg");
+        }
+    }
+
+    .active_video{
+        box-shadow: inset 0 0 0 5px #a31717, 0 0 0 5px #a31717;
+    }
+
     &_slider{
+        position: relative;
         width: 100%;
+        padding-top: 10px;
         overflow-x: hidden;
         display: flex;
         flex-direction: column;
@@ -1386,18 +1458,19 @@ html{
         }
 
         &_wrapper{
+            position: relative;
             display: flex;
             justify-content: space-between;
-            min-width: calc(452px * 5 + 42px * 4);
+            min-width: calc(452px * 7 + 42px * 6);
             @include media(1024px){
-                min-width: calc(300px * 5 + 42px * 4);
+                min-width: calc(300px * 7 + 42px * 6);
             }
             @include media(768px){
-                min-width: calc(354px * 5 + 20px * 4);
+                min-width: calc(354px * 7 + 20px * 6);
             }
 
             @include media(425px){
-                min-width: calc(180px * 5 + 20px * 4);
+                min-width: calc(180px * 7 + 20px * 6);
             }
 
             .video_card{
@@ -1548,6 +1621,7 @@ html{
                     height: 12px;
                     border-radius: 500%;
                     background-color: #999;
+                    cursor: pointer;
                     @include media(425px){
                         width: 8px;
                         height: 8px;
@@ -1615,7 +1689,7 @@ html{
         height: 3000px;
         row-gap: 24px;
         column-gap: 18px;
-        
+        contain: layout paint;
         &::before,&::after{
             content: "";
             flex-basis: 100%;
@@ -1630,6 +1704,9 @@ html{
         .picture{
             max-width: 456px;
             width: 100%;
+            opacity: 0;
+            transform: translateY(10px) scale(0.8);
+            transition: all 1s;
             img{
                 width: 100%;
                 object-fit: cover;
@@ -1648,6 +1725,12 @@ html{
                 width: 100%;
                 
             }
+        }
+
+        .pic_show{
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            transition: all 1s;
         }
 
         
@@ -1925,7 +2008,7 @@ html{
     .tickets_amount{
         display: flex;
         flex-direction: column;
-        max-width: 175px;
+        max-width: 190px;
         width: 100%;
         align-items: flex-end;
         @include media(1024px){
@@ -2075,6 +2158,7 @@ html{
             outline: none;
             cursor: pointer;
             background-color: #000;
+            max-width: 175px;
             width: 100%;
             border-radius: 2px;
             padding: 12px 0 12px;
@@ -2223,7 +2307,18 @@ html{
         .content_img{
             max-width: 960px;
             width: 100%;
-
+            position: relative;
+            padding-top: 43.05%;
+            // #map{
+            //     width: 100%;
+            //     height: 100%;
+            //     font: 12px/20px Helvetica Neue,Arial,Helvetica,sans-serif;
+            //     overflow: hidden;
+            //     position: absolute;
+            //     top: 0;
+            //     left: 0;
+            //     -webkit-tap-highlight-color: rgba(0,0,0,0);
+            // }
             source,img{
                 width: 100%;
             }
@@ -2231,7 +2326,12 @@ html{
 
     }
 }
-
+#map { 
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    width: 100%; 
+}
 .footer{
     background-color: $bg-dark;
     padding-top: 75px;
@@ -2664,18 +2764,18 @@ html{
             max-width: 100%;
         }
 
-        &::after{
-            content: "";
-            position: absolute;
-            background-image: url("./assets/img/arrow_ticket.png");
-            background-repeat: no-repeat;
-            right: 15px;
-            top: 15px;
-            width: 17px;
-            height: 17px;
-            cursor: pointer;
-            z-index: 2;
-        }
+        // &[type="text"]::after{
+        //     content: "";
+        //     position: absolute;
+        //     background-image: url("./assets/img/arrow_ticket.png");
+        //     background-repeat: no-repeat;
+        //     right: 15px;
+        //     top: 15px;
+        //     width: 17px;
+        //     height: 17px;
+        //     cursor: pointer;
+        //     z-index: 2;
+        // }
 
         .inp_date::-webkit-outer-spin-button,
         .inp_date::-webkit-inner-spin-button {
@@ -2688,7 +2788,16 @@ html{
         }
 
         .inp_date::-webkit-calendar-picker-indicator {
-            display: none;  
+            // display: none;  
+            position: absolute;
+            // right: 10px;
+            // top: 15px;
+            left: 0;
+            width: 80%;
+            height: 100%;
+            background-image: url("./assets/img/arrow_ticket.png");
+            background-position: right 15px ;
+            background-size: 17px 17px;
         }
 
         .inp_date::before{
@@ -2705,6 +2814,7 @@ html{
         background-image: url("./assets/img/time.png");
         background-repeat: no-repeat;
         background-position: 15px center;
+        position: relative;
         @include media(590px){
             max-width: 100%;
         }
@@ -2719,6 +2829,29 @@ html{
             height: 17px;
             cursor: pointer;
             z-index: 2;
+        }
+
+        .time_range{
+            position: absolute;
+            background-color: white;
+            display: none;
+            flex-direction: column;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            overflow-y: scroll;
+            z-index: 5;
+            row-gap: 5px;
+
+            div{
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 18px;
+                cursor: pointer;
+                text-align: center;
+            }
         }
 
         .inp_time::-webkit-outer-spin-button,
@@ -2740,6 +2873,8 @@ html{
             width: 100%;
         }
     }
+
+    
 
     .ticket_input{
         border: 1px solid #030303;
@@ -2780,6 +2915,13 @@ html{
         }
 
 
+    }
+
+    .show_time{
+        overflow: visible;
+        .time_range{
+            display: flex;
+        }
     }
 
     .ticket_name{
@@ -3008,12 +3150,13 @@ html{
             }
 
             .price{
-                min-width: 45px;
+                min-width: 120px;
                 font-family: Roboto;
                 font-style: normal;
                 font-weight: normal;
                 font-size: 22px;
                 line-height: 26px;
+                text-align: right;
 
                 color: #030303;
             }
@@ -3279,4 +3422,8 @@ html{
 
 .hide{
     opacity: 0;
+}
+
+.error{
+    border:3px solid red !important;
 }
