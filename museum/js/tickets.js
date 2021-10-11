@@ -19,6 +19,47 @@ function tickets(){
     const container = document.querySelector('.buy_container');
     const pTime = document.querySelector('.pay_dt.time_pay');
     const payTxt = document.querySelector('.pay_dt.txt_pay');
+    const nameWrap = document.querySelector('.ticket_input.ticket_name');
+    const ticketName = document.querySelector('.input_name');
+    const mailWrap = document.querySelector('.ticket_input.ticket_mail');
+    const ticketMail = document.querySelector('.input_mail');
+    const phoneWrap = document.querySelector('.ticket_input.ticket_phone');
+    const ticketPhone = document.querySelector('.input_phone');
+
+    ticketPhone.addEventListener('input', (e)=>{
+        let reg = /^(((\d{2})([-, ]\d{2}){3}([-, ]\d{2}))|((\d{3}[-, ]){2}(\d{2}[-, ])(\d{2}))|(\d{10}))$/g;
+        // let reg1 = /^(\d{2})([-, ]\d{2}){3}([-, ]\d{2})$/g;//-(\d{2})-(\d{2})-(\d{2})-(\d{2})
+        // let reg3 = /(\d{3})-(\d{2})-(\d{2})-(\d{2})-(\d{2})/g; || reg1.test(ticketPhone.value)
+        
+
+        if (reg.test(ticketPhone.value) ) {
+            phoneWrap.classList.remove('error');
+        } else {
+            phoneWrap.classList.add('error');
+        }
+    })
+
+    ticketMail.addEventListener('input', (e)=>{
+        let reg = /^[a-zA-Z]([a-zA-Z0-9_-]{3,15})@+([a-zA-Z]{4,})\.([a-zA-Z]{2,})$/g;
+        
+
+        if (reg.test(ticketMail.value)) {
+            mailWrap.classList.remove('error');
+        } else {
+            mailWrap.classList.add('error');
+        }
+    })
+
+    ticketName.addEventListener('input', (e)=>{
+        let reg = /[а-яА-Яa-zA-Z ]{3,15}/g;
+        let str = ticketName.value;
+
+        if (reg.test(ticketName.value)) {
+            nameWrap.classList.remove('error');
+        } else {
+            nameWrap.classList.add('error');
+        }
+    })
     container.addEventListener('click',(e)=>{
         // if (!e.target.closest('.time_range')){
         //     buyTimeParent.classList.remove('show_time');

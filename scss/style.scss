@@ -66,6 +66,8 @@ html{
     overflow: hidden;
 }
 
+
+
 .container{
     max-width: $width_container;
     width: 100%;
@@ -3420,4 +3422,8 @@ html{
 
 .hide{
     opacity: 0;
+}
+
+.error{
+    border:3px solid red !important;
 }
