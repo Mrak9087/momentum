@@ -112,7 +112,7 @@ function slider() {
     function checkIndex (){
         slideSize = slides[0].offsetWidth;
         items.classList.remove('shifting');
-        console.log('work');
+        // console.log('work');
         if (index == -1) {
         items.style.left = -(slidesLength * slideSize) + "px";
         index = slidesLength - 1;
