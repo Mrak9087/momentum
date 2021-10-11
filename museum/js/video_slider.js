@@ -247,7 +247,7 @@ function videoSlider(){
         positions[index].classList.add('nav_cur');
 
         slides.forEach((item)=>{
-            console.log(item)
+            // console.log(item)
             item.classList.remove('active_video');
         })
         slides[index].classList.add('active_video');

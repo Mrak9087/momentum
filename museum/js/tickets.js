@@ -275,7 +275,7 @@ function tickets(){
         inpData.min = `${dt.getFullYear()}-${dt.getMonth()+1}-${dt.getDate()}`;
     })
     inpData.addEventListener('change', (e)=>{
-        console.log(inpData.value);
+        // console.log(inpData.value);
         let dt = new Date(inpData.value);
         buyDateTick.innerText = `${DAY_WEEK[dt.getDay()]}, ${MONTHS[dt.getMonth()]} ${dt.getFullYear() % 100}`
         

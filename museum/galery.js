@@ -40,7 +40,7 @@ function shuffle(array) {
 setGalery();
 
 const glr = document.querySelector('.gallery_pictures');
-console.log(glr);
+// console.log(glr);
 let parentTop = glr.offsetTop; 
 
 function debounce(func, wait = 30, immediate = true){
@@ -64,7 +64,7 @@ function checkSlide(e){
     imagesGalery.forEach((item)=>{
         const imgInAt = (window.scrollY + window.innerHeight) - item.clientHeight;
         
-        console.log(parentTop)
+        // console.log(parentTop)
         const imgBottom = parentTop + item.offsetTop + item.clientHeight;
         const isHalfShown = imgInAt > parentTop + item.offsetTop;
         const isNotScrolledPast = window.scrollY < imgBottom;
