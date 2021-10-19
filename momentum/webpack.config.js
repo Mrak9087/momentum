@@ -20,7 +20,11 @@ const config = {
         clean:true,
     },
     devServer: {
-        open: true,
+        open:  {
+            app: {
+              name: 'chrome',
+            },
+          },
         host: 'localhost',
     },
     plugins: [
