@@ -13,7 +13,9 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "copy-webpack-plugin": "^9.0.1"
+  },
   "devDependencies": {
     "@webpack-cli/generators": "^2.4.1",
     "css-loader": "^6.4.0",
