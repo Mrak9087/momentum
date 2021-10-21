@@ -1,5 +1,6 @@
 import {BaseComponent} from "../baseComponent/baseComponent.js";
 import "./weather.css";
+import lang from '../lang/language';
 // import "../../owfont-regular.css";
 
 export class Weather extends BaseComponent{
@@ -8,6 +9,7 @@ export class Weather extends BaseComponent{
     }
 
     init(){
+        this.lng = 'en';
         this.inputCity = document.createElement('input');
         this.inputCity.type = 'text';
         this.inputCity.className = 'city';
@@ -38,7 +40,7 @@ export class Weather extends BaseComponent{
     }
 
     async getWeather() {
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${this.inputCity.value}&lang=ru&appid=3715a95b09cf4ceed9e7abf94eefccc8&units=metric`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${this.inputCity.value}&lang=${this.lng}&appid=3715a95b09cf4ceed9e7abf94eefccc8&units=metric`;
         const res = await fetch(url); 
         const data = await res.json();
         if (data.cod === "404"){
@@ -49,8 +51,8 @@ export class Weather extends BaseComponent{
         }
         this.icon.classList.add(`owf-${data.weather[0].id}`);
         this.temperature.textContent = `${data.main.temp}°C`;
-        this.wind.textContent = `Ветер: ${data.wind.speed}м/с`;
-        this.humidity.textContent = `Влажность: ${data.main.humidity}%`
+        this.wind.textContent = `${lang[this.lng].weatherWind}: ${data.wind.speed}${lang[this.lng].weatherSpeed}`;
+        this.humidity.textContent = `${lang[this.lng].weatherHumidity}: ${data.main.humidity}%`
         this.weatherDescr.textContent = data.weather[0].description;
     }
 
