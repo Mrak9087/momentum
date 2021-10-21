@@ -9,7 +9,7 @@ export class Weather extends BaseComponent{
     }
 
     init(){
-        this.lng = 'en';
+        this.lng = localStorage.getItem('lngMom') || 'ru';
         this.inputCity = document.createElement('input');
         this.inputCity.type = 'text';
         this.inputCity.className = 'city';
@@ -37,6 +37,11 @@ export class Weather extends BaseComponent{
 
         this.node.append(this.inputCity,this.icon,this.description,this.wind,this.humidity);
         this.getWeather();
+    }
+
+    setLang(lang){
+      this.lng = lng;
+      this.getWeather();
     }
 
     async getWeather() {

@@ -1,13 +1,16 @@
-import { BaseComponent } from "../baseComponent/baseComponent";
-import style from "./dateTime.css";
+import { BaseComponent } from "../baseComponent/baseComponent.js";
+import "./dateTime.css";
+import lang from '../lang/language.js';
 export class DateTime extends BaseComponent{
     constructor(parentNode){
         super(parentNode,'dateTime')
     }
 
     init(){
-        this.weekDays = ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'];
-        this.months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+        this.lng = localStorage.getItem('lngMom') || 'ru';
+        this.weekDays = lang[this.lng].weekDays.slice(0);
+        // console.log('log',lang[this.lng].weekDays);
+        this.months = lang[this.lng].months.slice(0);
         this.time = document.createElement('div');
         this.time.className = 'time';
         this.date = document.createElement('div');
@@ -15,6 +18,13 @@ export class DateTime extends BaseComponent{
         this.node.append(this.time);
         this.node.append(this.date);
         this.getTime();
+        this.getDate();
+    }
+
+    setLng(lang){
+        this.lng = lang;
+        this.weekDays = lang[this.lng].weekDays.slice(0);
+        this.months = lang[this.lng].months.slice(0);
         this.getDate();
     }
 
