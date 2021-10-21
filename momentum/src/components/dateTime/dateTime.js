@@ -1,17 +1,17 @@
-import { BaseComponent } from "../baseComponent";
+import { BaseComponent } from "../baseComponent/baseComponent";
 import style from "./dateTime.css";
 export class DateTime extends BaseComponent{
     constructor(parentNode){
-        super(parentNode,style.dateTime)
+        super(parentNode,'dateTime')
     }
 
     init(){
         this.weekDays = ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'];
         this.months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
         this.time = document.createElement('div');
-        this.time.className = style.time;
+        this.time.className = 'time';
         this.date = document.createElement('div');
-        this.date.className = style.date;
+        this.date.className = 'date';
         this.node.append(this.time);
         this.node.append(this.date);
         this.getTime();

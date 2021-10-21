@@ -1,10 +1,13 @@
+import './owfont-regular.css';
 import './style.css';
+
 import {DateTime} from './components/dateTime/dateTime.js';
 import {Player} from './components/player/player.js';
 import sound1 from './assets/sounds/AquaCaelestis.mp3';
 import sound2 from './assets/sounds/EnnioMorricone.mp3';
 import sound3 from './assets/sounds/RiverFlowsInYou.mp3';
 import sound4 from './assets/sounds/SummerWind.mp3';
+import {Weather} from './components/weather/weather.js'
 
 const arrMusic = [
     {name:'Aqua Caelestis',
@@ -23,4 +26,7 @@ dt.init();
 const pl = new Player(document.body);
 pl.init();
 pl.loadPlaylist(arrMusic);
+
+const wth = new Weather(document.body);
+wth.init();
 
