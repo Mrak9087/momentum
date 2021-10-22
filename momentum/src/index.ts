@@ -8,6 +8,7 @@ import sound2 from './assets/sounds/EnnioMorricone.mp3';
 import sound3 from './assets/sounds/RiverFlowsInYou.mp3';
 import sound4 from './assets/sounds/SummerWind.mp3';
 import {Weather} from './components/weather/weather.js'
+import {Quotes} from './components/quotes/quotes.js'
 
 const arrMusic = [
     {name:'Aqua Caelestis',
@@ -29,4 +30,7 @@ pl.loadPlaylist(arrMusic);
 
 const wth = new Weather(document.body);
 wth.init();
+
+const quote = new Quotes(document.body);
+quote.init();
 
