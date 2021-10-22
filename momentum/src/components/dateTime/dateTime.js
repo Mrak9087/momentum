@@ -9,7 +9,7 @@ export class DateTime extends BaseComponent{
     init(){
         this.lng = localStorage.getItem('lngMom') || 'ru';
         this.weekDays = lang[this.lng].weekDays.slice(0);
-        // console.log('log',lang[this.lng].weekDays);
+        
         this.months = lang[this.lng].months.slice(0);
         this.time = document.createElement('div');
         this.time.className = 'time';

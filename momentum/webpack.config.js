@@ -32,11 +32,11 @@ const config = {
         new HtmlWebpackPlugin({
             template: 'index.html',
         }),
-        // new CopyPlugin({
-        //     patterns: [
-        //       { from: "sound", to: "dest" },
-        //     ],
-        //   }),
+        new CopyPlugin({
+            patterns: [
+                {from: './public' }
+            ]
+        }),
         // Add your plugins here
         // Learn more about plugins from https://webpack.js.org/configuration/plugins/
     ],
@@ -70,6 +70,11 @@ const config = {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
                 type: 'asset/resource',
             },
+            // {
+            //     test: /\.json$/i,
+            //     loader: 'json-loader',
+                
+            // },
             {
                 test: /\.(mp3)$/i,
                 type: 'asset/resource',

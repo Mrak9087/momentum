@@ -2,6 +2,7 @@ import "./quotes.css";
 import {BaseComponent} from '../baseComponent/baseComponent.js';
 
 
+
 export class Quotes extends BaseComponent{
     constructor(parentNode){
         super(parentNode, 'quotes')
@@ -24,9 +25,14 @@ export class Quotes extends BaseComponent{
     }
 
     loadQuote(){
-        fetch(`../../quotes_${this.lng}.json`).then(res => res.json()).then(data =>{
+        fetch(`./quotes_${this.lng}.json`).then(res => res.json()).then(data =>{
             this.quoteArr = data.slice(0);
         })
+    }
+
+    randomNumber(min, max) {
+        let rand = min + Math.random() * (max + 1 - min);
+        return Math.floor(rand);
     }
 
     setLang(lang){
@@ -35,6 +41,8 @@ export class Quotes extends BaseComponent{
     }
 
     showQuote = () =>{
-        this.quoteText.innerText = this.quoteArr[0].text;
+        let i = this.randomNumber(0, this.quoteArr.length-1);
+        this.quoteText.innerText = this.quoteArr[i].text;
+        this.quoteAuthor.innerText = this.quoteArr[i].author;
     }
 }
