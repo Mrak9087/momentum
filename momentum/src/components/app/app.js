@@ -39,18 +39,27 @@ export class App extends BaseComponent{
         this.dateTime.append(this.time);
         this.dateTime.append(this.date);
 
-        this.greating = document.createElement('div');
-        this.greating.className = 'great';
+        this.greatContainer = document.createElement('div');
+        this.greatContainer.className = 'greeting-container';
         this.greatTxt = document.createElement('p');
-        this.greatTxt.className = 'greatTxt';
+        this.greatTxt.className = 'greeting';
+        this.greatTxt.innerText = lang[this.lng].greetings[this.getTimeOfDay()] || 'Hello';
+        this.greatName = document.createElement('input');
+        this.greatName.type = 'text';
+        this.greatName.placeholder = `[${lang[this.lng].placeholder}]`;
+        this.greatName.className = 'name';
 
-        this.center.append(this.dateTime);
+        this.greatContainer.append(this.greatTxt,this.greatName);
+
+        this.center.append(this.dateTime,this.greatContainer);
         this.content.append(this.center);
         this.node.append(this.content);
         this.getTime();
         this.getDate();
         // this.getLinkToImage();
         this.setBg()
+        this.setGreat();
+        // console.log(lang[this.lng].greetings[this.getTimeOfDay()]);
     }
 
     getLinkToImage() {
@@ -67,6 +76,15 @@ export class App extends BaseComponent{
         this.great = this.getTimeOfDay();
         this.imgNum = this.getRandomNum(1,20);
         this.setImg()
+    }
+
+    setGreat(){
+        this.greatTxt.innerText = lang[this.lng].greetings[this.getTimeOfDay()]
+        let locDate = new Date();
+        let locMin = locDate.getMinutes();
+        let locSec = locDate.getSeconds();
+        let leftSec = 3600 - (locMin * 60 +locSec);
+        setTimeout(this.setGreat, leftSec*1000);
     }
 
     setImg(){

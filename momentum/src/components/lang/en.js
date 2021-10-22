@@ -4,5 +4,11 @@ export default{
     weatherHumidity:'Humidity',
     weekDays:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
     months:['January','February','March','April','May','June','July','August','September','October','November','December'],
-    greetings:['Good morning','Good day','Good evening','Good night'],
+    placeholder:'Your name',
+    greetings:{
+        morning:'Good morning',
+        day:'Good day',
+        evening:'Good evening',
+        night:'Good night'
+    },
 }
