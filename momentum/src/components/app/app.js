@@ -8,7 +8,7 @@ import sound3 from '../../assets/sounds/RiverFlowsInYou.mp3';
 import sound4 from '../../assets/sounds/SummerWind.mp3';
 import {Weather} from '../weather/weather.js'
 import {Quotes} from '../quotes/quotes.js'
-
+import {ToDo} from '../todo/todo.js';
 
 export class App extends BaseComponent{
     constructor(parentNode){
@@ -52,12 +52,18 @@ export class App extends BaseComponent{
         this.greatContainer.append(this.greatTxt,this.greatName);
 
         this.center.append(this.dateTime,this.greatContainer);
-        this.content.append(this.center);
+        this.bottom = document.createElement('div');
+        this.bottom.className = 'bottom';
+
+        this.todo = new ToDo(this.bottom);
+        this.todo.init();
+
+        this.content.append(this.center,this.bottom);
         this.node.append(this.content);
         this.getTime();
         this.getDate();
         // this.getLinkToImage();
-        this.setBg()
+        // this.setBg()
         this.setGreat();
         // console.log(lang[this.lng].greetings[this.getTimeOfDay()]);
     }

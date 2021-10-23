@@ -1,0 +1,151 @@
+.todo{
+    position: relative;
+    font-size: 14px;
+    text-shadow: 1px 0 1px #000, 
+                0 1px 1px #000, 
+                -1px 0 1px #000, 
+                0 -1px 1px #000;
+    cursor: pointer;
+    /* overflow: hidden; */
+    
+}
+
+.todo_container{
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    row-gap: 10px;
+    bottom: 100%;
+    /* top: -100%; */
+    right:0;
+    
+    padding: 10px;
+    width: 300px;
+    background-color: #fff;
+    z-index: 2;
+    /* opacity: 0; */
+    /* transform: scaleY(0); */
+    /* animation: todoShow 0.5s linear */
+    transition: all 0.5s linear;
+}
+
+.show .todo_container{
+    display: flex;
+    opacity: 0;
+    height: 0px;
+}
+
+.show.app_show .todo_container{
+    height: 300px;
+    opacity: 1;
+}
+
+.container_top{
+    display: flex;
+    border: 1px solid #000;
+}
+
+.input_todo{
+    
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 5px;
+}
+
+.add_btn{
+    width: 30px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: brown;
+    font-size: 16;
+    font-weight: bold;
+    color: #fff;
+}
+
+.container_list{
+    width: 100%;
+    height: 100%;
+    flex:1;
+    overflow-y: scroll;
+}
+
+.list_todo li{
+    cursor: pointer;
+    position: relative;
+    text-align: left;
+    padding: 6px 40px;
+    background: #eee;
+    font-size: 12px;
+    transition: 0.2s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-shadow: none;
+    color: black;
+}
+
+.list_todo li:nth-child(odd) {
+    background: #f9f9f9;
+}
+  
+
+.list_todo li:hover {
+    background: #ddd;
+}
+
+.list_todo li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+}
+  
+
+.list_todo li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 5px;
+    left: 10px;
+    transform: rotate(45deg);
+    height: 12px;
+    width: 7px;
+}
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 16px;
+    color: #fff;
+    text-shadow: 1px 0 1px #000, 
+                0 1px 1px #000, 
+                -1px 0 1px #000, 
+                0 -1px 1px #000;
+}
+  
+.close:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+@keyframes todoShow {
+    0% {
+        transform: scaleY(0);
+    }
+
+    50% {
+        transform: scaleY(0.5);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
