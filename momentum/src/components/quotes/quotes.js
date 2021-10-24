@@ -8,7 +8,7 @@ export class Quotes extends BaseComponent{
         super(parentNode, 'quotes')
     }
 
-    init(){
+    async init(){
         this.lng = localStorage.getItem('lngMom') || 'ru';
         this.btnQuote = document.createElement('button');
         this.btnQuote.className = 'quote_btn';
@@ -21,13 +21,14 @@ export class Quotes extends BaseComponent{
 
         this.node.append(this.btnQuote,this.quoteText,this.quoteAuthor);
         this.btnQuote.addEventListener('click', this.showQuote);
-        this.loadQuote();
+        await this.loadQuote();
+        this.showQuote();
     }
 
-    loadQuote(){
-        fetch(`./quotes_${this.lng}.json`).then(res => res.json()).then(data =>{
-            this.quoteArr = data.slice(0);
-        })
+    async loadQuote(){
+        let res = await fetch(`./quotes_${this.lng}.json`);
+        let data = await res.json();
+        this.quoteArr = data.slice(0);
     }
 
     randomNumber(min, max) {

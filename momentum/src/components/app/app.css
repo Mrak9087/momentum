@@ -1,6 +1,25 @@
 .app{
   min-height: 100%;
 }
+
+.top{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+
+.t_left{
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.t_right{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .container{
   min-height: 100vh;
   
@@ -63,6 +82,79 @@
 
 .bottom{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 10px 15px;
+}
+
+.bt_left{
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.bt_right{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.settings{
+  position: relative;
+  
+}
+
+.settings_icon{
+  width: 32px; 
+  height: 32px;
+  background-image: url("../../assets/svg/settings2.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+  cursor: pointer;
+  transition:all 0.5s ease;
+}
+
+.settings_icon:hover{
+   opacity: 1;
+}
+ 
+.settings_icon:active{
+   transform: scale(0.8) rotate(90deg);
+}
+
+.settings_container{
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  row-gap: 10px;
+  bottom: 100%;
+  
+  left:0;
+  height: 300px;
+  /* opacity: 1 !important; */
+  padding: 10px;
+  width: 300px;
+  background-color: #fff;
+  z-index: 2;
+  transition: all 0.5s linear;
+}
+
+.show .settings_container{
+  display: flex;
+  opacity: 0;
+  height: 0px;
+}
+
+.show.app_show .settings_container{
+  height: 300px;
+  opacity: 1;
+}
+
+
+.stItem{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  color: #000;
 }

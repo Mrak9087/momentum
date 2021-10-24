@@ -45,7 +45,7 @@ export class ToDo extends BaseComponent{
     }
 
     clickAdd = () => {
-        console.log(this.inputTodo.value);
+        // console.log(this.inputTodo.value);
         if (this.inputTodo.value){
             const li = document.createElement('li');
             li.innerText = this.inputTodo.value;
