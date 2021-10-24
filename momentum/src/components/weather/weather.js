@@ -40,7 +40,7 @@ export class Weather extends BaseComponent{
     }
 
     setLang(lang){
-      this.lng = lng;
+      this.lng = lang;
       this.getWeather();
     }
 
@@ -59,6 +59,7 @@ export class Weather extends BaseComponent{
         this.wind.textContent = `${lang[this.lng].weatherWind}: ${data.wind.speed}${lang[this.lng].weatherSpeed}`;
         this.humidity.textContent = `${lang[this.lng].weatherHumidity}: ${data.main.humidity}%`
         this.weatherDescr.textContent = data.weather[0].description;
+        
     }
 
     setCity = (e) => {

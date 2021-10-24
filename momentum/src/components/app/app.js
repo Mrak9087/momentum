@@ -48,9 +48,6 @@ export class App extends BaseComponent{
         this.weather = new Weather(this.tRight);
         this.weather.init();
 
-        
-
-
         this.content = document.createElement('div');
         this.content.className = 'container';
         this.center = document.createElement('div');
@@ -142,6 +139,14 @@ export class App extends BaseComponent{
         this.settings.addEventListener('click', this.clickSettings);
     }
 
+    showingWidget = (widget, check) => {
+        if (check.checked) {
+            widget.node.classList.remove('hideWidget');
+        } else {
+            widget.node.classList.add('hideWidget');
+        }
+    }
+
     clickSettings = (e) =>{
         if (this.settings.classList.contains('show') && this.settings.classList.contains('app_show')){
             this.settings.classList.remove('app_show');
@@ -167,6 +172,7 @@ export class App extends BaseComponent{
         this.stWeatherCheck = document.createElement('input');
         this.stWeatherCheck.type = 'checkbox';
         this.stWeatherCheck.checked = true;
+        
         this.stWeather.append(this.stWeatherTitle,this.stWeatherCheck);
 
         this.stPlayer = document.createElement('div');
@@ -223,14 +229,108 @@ export class App extends BaseComponent{
         this.stTodoCheck.checked = true;
         this.stTodo.append(this.stTodoTitle,this.stTodoCheck);
 
+        this.stLang = document.createElement('div');
+        this.stLang.className = 'stLang';
+        this.stRu = document.createElement('input');
+        this.stRu.type = 'radio';
+        this.stRu.name = 'lang';
+        this.stRu.id = 'langRu';
+        this.stRu.value = 'ru';
+        
+        
 
-        this.settingsContainer.append(this.stWeather,this.stPlayer,this.stTime,this.stDate,this.stGreeting,this.stQuotes,this.stTodo);
+        this.lRu = document.createElement('label');
+        this.lRu.className = 'langLabel';
+        this.rSpan = document.createElement('span');
+        this.rSpan.innerText = 'ru'
+        this.lRu.append(this.stRu, this.rSpan);
+
+        this.stEn = document.createElement('input');
+        this.stEn.type = 'radio';
+        this.stEn.name = 'lang';
+        this.stEn.id = 'langEn';
+        this.stEn.value = 'en';
+
+        this.lEn = document.createElement('label');
+        this.lEn.className = 'langLabel'
+        this.eSpan = document.createElement('span');
+        this.eSpan.innerText = 'en'
+        this.lEn.append(this.stEn,this.eSpan);
+        
+        if (!localStorage.getItem('lngMom') || localStorage.getItem('lngMom') == 'ru'){
+            this.stRu.checked = true;
+        } else if (localStorage.getItem('lngMom') == 'en'){
+            this.stEn.checked = true;
+        }
+
+        this.stLang.append(this.lRu,this.lEn);
+
+        this.stRu.addEventListener('change', this.changeLng);
+        this.stEn.addEventListener('change', this.changeLng);
+
+        this.stWeatherCheck.addEventListener('change', ()=>{
+            this.showingWidget(this.weather,this.stWeatherCheck);
+        })
+
+        this.stPlayerCheck.addEventListener('change', ()=>{
+            this.showingWidget(this.player,this.stPlayerCheck);
+        })
+
+        this.stTimeCheck.addEventListener('change', ()=>{
+            if (this.stTimeCheck.checked) {
+                this.time.classList.remove('hideWidget');
+            } else {
+                this.time.classList.add('hideWidget');
+            }
+        })
+
+        this.stDateCheck.addEventListener('change', ()=>{
+            if (this.stDateCheck.checked) {
+                this.date.classList.remove('hideWidget');
+            } else {
+                this.date.classList.add('hideWidget');
+            }
+        })
+
+        this.stGreetingCheck.addEventListener('change', ()=>{
+            if (this.stGreetingCheck.checked) {
+                this.greatContainer.classList.remove('hideWidget');
+            } else {
+                this.greatContainer.classList.add('hideWidget');
+            }
+        })
+
+        this.stQuotesCheck.addEventListener('change', ()=>{
+            this.showingWidget(this.quotes,this.stQuotesCheck);
+        })
+
+        this.stTodoCheck.addEventListener('change', ()=>{
+            this.showingWidget(this.todo,this.stTodoCheck);
+        })
+
+        this.settingsContainer.append(this.stWeather,this.stPlayer,this.stTime,this.stDate,this.stGreeting,this.stQuotes,this.stTodo,this.stLang);
     }
 
     setShowItem(item, check){
         if (check.checked){
 
         }
+    }
+
+    changeLng = (e) => {
+        localStorage.setItem('lngMom', e.target.value)
+        this.setLang(e.target.value);
+        
+    }
+
+    setLang(lng){
+        this.lng = lng;
+        this.weekDays = lang[this.lng].weekDays.slice(0);
+        this.months = lang[this.lng].months.slice(0);
+        this.weather.setLang(this.lng);
+        this.todo.setLang(this.lng);
+        this.setGreat();
+        this.getDate();
     }
 
     getLinkToImage() {
@@ -301,7 +401,13 @@ export class App extends BaseComponent{
         const locDate = new Date();
         const weekDay = locDate.getDay();
         const month = locDate.getMonth();
-        this.date.innerHTML = `${this.weekDays[weekDay]} ${this.addZero(locDate.getDate())} ${this.months[month]}`;
+        if (this.lng === 'ru'){
+            this.date.innerHTML = `${this.weekDays[weekDay]}, ${this.addZero(locDate.getDate())} ${this.months[month]}`;
+        }
+        if (this.lng === 'en'){
+            this.date.innerHTML = `${this.weekDays[weekDay]}, ${this.months[month]} ${this.addZero(locDate.getDate())}`;
+        }
+        
     }
 
     getTimeOfDay(){

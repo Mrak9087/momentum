@@ -1,5 +1,6 @@
 import './todo.css';
 import {BaseComponent} from "../baseComponent/baseComponent.js";
+import lang from '../lang/language';
 
 export class ToDo extends BaseComponent{
     constructor(parentNode){
@@ -7,17 +8,18 @@ export class ToDo extends BaseComponent{
     }
 
     init(){
+        this.lng = localStorage.getItem('lngMom') || 'ru';
         this.node.innerText = 'ToDo';
         this.container = document.createElement('div');
         this.container.className = 'todo_container';
-        this.container.innerHTML = '<span>Hello</span>'
+        
 
         this.containerTop = document.createElement('div');
         this.containerTop.className = 'container_top'
 
         this.inputTodo = document.createElement('input');
         this.inputTodo.type = 'text';
-        this.inputTodo.placeholder = 'Todo';
+        this.inputTodo.placeholder = `[${lang[this.lng].placeholderTodo}]`;
         this.inputTodo.className = 'input_todo';
         this.addBtn = document.createElement('button');
         this.addBtn.className = 'add_btn';
@@ -38,6 +40,11 @@ export class ToDo extends BaseComponent{
         this.container.addEventListener('click', this.clickContainer)
         this.node.addEventListener('click', this.clickNode)
 
+    }
+
+    setLang(lng){
+        this.lng = lng;
+        this.inputTodo.placeholder = `[${lang[this.lng].placeholderTodo}]`;
     }
 
     clickContainer = (e) => {

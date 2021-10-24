@@ -9,6 +9,7 @@
                 0 -1px 1px #000;
     cursor: pointer;
     /* overflow: hidden; */
+    transition: all 0.5s linear;
     
 }
 
