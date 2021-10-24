@@ -93,19 +93,27 @@ export class App extends BaseComponent{
         // this.settings = new Settings(this.btLeft);
         // this.settings.init();
         this.createSittings();
+        
         this.todo = new ToDo(this.btRight);
         this.todo.init();
 
         
 
         this.content.append(this.top,this.center,this.bottom);
-        this.node.append(this.content);
+
+        this.btnTmp = document.createElement('button');
+        this.btnTmp.className = 'tmpBtn';
+        this.btnTmp.addEventListener('click', this.incImg);
+
+        this.node.append(this.content, this.btnTmp);
         this.getTime();
         this.getDate();
         // this.getLinkToImage();
-        // this.setBg()
+        this.setBg()
         this.setGreat();
         // console.log(lang[this.lng].greetings[this.getTimeOfDay()]);
+
+        this.showItems();
     }
 
     clickContainerSettings = (e) => {
@@ -141,9 +149,9 @@ export class App extends BaseComponent{
 
     showingWidget = (widget, check) => {
         if (check.checked) {
-            widget.node.classList.remove('hideWidget');
+            widget.classList.remove('hideWidget');
         } else {
-            widget.node.classList.add('hideWidget');
+            widget.classList.add('hideWidget');
         }
     }
 
@@ -269,51 +277,104 @@ export class App extends BaseComponent{
         this.stEn.addEventListener('change', this.changeLng);
 
         this.stWeatherCheck.addEventListener('change', ()=>{
-            this.showingWidget(this.weather,this.stWeatherCheck);
+            localStorage.setItem('showWeather',this.stWeatherCheck.checked);
+            this.showingWidget(this.weather.node,this.stWeatherCheck);
         })
 
         this.stPlayerCheck.addEventListener('change', ()=>{
-            this.showingWidget(this.player,this.stPlayerCheck);
+            localStorage.setItem('showPlayer',this.stPlayerCheck.checked);
+            this.showingWidget(this.player.node,this.stPlayerCheck);
         })
 
         this.stTimeCheck.addEventListener('change', ()=>{
-            if (this.stTimeCheck.checked) {
-                this.time.classList.remove('hideWidget');
-            } else {
-                this.time.classList.add('hideWidget');
-            }
+            localStorage.setItem('showTime',this.stTimeCheck.checked);
+            this.showingWidget(this.time,this.stTimeCheck);
         })
 
         this.stDateCheck.addEventListener('change', ()=>{
-            if (this.stDateCheck.checked) {
-                this.date.classList.remove('hideWidget');
-            } else {
-                this.date.classList.add('hideWidget');
-            }
+            localStorage.setItem('showDate',this.stDateCheck.checked);
+            this.showingWidget(this.date,this.stDateCheck);
         })
 
         this.stGreetingCheck.addEventListener('change', ()=>{
-            if (this.stGreetingCheck.checked) {
-                this.greatContainer.classList.remove('hideWidget');
-            } else {
-                this.greatContainer.classList.add('hideWidget');
-            }
+            localStorage.setItem('showGreeting',this.stGreetingCheck.checked);
+            this.showingWidget(this.greatContainer,this.stGreetingCheck);
         })
 
         this.stQuotesCheck.addEventListener('change', ()=>{
-            this.showingWidget(this.quotes,this.stQuotesCheck);
+            localStorage.setItem('showQuotes',this.stQuotesCheck.checked);
+            this.showingWidget(this.quotes.node,this.stQuotesCheck);
         })
 
         this.stTodoCheck.addEventListener('change', ()=>{
-            this.showingWidget(this.todo,this.stTodoCheck);
+            localStorage.setItem('showTodo',this.stTodoCheck.checked);
+            this.showingWidget(this.todo.node,this.stTodoCheck);
         })
 
         this.settingsContainer.append(this.stWeather,this.stPlayer,this.stTime,this.stDate,this.stGreeting,this.stQuotes,this.stTodo,this.stLang);
     }
 
-    setShowItem(item, check){
-        if (check.checked){
+    showItems(){
 
+        let w = localStorage.getItem('showWeather');
+        let pl = localStorage.getItem('showPlayer');
+        let t = localStorage.getItem('showTime');
+        let d = localStorage.getItem('showDate');
+        let g = localStorage.getItem('showGreeting');
+        let q = localStorage.getItem('showQuotes');
+        let td = localStorage.getItem('showTodo');
+        if (w === null || w === 'true'){
+            this.stWeatherCheck.checked = true;
+            this.showingWidget(this.weather.node,this.stWeatherCheck);
+        } else {
+            this.stWeatherCheck.checked = false;
+            this.showingWidget(this.weather.node,this.stWeatherCheck);
+        }
+        if (pl === null || pl === 'true'){
+            this.stPlayerCheck.checked = true;
+            this.showingWidget(this.player.node,this.stPlayerCheck);
+
+        } else {
+            this.stPlayerCheck.checked = false;
+            this.showingWidget(this.player.node,this.stPlayerCheck);
+        }
+        if (t === null || t === 'true'){
+            this.stTimeCheck.checked = true;
+            this.showingWidget(this.time,this.stTimeCheck);
+
+        } else {
+            this.stTimeCheck.checked = false;
+            this.showingWidget(this.time,this.stTimeCheck);
+        }
+        if (d === null || d === 'true'){
+            this.stDateCheck.checked = true;
+            this.showingWidget(this.date,this.stDateCheck);
+        } else {
+            this.stDateCheck.checked = false;
+            this.showingWidget(this.date,this.stDateCheck);
+        }
+        if (g === null || g === 'true'){
+            this.stGreetingCheck.checked = true;
+            this.showingWidget(this.greatContainer,this.stGreetingCheck);
+
+        } else {
+            this.stGreetingCheck.checked = false;
+            this.showingWidget(this.greatContainer,this.stGreetingCheck);
+        }
+        if (q === null || q === 'true'){
+            this.stQuotesCheck.checked = true;
+            this.showingWidget(this.quotes.node,this.stQuotesCheck);
+
+        } else {
+            this.stQuotesCheck.checked = false;
+            this.showingWidget(this.quotes.node,this.stQuotesCheck);
+        }
+        if (td === null || td === 'true'){
+            this.stTodoCheck.checked = true;
+            this.showingWidget(this.todo.node,this.stTodoCheck);
+        } else {
+            this.stTodoCheck.checked = false;
+            this.showingWidget(this.todo.node,this.stTodoCheck);
         }
     }
 
@@ -327,8 +388,10 @@ export class App extends BaseComponent{
         this.lng = lng;
         this.weekDays = lang[this.lng].weekDays.slice(0);
         this.months = lang[this.lng].months.slice(0);
+        this.greatName.placeholder = `[${lang[this.lng].placeholder}]`;
         this.weather.setLang(this.lng);
         this.todo.setLang(this.lng);
+        this.quotes.setLang(this.lng);
         this.setGreat();
         this.getDate();
     }
@@ -366,7 +429,7 @@ export class App extends BaseComponent{
         };
     }
 
-    incImg(){
+    incImg = () => {
         this.imgNum++;
         if (this.imgNum > 20){
             this.imgNum = 1;

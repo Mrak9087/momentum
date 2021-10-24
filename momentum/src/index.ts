@@ -20,6 +20,10 @@ import {App} from './components/app/app.js';
 const app = new App(document.body);
 app.init();
 
+// setTimeout(() => {
+//     app.incImg();
+// },10000);
+
 // const pl = new Player(document.body);
 // pl.init();
 // pl.loadPlaylist(arrMusic);

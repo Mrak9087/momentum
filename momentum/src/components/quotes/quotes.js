@@ -22,13 +22,14 @@ export class Quotes extends BaseComponent{
         this.node.append(this.btnQuote,this.quoteText,this.quoteAuthor);
         this.btnQuote.addEventListener('click', this.showQuote);
         await this.loadQuote();
-        this.showQuote();
+        
     }
 
     async loadQuote(){
         let res = await fetch(`./quotes_${this.lng}.json`);
         let data = await res.json();
         this.quoteArr = data.slice(0);
+        this.showQuote();
     }
 
     randomNumber(min, max) {
@@ -36,8 +37,8 @@ export class Quotes extends BaseComponent{
         return Math.floor(rand);
     }
 
-    setLang(lang){
-        this.lng = lang;
+    setLang(lng){
+        this.lng = lng;
         this.loadQuote();
     }
 
