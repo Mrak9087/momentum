@@ -9,7 +9,10 @@ export class ToDo extends BaseComponent{
 
     init(){
         this.lng = localStorage.getItem('lngMom') || 'ru';
-        this.node.innerText = 'ToDo';
+        
+        this.todoName = document.createElement('span');
+        this.todoName.innerHTML = lang[this.lng].stTodo || 'ToDo';
+        this.node.append(this.todoName);
         this.container = document.createElement('div');
         this.container.className = 'todo_container';
         
@@ -45,6 +48,7 @@ export class ToDo extends BaseComponent{
     setLang(lng){
         this.lng = lng;
         this.inputTodo.placeholder = `[${lang[this.lng].placeholderTodo}]`;
+        this.todoName.innerHTML = lang[this.lng].stTodo || 'ToDo';
     }
 
     clickContainer = (e) => {

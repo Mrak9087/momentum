@@ -12,4 +12,11 @@ export default{
         evening:'Good evening',
         night:'Good night'
     },
+    stWeather:'Weather',
+    stPlayer:'Player',
+    stTime:'Time',
+    stDate:'Date',
+    stGreeting:'Greeting',
+    stQuotes:'Quotes',
+    stTodo:'ToDo',
 }

@@ -176,7 +176,7 @@ export class App extends BaseComponent{
         this.stWeather = document.createElement('div');
         this.stWeather.className = 'stItem';
         this.stWeatherTitle = document.createElement('span');
-        this.stWeatherTitle.innerText = 'Weather';
+        this.stWeatherTitle.innerText = lang[this.lng].stWeather || 'Weather';
         this.stWeatherCheck = document.createElement('input');
         this.stWeatherCheck.type = 'checkbox';
         this.stWeatherCheck.checked = true;
@@ -186,7 +186,7 @@ export class App extends BaseComponent{
         this.stPlayer = document.createElement('div');
         this.stPlayer.className = 'stItem';
         this.stPlayerTitle = document.createElement('span');
-        this.stPlayerTitle.innerText = 'Player';
+        this.stPlayerTitle.innerText = lang[this.lng].stPlayer || 'Player';
         this.stPlayerCheck = document.createElement('input');
         this.stPlayerCheck.type = 'checkbox';
         this.stPlayerCheck.checked = true;
@@ -195,7 +195,7 @@ export class App extends BaseComponent{
         this.stTime = document.createElement('div');
         this.stTime.className = 'stItem';
         this.stTimeTitle = document.createElement('span');
-        this.stTimeTitle.innerText = 'Time';
+        this.stTimeTitle.innerText = lang[this.lng].stTime || 'Time';
         this.stTimeCheck = document.createElement('input');
         this.stTimeCheck.type = 'checkbox';
         this.stTimeCheck.checked = true;
@@ -204,7 +204,7 @@ export class App extends BaseComponent{
         this.stDate = document.createElement('div');
         this.stDate.className = 'stItem';
         this.stDateTitle = document.createElement('span');
-        this.stDateTitle.innerText = 'Date';
+        this.stDateTitle.innerText = lang[this.lng].stDate || 'Date';
         this.stDateCheck = document.createElement('input');
         this.stDateCheck.type = 'checkbox';
         this.stDateCheck.checked = true;
@@ -213,7 +213,7 @@ export class App extends BaseComponent{
         this.stGreeting = document.createElement('div');
         this.stGreeting.className = 'stItem';
         this.stGreetingTitle = document.createElement('span');
-        this.stGreetingTitle.innerText = 'Greeting';
+        this.stGreetingTitle.innerText = lang[this.lng].stGreeting || 'Greeting';
         this.stGreetingCheck = document.createElement('input');
         this.stGreetingCheck.type = 'checkbox';
         this.stGreetingCheck.checked = true;
@@ -222,7 +222,7 @@ export class App extends BaseComponent{
         this.stQuotes = document.createElement('div');
         this.stQuotes.className = 'stItem';
         this.stQuotesTitle = document.createElement('span');
-        this.stQuotesTitle.innerText = 'Quotes';
+        this.stQuotesTitle.innerText = lang[this.lng].stDate || 'Quotes';
         this.stQuotesCheck = document.createElement('input');
         this.stQuotesCheck.type = 'checkbox';
         this.stQuotesCheck.checked = true;
@@ -231,7 +231,7 @@ export class App extends BaseComponent{
         this.stTodo = document.createElement('div');
         this.stTodo.className = 'stItem';
         this.stTodoTitle = document.createElement('span');
-        this.stTodoTitle.innerText = 'ToDo';
+        this.stTodoTitle.innerText = lang[this.lng].stTodo || 'ToDo';
         this.stTodoCheck = document.createElement('input');
         this.stTodoCheck.type = 'checkbox';
         this.stTodoCheck.checked = true;
@@ -394,6 +394,13 @@ export class App extends BaseComponent{
         this.quotes.setLang(this.lng);
         this.setGreat();
         this.getDate();
+        this.stWeatherTitle.innerText = lang[this.lng].stWeather || 'Weather';
+        this.stPlayerTitle.innerText = lang[this.lng].stPlayer || 'Player';
+        this.stTimeTitle.innerText = lang[this.lng].stTime || 'Time';
+        this.stDateTitle.innerText = lang[this.lng].stDate || 'Date';
+        this.stGreetingTitle.innerText = lang[this.lng].stGreeting || 'Greeting';
+        this.stQuotesTitle.innerText = lang[this.lng].stDate || 'Quotes';
+        this.stTodoTitle.innerText = lang[this.lng].stTodo || 'ToDo';
     }
 
     getLinkToImage() {

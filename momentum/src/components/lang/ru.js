@@ -12,4 +12,11 @@ export default{
         evening:'Добрый вечер',
         night:'Доброй ночи',
     },
+    stWeather:'Погода',
+    stPlayer:'Плеер',
+    stTime:'Время',
+    stDate:'Дата',
+    stGreeting:'Приветствие',
+    stQuotes:'Цитаты',
+    stTodo:'Дела',
 }
