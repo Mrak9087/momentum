@@ -10,13 +10,17 @@ html{
 
 body{
     min-width: 480px;
+    width: 100%;
     min-height: 100vh;
     height: 100%;
     font-family: 'Arial', sans-serif;
     font-size: 16px;
     color: #fff;
     text-align: center;
-    background: url("./assets/img/bg.jpg") center/auto, rgba(0, 0, 0, 0.5);
+    background-image: url("./assets/img/bg.jpg");
+    background-position: center;
+    background-size: auto;
+    background-color: rgba(0, 0, 0, 0.5);
     background-blend-mode: multiply;
     background-repeat: no-repeat;
     transition: background-image 1s ease-in-out;

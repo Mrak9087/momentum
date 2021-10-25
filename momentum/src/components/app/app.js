@@ -29,6 +29,9 @@ export class App extends BaseComponent{
             src:sound4},
         ];
 
+        this.srcImg = 'git';//'unsplash'
+        this.catImg = 'nature'
+
         this.urlImg = 'https://api.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=g0ttMV6psSPNZi2BvJ6iYQdKu9aUV8EuEu4ZlK0mOv0'
         this.lng = localStorage.getItem('lngMom') || 'ru';
         this.great = '';
@@ -54,6 +57,7 @@ export class App extends BaseComponent{
         this.center.className = 'center';
 
         this.slider = document.createElement('div')
+        this.slider.className = 'slider';
         this.btnSliderPrev = document.createElement('button');
         this.btnSliderPrev.className = 'slide_prev slider_icon';
         this.btnSliderNext = document.createElement('button');
@@ -432,20 +436,36 @@ export class App extends BaseComponent{
         this.stTodoTitle.innerText = lang[this.lng].stTodo || 'ToDo';
     }
 
-    getLinkToImage() {
-        const url = 'https://api.unsplash.com/photos/random?query=morning&client_id=e2077ad31a806c894c460aec8f81bc2af4d09c4f8104ae3177bb809faf0eac17';
+    async getLinkToImage() {
+        let url = '';
+        if (this.srcImg == 'unsplash'){
+            url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${this.catImg}&client_id=g0ttMV6psSPNZi2BvJ6iYQdKu9aUV8EuEu4ZlK0mOv0`;
+        }
+        
         let urlImage = '';
-        fetch(url).then(res => res.json()).then(data => {
-            console.log(data);
-            urlImage  = data.urls.regular;
-            document.body.style = `background-image: url("${urlImage}")`;
-        });
+        let res = await fetch(url);
+        let data = await res.json();
+        const img = new Image();
+        img.src = data.urls.regular;
+        img.onload = () => {      
+            document.body.style = `background-image: url("${img.src}")`;
+        };
+        // fetch(url).then(res => res.json()).then(data => {
+        //     console.log(data);
+        //     urlImage  = data.urls.regular;
+        //     document.body.style = `background-image: url("${urlImage}")`;
+        // });
     }
 
-    setBg = () => {  
-        this.great = this.getTimeOfDay();
-        this.imgNum = this.getRandomNum(1,20);
-        this.setImg()
+    setBg = () => {
+        if (this.srcImg === 'git'){
+            this.great = this.getTimeOfDay();
+            this.imgNum = this.getRandomNum(1,20);
+            this.setImg();
+        } else {
+            this.getLinkToImage();
+        }
+        
     }
 
     setGreat = () => {
@@ -467,19 +487,29 @@ export class App extends BaseComponent{
     }
 
     incImg = () => {
-        this.imgNum++;
-        if (this.imgNum > 20){
-            this.imgNum = 1;
+        if (this.srcImg === 'git'){
+            this.imgNum++;
+            if (this.imgNum > 20){
+                this.imgNum = 1;
+            }
+            this.setImg()
+        } else {
+            this.getLinkToImage()
         }
-        this.setImg()
+        
     }
 
     decImg = () => {
-        this.imgNum--;
-        if (this.imgNum < 1){
-            this.imgNum = 20;
+        if (this.srcImg == 'git'){
+            this.imgNum--;
+            if (this.imgNum < 1){
+                this.imgNum = 20;
+            }
+            this.setImg()
+        } else {
+            this.getLinkToImage();
         }
-        this.setImg()
+        
     }
 
     getRandomNum(min, max) {

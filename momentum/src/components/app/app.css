@@ -1,4 +1,5 @@
 .app{
+  width: 100%;
   min-height: 100%;
   overflow: hidden;
 }
@@ -9,26 +10,29 @@
 }
 
 .top{
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 10px 15px;
 }
 
 .t_left{
-  flex: 1;
+  /* flex: 1; */
+  width: 100%;
   display: flex;
   justify-content: flex-start;
 }
 
 .t_right{
-  flex: 1;
+  /* flex: 1; */
+  width: 100%;
   display: flex;
   justify-content: flex-end;
 }
 
 .container{
   min-height: 100vh;
-  
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -59,7 +63,7 @@
 .slider_icon:active{
   border: 0;
   outline: 0;  
-  transform: scale(0.8);
+  /* transform: scale(0.8); */
 }
 
 .slide_prev {
@@ -74,6 +78,7 @@
 
 .dateTime{
   background-color: transparent;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -128,19 +133,22 @@
 }
 
 .bottom{
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 10px 15px;
 }
 
 .bt_left{
-  flex: 1;
+  /* flex: 1; */
+  width: 100%;
   display: flex;
   justify-content: flex-start;
 }
 
 .bt_right{
-  flex: 1;
+  /* flex: 1; */
+  width: 100%;
   display: flex;
   justify-content: flex-end;
 }
@@ -227,4 +235,36 @@
   width: 50px;
   height: 50px;
   z-index: 2;
+}
+
+@media screen and (max-width:570px) {
+  .greeting-container{
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .name{
+    text-align: center;
+  }
+
+  .dateTime{
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .top{
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  .t_left, .t_right{
+    justify-content: center;
+  }
+
+  .time{
+    font-size: 64px;
+  }
+  
 }
