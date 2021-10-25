@@ -237,6 +237,48 @@
   z-index: 2;
 }
 
+.footer {
+  width: 100%;
+  padding: 10px;
+}
+.footer_container {
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.github{
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+.github:hover {
+  color: #fff;
+}
+.rss {
+  display: block;
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+  width: 86px;
+  height: 32px;
+  background-image: url('../../assets/svg/rs_school_js.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-right: 111px;
+}
+.rss_year {
+  font-size: 21px;
+  letter-spacing: -2px;
+  color: #cbd5de;
+  line-height: 0.9;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
 @media screen and (max-width:570px) {
   .greeting-container{
     flex-direction: column;

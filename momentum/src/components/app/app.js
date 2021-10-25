@@ -122,8 +122,17 @@ export class App extends BaseComponent{
         this.btnSliderNext.addEventListener('click', this.incImg);
         this.btnSliderPrev.addEventListener('click', this.decImg);
 
+        this.footer = document.createElement('footer');
+        this.footer.className = 'footer';
+        this.footer.innerHTML =`<div class="footer_container">
+                <a class="github" href="https://github.com/Mrak9087" target="blank">Mrak9087</a>
+                <span class="rss_year">2021</span>
+                <a class="rss" href="https://rs.school/js/" target="_blank" rel="noopener noreferrer">
+                    
+                </a>
+            </div>`;
 
-        this.node.append(this.content);
+        this.node.append(this.content, this.footer);
         this.getTime();
         this.getDate();
         // this.getLinkToImage();
