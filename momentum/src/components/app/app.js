@@ -53,6 +53,13 @@ export class App extends BaseComponent{
         this.center = document.createElement('div');
         this.center.className = 'center';
 
+        this.slider = document.createElement('div')
+        this.btnSliderPrev = document.createElement('button');
+        this.btnSliderPrev.className = 'slide_prev slider_icon';
+        this.btnSliderNext = document.createElement('button');
+        this.btnSliderNext.className = 'slide_next slider_icon';
+        this.slider.append(this.btnSliderPrev, this.btnSliderNext);
+
         this.dateTime = document.createElement('div');
         this.dateTime.className = 'dateTime';
         this.weekDays = lang[this.lng].weekDays.slice(0);
@@ -77,7 +84,7 @@ export class App extends BaseComponent{
 
         this.greatContainer.append(this.greatTxt,this.greatName);
 
-        this.center.append(this.dateTime,this.greatContainer);
+        this.center.append(this.slider,this.dateTime,this.greatContainer);
 
         this.quotes = new Quotes(this.center);
         this.quotes.init();
@@ -101,11 +108,15 @@ export class App extends BaseComponent{
 
         this.content.append(this.top,this.center,this.bottom);
 
-        this.btnTmp = document.createElement('button');
-        this.btnTmp.className = 'tmpBtn';
-        this.btnTmp.addEventListener('click', this.incImg);
+        // this.btnTmp = document.createElement('button');
+        // this.btnTmp.className = 'tmpBtn';
+        // this.btnTmp.addEventListener('click', this.incImg);
 
-        this.node.append(this.content, this.btnTmp);
+        this.btnSliderNext.addEventListener('click', this.incImg);
+        this.btnSliderPrev.addEventListener('click', this.decImg);
+
+
+        this.node.append(this.content);
         this.getTime();
         this.getDate();
         // this.getLinkToImage();
@@ -444,7 +455,7 @@ export class App extends BaseComponent{
         this.setImg()
     }
 
-    decImg(){
+    decImg = () => {
         this.imgNum--;
         if (this.imgNum < 1){
             this.imgNum = 20;
@@ -484,10 +495,10 @@ export class App extends BaseComponent{
         const locTime = new Date();
         const hour = locTime.getHours();
         switch(Math.floor(hour/6)){
-            case 0: return 'morning';
-            case 1: return 'day';
-            case 2: return 'evening';
-            case 3: return 'night';
+            case 0: return 'night';
+            case 1: return 'morning';
+            case 2: return 'day';
+            case 3: return 'evening';
         }
     }
 
