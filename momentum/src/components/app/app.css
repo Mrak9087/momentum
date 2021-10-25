@@ -201,7 +201,7 @@
 }
 
 .show.app_show .settings_container{
-  height: 300px;
+  height: 400px;
   opacity: 1;
 }
 
@@ -214,14 +214,14 @@
   color: #000;
 }
 
-.stLang{
+.stLang, .stSrcImg{
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: #000;
 }
 
-.langLabel{
+.langLabel, .srcLabel{
   width: 40px;
   display: flex;
   align-items: center;

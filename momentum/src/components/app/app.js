@@ -29,8 +29,8 @@ export class App extends BaseComponent{
             src:sound4},
         ];
 
-        this.srcImg = 'git';//'unsplash'
-        this.catImg = 'nature'
+        this.srcImg = localStorage.getItem('srcMom') || 'git';//'unsplash'
+        this.catImg = localStorage.getItem('catMom') ||'nature';
 
         this.urlImg = 'https://api.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=g0ttMV6psSPNZi2BvJ6iYQdKu9aUV8EuEu4ZlK0mOv0'
         this.lng = localStorage.getItem('lngMom') || 'ru';
@@ -338,19 +338,38 @@ export class App extends BaseComponent{
         this.lUnsplash = document.createElement('label');
         this.lUnsplash.className = 'srcLabel'
         this.unsplashSpan = document.createElement('span');
-        this.unsplashSpan.innerText = 'en'
+        this.unsplashSpan.innerText = 'unsplash'
         this.lUnsplash.append(this.stUnsplash,this.unsplashSpan);
-        
+
+        this.selCat = document.createElement('select');
+        this.selCat.className = 'selCat';
+        this.selCat.disabled = true;
+        this.opNature = document.createElement('option');
+        this.opNature.value = 'nature';
+        this.opNature.innerText = 'nature';
+        this.opEven = document.createElement('option');
+        this.opEven.value = 'evening';
+        this.opEven.innerText = 'evening';
+        this.opMorn = document.createElement('option');
+        this.opMorn.value = 'morning';
+        this.opMorn.innerText = 'morning';
+
+        this.selCat.append(this.opNature,this.opEven,this.opMorn);
+
+        this.selCat.addEventListener('change', this.changeCat);
         if (!localStorage.getItem('srcMom') || localStorage.getItem('srcMom') == 'git'){
             this.stGit.checked = true;
-        } else if (localStorage.getItem('lngMom') == 'unsplash'){
+            this.selCat.disabled = true;
+        } else if (localStorage.getItem('srcMom') == 'unsplash'){
             this.stUnsplash.checked = true;
+            this.selCat.disabled = false;
         }
 
         this.stSrcImg.append(this.lGit,this.lUnsplash);
 
 
-
+        this.stGit.addEventListener('change', this.changeSrc);
+        this.stUnsplash.addEventListener('change', this.changeSrc);
         this.stRu.addEventListener('change', this.changeLng);
         this.stEn.addEventListener('change', this.changeLng);
 
@@ -389,7 +408,8 @@ export class App extends BaseComponent{
             this.showingWidget(this.todo.node,this.stTodoCheck);
         })
 
-        this.settingsContainer.append(this.stWeather,this.stPlayer,this.stTime,this.stDate,this.stGreeting,this.stQuotes,this.stTodo,this.stLang);
+        this.settingsContainer.append(this.stWeather,this.stPlayer,this.stTime,this.stDate,
+            this.stGreeting,this.stQuotes,this.stTodo,this.stLang,this.stSrcImg,this.selCat);
     }
 
     showItems(){
@@ -459,7 +479,25 @@ export class App extends BaseComponent{
     changeLng = (e) => {
         localStorage.setItem('lngMom', e.target.value)
         this.setLang(e.target.value);
-        
+    }
+
+    changeSrc = (e) => {
+        localStorage.setItem('srcMom', e.target.value)
+        this.srcImg = e.target.value;
+        if (this.srcImg !== 'git'){
+            this.catImg = this.selCat.value;
+            this.selCat.disabled = false;
+        } else {
+            this.selCat.disabled = true;
+        }
+        this.setBg()
+        // console.log(this.srcImg,this.catImg);
+    }
+
+    changeCat = (e) => {
+        localStorage.setItem('catMom',this.selCat.value);
+        this.catImg = this.selCat.value;
+        this.setBg();
     }
 
     setLang(lng){
