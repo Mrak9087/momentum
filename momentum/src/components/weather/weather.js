@@ -16,7 +16,7 @@ export class Weather extends BaseComponent{
         this.inputCity.addEventListener('keypress', this.setCity);
         this.inputCity.addEventListener('blur', this.getCity);
 
-        this.inputCity.value = localStorage.getItem('cityMom') || 'Саратов';
+        this.inputCity.value = localStorage.getItem('cityMom') || 'Минск';
         this.icon = document.createElement('i');
         this.icon.className = 'weather-icon owf';
 

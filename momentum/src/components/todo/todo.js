@@ -28,6 +28,7 @@ export class ToDo extends BaseComponent{
         this.addBtn.className = 'add_btn';
         this.addBtn.innerText = '+';
         this.addBtn.addEventListener('click', this.clickAdd);
+        this.inputTodo.addEventListener('keypress', this.keypressTodo)
         this.containerTop.append(this.inputTodo,this.addBtn);
         
         this.containerList = document.createElement('div');
@@ -55,6 +56,14 @@ export class ToDo extends BaseComponent{
         this.lng = lng;
         this.inputTodo.placeholder = `[${lang[this.lng].placeholderTodo}]`;
         this.todoName.innerHTML = lang[this.lng].stTodo || 'ToDo';
+    }
+
+    keypressTodo = (e) => {
+        if (e.type === "keypress"){
+            if (e.which === 13 || e.keyCode === 13) {
+                this.clickAdd()
+            }
+        }
     }
 
     clickContainer = (e) => {

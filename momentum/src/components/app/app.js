@@ -79,8 +79,11 @@ export class App extends BaseComponent{
         this.greatTxt.innerText = lang[this.lng].greetings[this.getTimeOfDay()] || 'Hello';
         this.greatName = document.createElement('input');
         this.greatName.type = 'text';
+        this.greatName.value = localStorage.getItem('momName') || ''
         this.greatName.placeholder = `[${lang[this.lng].placeholder}]`;
         this.greatName.className = 'name';
+
+        this.greatName.addEventListener('keypress', this.setName)
 
         this.greatContainer.append(this.greatTxt,this.greatName);
 
@@ -125,6 +128,21 @@ export class App extends BaseComponent{
         // console.log(lang[this.lng].greetings[this.getTimeOfDay()]);
 
         this.showItems();
+    }
+
+    setName = (e) => {
+        if (e.type === "keypress"){
+          if (e.which === 13 || e.keyCode === 13) {
+            if (!this.greatName.value) {
+              localStorage.removeItem('momName');
+            } else {
+              localStorage.setItem('momName', this.greatName.value);
+            }
+            this.greatName.blur();
+          }
+        }else {
+          localStorage.setItem('momName', this.greatName.value);
+        }
     }
 
     clickContainerSettings = (e) => {
@@ -424,13 +442,13 @@ export class App extends BaseComponent{
         });
     }
 
-    setBg() {  
+    setBg = () => {  
         this.great = this.getTimeOfDay();
         this.imgNum = this.getRandomNum(1,20);
         this.setImg()
     }
 
-    setGreat(){
+    setGreat = () => {
         this.greatTxt.innerText = lang[this.lng].greetings[this.getTimeOfDay()]
         let locDate = new Date();
         let locMin = locDate.getMinutes();
