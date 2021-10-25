@@ -40,7 +40,7 @@ export class ToDo extends BaseComponent{
         this.arrTodo.forEach((item) => {
             this.createTodoItem(item);
         });
-        console.log(this.arrTodo);
+        // console.log(this.arrTodo);
         // this.listTodo.append(this.arrTodo);
 
         this.containerList.append(this.listTodo);

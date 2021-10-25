@@ -29,8 +29,9 @@ export class App extends BaseComponent{
             src:sound4},
         ];
 
-        this.srcImg = localStorage.getItem('srcMom') || 'git';//'unsplash'
+        this.srcImg = localStorage.getItem('srcMom') || 'git';//'unsplash' 'flickr'
         this.catImg = localStorage.getItem('catMom') ||'nature';
+        this.flickrArr = [];
 
         this.urlImg = 'https://api.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=g0ttMV6psSPNZi2BvJ6iYQdKu9aUV8EuEu4ZlK0mOv0'
         this.lng = localStorage.getItem('lngMom') || 'ru';
@@ -334,12 +335,22 @@ export class App extends BaseComponent{
         this.stUnsplash.name = 'srcimg';
         this.stUnsplash.id = 'srcUnsplash';
         this.stUnsplash.value = 'unsplash';
-
         this.lUnsplash = document.createElement('label');
         this.lUnsplash.className = 'srcLabel'
         this.unsplashSpan = document.createElement('span');
         this.unsplashSpan.innerText = 'unsplash'
         this.lUnsplash.append(this.stUnsplash,this.unsplashSpan);
+
+        this.stFlickr = document.createElement('input');
+        this.stFlickr.type = 'radio';
+        this.stFlickr.name = 'srcimg';
+        this.stFlickr.id = 'srcFlickr';
+        this.stFlickr.value = 'flickr';
+        this.lFlickr = document.createElement('label');
+        this.lFlickr.className = 'srcLabel'
+        this.flickrSpan = document.createElement('span');
+        this.flickrSpan.innerText = 'flickr'
+        this.lFlickr.append(this.stFlickr,this.flickrSpan);
 
         this.selCat = document.createElement('select');
         this.selCat.className = 'selCat';
@@ -363,13 +374,17 @@ export class App extends BaseComponent{
         } else if (localStorage.getItem('srcMom') == 'unsplash'){
             this.stUnsplash.checked = true;
             this.selCat.disabled = false;
+        } else if (localStorage.getItem('srcMom') == 'flickr'){
+            this.stFlickr.checked = true;
+            this.selCat.disabled = false;
         }
 
-        this.stSrcImg.append(this.lGit,this.lUnsplash);
+        this.stSrcImg.append(this.lGit,this.lUnsplash,this.lFlickr);
 
 
         this.stGit.addEventListener('change', this.changeSrc);
         this.stUnsplash.addEventListener('change', this.changeSrc);
+        this.stFlickr.addEventListener('change', this.changeSrc);
         this.stRu.addEventListener('change', this.changeLng);
         this.stEn.addEventListener('change', this.changeLng);
 
@@ -523,16 +538,31 @@ export class App extends BaseComponent{
         let url = '';
         if (this.srcImg == 'unsplash'){
             url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${this.catImg}&client_id=g0ttMV6psSPNZi2BvJ6iYQdKu9aUV8EuEu4ZlK0mOv0`;
+            let urlImage = '';
+            let res = await fetch(url);
+            let data = await res.json();
+            const img = new Image();
+            img.src = data.urls.regular;
+            img.onload = () => {      
+                document.body.style = `background-image: url("${img.src}")`;
+            };
         }
+        if (this.srcImg == 'flickr'){
+            if (!this.flickrArr.length){
+                url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=5f5f7f3938d7b1123512b9bcca33f33a&tags=${this.catImg}&extras=url_h&format=json&nojsoncallback=1`;
+                let urlImage = '';
+                let res = await fetch(url);
+                let data = await res.json();
+                this.flickrArr = data.photos.photo.slice(0);
+            }
+            const img = new Image();
+            img.src = this.flickrArr[this.imgNum].url_h
+            img.onload = () => {      
+                document.body.style = `background-image: url("${img.src}")`;
+            };
+        }
+        //https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=5f5f7f3938d7b1123512b9bcca33f33a&tags=nature&extras=url_h&format=json&nojsoncallback=1
         
-        let urlImage = '';
-        let res = await fetch(url);
-        let data = await res.json();
-        const img = new Image();
-        img.src = data.urls.regular;
-        img.onload = () => {      
-            document.body.style = `background-image: url("${img.src}")`;
-        };
         // fetch(url).then(res => res.json()).then(data => {
         //     console.log(data);
         //     urlImage  = data.urls.regular;
@@ -548,7 +578,6 @@ export class App extends BaseComponent{
         } else {
             this.getLinkToImage();
         }
-        
     }
 
     setGreat = () => {
@@ -570,24 +599,27 @@ export class App extends BaseComponent{
     }
 
     incImg = () => {
+        this.imgNum++;
+        if (this.imgNum > 20){
+            this.imgNum = 1;
+        }
         if (this.srcImg === 'git'){
-            this.imgNum++;
-            if (this.imgNum > 20){
-                this.imgNum = 1;
-            }
             this.setImg()
-        } else {
+        } else if (this.srcImg === 'flickr'){
+            this.getLinkToImage()
+        }
+        else {
             this.getLinkToImage()
         }
         
     }
 
     decImg = () => {
-        if (this.srcImg == 'git'){
-            this.imgNum--;
+        this.imgNum--;
             if (this.imgNum < 1){
                 this.imgNum = 20;
             }
+        if (this.srcImg == 'git'){
             this.setImg()
         } else {
             this.getLinkToImage();
