@@ -315,6 +315,42 @@ export class App extends BaseComponent{
 
         this.stLang.append(this.lRu,this.lEn);
 
+
+        this.stSrcImg = document.createElement('div');
+        this.stSrcImg.className = 'stSrcImg';
+        this.stGit = document.createElement('input');
+        this.stGit.type = 'radio';
+        this.stGit.name = 'srcimg';
+        this.stGit.id = 'srcGit';
+        this.stGit.value = 'git';
+        this.lGit = document.createElement('label');
+        this.lGit.className = 'srcLabel';
+        this.gitSpan = document.createElement('span');
+        this.gitSpan.innerText = 'git'
+        this.lGit.append(this.stGit, this.gitSpan);
+
+        this.stUnsplash = document.createElement('input');
+        this.stUnsplash.type = 'radio';
+        this.stUnsplash.name = 'srcimg';
+        this.stUnsplash.id = 'srcUnsplash';
+        this.stUnsplash.value = 'unsplash';
+
+        this.lUnsplash = document.createElement('label');
+        this.lUnsplash.className = 'srcLabel'
+        this.unsplashSpan = document.createElement('span');
+        this.unsplashSpan.innerText = 'en'
+        this.lUnsplash.append(this.stUnsplash,this.unsplashSpan);
+        
+        if (!localStorage.getItem('srcMom') || localStorage.getItem('srcMom') == 'git'){
+            this.stGit.checked = true;
+        } else if (localStorage.getItem('lngMom') == 'unsplash'){
+            this.stUnsplash.checked = true;
+        }
+
+        this.stSrcImg.append(this.lGit,this.lUnsplash);
+
+
+
         this.stRu.addEventListener('change', this.changeLng);
         this.stEn.addEventListener('change', this.changeLng);
 
