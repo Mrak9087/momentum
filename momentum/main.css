@@ -581,6 +581,7 @@ body{
 }
 .app{
   min-height: 100%;
+  overflow: hidden;
 }
 
 .hideWidget{
@@ -954,7 +955,20 @@ body{
     width: 100px;
 }
 
+.sound_info{
+    width: 100%;
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+}
 
+.sound_name{
+    flex: 1;
+}
+
+.sound_time{
+    flex: 1;
+}
 .weather {
     display: flex;
     flex-direction: column;
