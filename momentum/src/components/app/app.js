@@ -436,6 +436,7 @@ export class App extends BaseComponent{
         let locMin = locDate.getMinutes();
         let locSec = locDate.getSeconds();
         let leftSec = 3600 - (locMin * 60 +locSec);
+        this.setBg();
         setTimeout(this.setGreat, leftSec*1000);
     }
 

@@ -116,6 +116,10 @@ export class ToDo extends BaseComponent{
         let idx = +li.dataset.index;
         this.arrTodo.splice(idx,1);
         this.listTodo.removeChild(li);
+        this.arrTodo.forEach((item,index) => {
+            item.index = index;
+            this.listTodo.children[index].dataset.index = index;
+        })
         localStorage.setItem('listTodo', JSON.stringify(this.arrTodo))
 
     } 
