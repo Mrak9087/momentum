@@ -358,14 +358,26 @@ export class App extends BaseComponent{
         this.opNature = document.createElement('option');
         this.opNature.value = 'nature';
         this.opNature.innerText = 'nature';
+        
         this.opEven = document.createElement('option');
         this.opEven.value = 'evening';
         this.opEven.innerText = 'evening';
+        
         this.opMorn = document.createElement('option');
         this.opMorn.value = 'morning';
         this.opMorn.innerText = 'morning';
+        
 
         this.selCat.append(this.opNature,this.opEven,this.opMorn);
+        if (this.catImg == 'nature'){
+            this.selCat.selectedIndex = 0;
+        }
+        if (this.catImg == 'evening'){
+            this.selCat.selectedIndex = 1;
+        }
+        if (this.catImg == 'morning'){
+            this.selCat.selectedIndex = 2;
+        }
 
         this.selCat.addEventListener('change', this.changeCat);
         if (!localStorage.getItem('srcMom') || localStorage.getItem('srcMom') == 'git'){
@@ -512,7 +524,10 @@ export class App extends BaseComponent{
     changeCat = (e) => {
         localStorage.setItem('catMom',this.selCat.value);
         this.catImg = this.selCat.value;
+        this.flickrArr = [];
+        
         this.setBg();
+        
     }
 
     setLang(lng){
