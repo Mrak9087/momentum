@@ -614,6 +614,44 @@ body{
   justify-content: space-between;
 }
 
+.slider_icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  background-size: 32px 32px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  opacity: .8;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.slider_icon:hover{
+  opacity: 1;
+}
+
+.slider_icon:active{
+  border: 0;
+  outline: 0;  
+  transform: scale(0.8);
+}
+
+.slide_prev {
+  left: 20px;
+  background-image: url(assets/slider-prev-f5f3a4aa550dd30baa35..svg);
+}
+
+.slide_next {
+  right: 20px;
+  background-image: url(assets/slider-next-320ea03df2fc81496da0..svg);
+}
+
 .dateTime{
   background-color: transparent;
   display: flex;
