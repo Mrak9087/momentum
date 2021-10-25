@@ -38,7 +38,16 @@ export class Player extends BaseComponent{
         this.soundInput.style.background = `linear-gradient(to right, #710707 0%, #710707 ${this.soundInput.value}%, #fff ${this.soundInput.value}%, white 100%)`;
 
         this.soundDiv.append(this.soundBtn,this.soundInput);
-        this.ranges.append(this.durInput,this.soundDiv);
+
+        this.soundInfo = document.createElement('div');
+        this.soundInfo.className = 'sound_info';
+        this.soundName = document.createElement('div');
+        this.soundName.className = 'sound_name';
+        this.soundTime = document.createElement('div');
+        this.soundTime.className = 'sound_time';
+        this.soundTime.innerText = '00:00 / 00:00';
+        this.soundInfo.append(this.soundName,this.soundTime);
+        this.ranges.append(this.soundInfo,this.durInput,this.soundDiv);
         this.controls.append(this.btns,this.ranges);
 
         this.prevBtn = document.createElement('button');
@@ -62,9 +71,13 @@ export class Player extends BaseComponent{
             let percent = ((this.player.currentTime / this.player.duration) * 100) || 0;
             this.durInput.value = percent;
             this.durInput.style.background = `linear-gradient(to right, #710707 0%, #710707 ${this.durInput.value}%, #fff ${this.durInput.value}%, white 100%)`;
+            let dur =  Math.floor(Math.round(this.player.duration*100)/100) || 0;
+            let tm = Math.floor(Math.round(this.player.currentTime*100)/100);
+            this.soundTime.innerText = `${this.addZero(Math.floor(dur/60))}:${this.addZero(Math.floor(dur%60))} / ${this.addZero(Math.floor(tm/60))}:${this.addZero(Math.floor(tm%60))}`;
             if (this.player.ended){
                 this.playBtn.classList.remove('pause');
                 this.durInput.value = 0;
+                this.clickNext();
             }
         })
 
@@ -147,24 +160,8 @@ export class Player extends BaseComponent{
     }
 
     clickNext = () => {
-        this.curIndex ++;
-        if (this.curIndex >= this.playList.length){
-            this.curIndex = this.playList.length - 1;
-        }
-        if (!this.player.paused){
-            this.player.pause();
-            this.playBtn.classList.remove('pause');
-            this.player.playbackRate = 1;
-        }
-        this.player.src = this.playList[this.curIndex].src;
-        this.durInput.value = 0;
-        this.clearActive()
-        this.listItems[this.curIndex].classList.add('item-active');
-    }
-
-    clickPrev = () => {
-        this.curIndex --;
-        if (this.curIndex < 0){
+        this.curIndex++;
+        if (this.curIndex == this.playList.length){
             this.curIndex = 0;
         }
         if (!this.player.paused){
@@ -174,8 +171,26 @@ export class Player extends BaseComponent{
         }
         this.player.src = this.playList[this.curIndex].src;
         this.durInput.value = 0;
+        this.clearActive();
+        this.listItems[this.curIndex].classList.add('item-active');
+        this.playBtn.click();
+    }
+
+    clickPrev = () => {
+        this.curIndex --;
+        if (this.curIndex < 0){
+            this.curIndex = this.playList.length-1;
+        }
+        if (!this.player.paused){
+            this.player.pause();
+            this.playBtn.classList.remove('pause');
+            this.player.playbackRate = 1;
+        }
+        this.player.src = this.playList[this.curIndex].src;
+        this.durInput.value = 0;
         this.clearActive()
         this.listItems[this.curIndex].classList.add('item-active');
+        this.player.play();
     }
 
     clearActive(){
@@ -194,6 +209,11 @@ export class Player extends BaseComponent{
             this.playBtn.classList.remove('pause');
             this.player.playbackRate = 1;
         }
+
+        this.soundName.innerText = this.listItems[this.curIndex].innerText;
     }
 
+    addZero(n){
+        return (parseInt(n) < 10 ? '0' : '') + n; 
+    }
 }
