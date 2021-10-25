@@ -568,18 +568,23 @@ html{
 
 body{
     min-width: 480px;
+    width: 100%;
     min-height: 100vh;
     height: 100%;
     font-family: 'Arial', sans-serif;
     font-size: 16px;
     color: #fff;
     text-align: center;
-    background: url(assets/bg-1ec547d73dd0ce35a063..jpg) center/auto, rgba(0, 0, 0, 0.5);
+    background-image: url(assets/bg-1ec547d73dd0ce35a063..jpg);
+    background-position: center;
+    background-size: auto;
+    background-color: rgba(0, 0, 0, 0.5);
     background-blend-mode: multiply;
     background-repeat: no-repeat;
     transition: background-image 1s ease-in-out;
 }
 .app{
+  width: 100%;
   min-height: 100%;
   overflow: hidden;
 }
@@ -590,26 +595,29 @@ body{
 }
 
 .top{
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 10px 15px;
 }
 
 .t_left{
-  flex: 1;
+  /* flex: 1; */
+  width: 100%;
   display: flex;
   justify-content: flex-start;
 }
 
 .t_right{
-  flex: 1;
+  /* flex: 1; */
+  width: 100%;
   display: flex;
   justify-content: flex-end;
 }
 
 .container{
   min-height: 100vh;
-  
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -640,7 +648,7 @@ body{
 .slider_icon:active{
   border: 0;
   outline: 0;  
-  transform: scale(0.8);
+  /* transform: scale(0.8); */
 }
 
 .slide_prev {
@@ -655,6 +663,7 @@ body{
 
 .dateTime{
   background-color: transparent;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -709,19 +718,22 @@ body{
 }
 
 .bottom{
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 10px 15px;
 }
 
 .bt_left{
-  flex: 1;
+  /* flex: 1; */
+  width: 100%;
   display: flex;
   justify-content: flex-start;
 }
 
 .bt_right{
-  flex: 1;
+  /* flex: 1; */
+  width: 100%;
   display: flex;
   justify-content: flex-end;
 }
@@ -808,6 +820,80 @@ body{
   width: 50px;
   height: 50px;
   z-index: 2;
+}
+
+.footer {
+  width: 100%;
+  padding: 10px;
+}
+.footer_container {
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.github{
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+.github:hover {
+  color: #fff;
+}
+.rss {
+  display: block;
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+  width: 86px;
+  height: 32px;
+  background-image: url(assets/rs_school_js-ad178c0df28bc133be34..svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-right: 111px;
+}
+.rss_year {
+  font-size: 21px;
+  letter-spacing: -2px;
+  color: #cbd5de;
+  line-height: 0.9;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+@media screen and (max-width:570px) {
+  .greeting-container{
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .name{
+    text-align: center;
+  }
+
+  .dateTime{
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .top{
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  .t_left, .t_right{
+    justify-content: center;
+  }
+
+  .time{
+    font-size: 64px;
+  }
+  
 }
 .player{
     display: flex;
@@ -1024,6 +1110,9 @@ body{
     color: #fff;
 }
 .quotes{
+    max-width: 1024px;
+    margin: 0 auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1058,14 +1147,24 @@ body{
 }
 
 .quote_text{
+    max-width: 800px;
+    width: 100%;
     font-size: 16px;
     min-height: 32px;
+    height: 100%;
+    word-wrap: break-word;
+
 }
 
 .quote_author{
+    width: 100%;
     font-size: 16px;
     min-height: 20px;
+    height: 100%;
+    word-wrap: break-word;
 }
+
+
 .todo{
     display: flex;
     align-items: center;
