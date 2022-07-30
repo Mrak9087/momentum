@@ -1,7 +1,6 @@
 import {BaseComponent} from "../baseComponent/baseComponent.js";
 import "./weather.css";
 import lang from '../lang/language';
-// import "../../owfont-regular.css";
 
 export class Weather extends BaseComponent{
     constructor(parentNode){

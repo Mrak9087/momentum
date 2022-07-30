@@ -91,11 +91,9 @@ export class Player extends BaseComponent{
         this.soundBtn.addEventListener('click', this.soundClick);
         this.nextBtn.addEventListener('click', this.clickNext);
         this.prevBtn.addEventListener('click', this.clickPrev);
-        // this.soundInput.addEventListener('mousemove', changeSound);
     }
 
     changeSound = () => {
-        // if (!isChangeSound) return;
         this.player.volume = this.soundInput.value / 100;
         
         
@@ -144,7 +142,6 @@ export class Player extends BaseComponent{
             item.addEventListener('click', () => {
                 this.clickItem(index);
                 item.classList.add('item-active');
-                // this.player.src = this.playList[index].src;
             })
         })
     }

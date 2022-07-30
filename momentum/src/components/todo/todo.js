@@ -40,8 +40,6 @@ export class ToDo extends BaseComponent{
         this.arrTodo.forEach((item) => {
             this.createTodoItem(item);
         });
-        // console.log(this.arrTodo);
-        // this.listTodo.append(this.arrTodo);
 
         this.containerList.append(this.listTodo);
 
@@ -71,7 +69,6 @@ export class ToDo extends BaseComponent{
     }
 
     clickAdd = () => {
-        // console.log(this.inputTodo.value);
         if (this.inputTodo.value){
             let item = {
                 index:this.arrTodo.length,
@@ -81,8 +78,6 @@ export class ToDo extends BaseComponent{
             this.createTodoItem(item);
             this.inputTodo.value = '';
             this.arrTodo.push(item);
-            // console.log(this.listTodo.childNodes);
-            // console.log(this.arrTodo);
             localStorage.setItem('listTodo', JSON.stringify(this.arrTodo));
         }
         
@@ -134,20 +129,13 @@ export class ToDo extends BaseComponent{
     } 
 
     clickNode = (e) => {
-        // if (e.target != this.node) return;
         if (this.node.classList.contains('show') && this.node.classList.contains('app_show')){
             this.node.classList.remove('app_show');
-            // setTimeout(() => {
-            //     this.node.classList.remove('show');
-            // }, 500);
             this.node.classList.remove('show');
             
         } else{
             this.node.classList.add('show');
             this.node.classList.add('app_show');
-            // setTimeout(() => {
-            //     this.node.classList.add('app_show');
-            // }, 500);
         }
         
     }

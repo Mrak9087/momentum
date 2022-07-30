@@ -8,7 +8,6 @@ import sound3 from '../../assets/sounds/RiverFlowsInYou.mp3';
 import sound4 from '../../assets/sounds/SummerWind.mp3';
 import {Weather} from '../weather/weather.js'
 import {Quotes} from '../quotes/quotes.js'
-// import {Settings} from '../settings/settings.js'
 import {ToDo} from '../todo/todo.js';
 
 export class App extends BaseComponent{
@@ -105,20 +104,12 @@ export class App extends BaseComponent{
         this.btRight.className = 'bt_right';
         this.bottom.append(this.btLeft,this.btRight);
 
-        // this.settings = new Settings(this.btLeft);
-        // this.settings.init();
-        this.createSittings();
+        this.createSettings();
         
         this.todo = new ToDo(this.btRight);
         this.todo.init();
 
-        
-
         this.content.append(this.top,this.center,this.bottom);
-
-        // this.btnTmp = document.createElement('button');
-        // this.btnTmp.className = 'tmpBtn';
-        // this.btnTmp.addEventListener('click', this.incImg);
 
         this.btnSliderNext.addEventListener('click', this.incImg);
         this.btnSliderPrev.addEventListener('click', this.decImg);
@@ -136,10 +127,8 @@ export class App extends BaseComponent{
         this.node.append(this.content, this.footer);
         this.getTime();
         this.getDate();
-        // this.getLinkToImage();
         this.setBg()
         this.setGreat();
-        // console.log(lang[this.lng].greetings[this.getTimeOfDay()]);
 
         this.showItems();
     }
@@ -163,7 +152,7 @@ export class App extends BaseComponent{
         e.stopPropagation();
     }
 
-    createSittings(){
+    createSettings(){
         this.settings = document.createElement('div');
         this.settings.className = 'settings';
         this.settingsIcon = document.createElement('div');
@@ -173,16 +162,6 @@ export class App extends BaseComponent{
 
         this.settingsContainer = document.createElement('div');
         this.settingsContainer.className = 'settings_container';
-
-        // this.stWeather = document.createElement('div');
-        // this.stWeather.className = 'stItem';
-        // this.stWeatherTitle = document.createElement('span');
-        // this.stWeatherTitle.innerText = 'Weather';
-        // this.stWeatherCheck = document.createElement('input');
-        // this.stWeatherCheck.type = 'checkbox';
-        // this.stWeather.append(this.stWeatherTitle,this.stWeatherCheck);
-
-        // this.settingsContainer.append(this.stWeather);
 
         this.createItems();
         this.settings.append(this.settingsContainer);
@@ -201,17 +180,11 @@ export class App extends BaseComponent{
     clickSettings = (e) =>{
         if (this.settings.classList.contains('show') && this.settings.classList.contains('app_show')){
             this.settings.classList.remove('app_show');
-            // setTimeout(() => {
-            //     this.node.classList.remove('show');
-            // }, 500);
             this.settings.classList.remove('show');
             
         } else{
             this.settings.classList.add('show');
             this.settings.classList.add('app_show');
-            // setTimeout(() => {
-            //     this.node.classList.add('app_show');
-            // }, 500);
         }
     }
 
@@ -518,7 +491,6 @@ export class App extends BaseComponent{
             this.selCat.disabled = true;
         }
         this.setBg()
-        // console.log(this.srcImg,this.catImg);
     }
 
     changeCat = (e) => {
@@ -564,7 +536,7 @@ export class App extends BaseComponent{
         }
         if (this.srcImg == 'flickr'){
             if (!this.flickrArr.length){
-                url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=5f5f7f3938d7b1123512b9bcca33f33a&tags=${this.catImg}&extras=url_h&format=json&nojsoncallback=1`;
+                url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=2ac28d512705274f543e6c150964af2e&tags=${this.catImg}&extras=url_h&format=json&nojsoncallback=1`;
                 let urlImage = '';
                 let res = await fetch(url);
                 let data = await res.json();
@@ -576,13 +548,6 @@ export class App extends BaseComponent{
                 document.body.style = `background-image: url("${img.src}")`;
             };
         }
-        //https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=5f5f7f3938d7b1123512b9bcca33f33a&tags=nature&extras=url_h&format=json&nojsoncallback=1
-        
-        // fetch(url).then(res => res.json()).then(data => {
-        //     console.log(data);
-        //     urlImage  = data.urls.regular;
-        //     document.body.style = `background-image: url("${urlImage}")`;
-        // });
     }
 
     setBg = () => {
